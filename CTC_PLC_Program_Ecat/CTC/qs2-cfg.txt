@@ -1,0 +1,23 @@
+;;;
+;;; Quickstep 2.1 Parameters
+;;;
+
+controller_model                     53XX
+analog_inputs                         256
+analog_outputs                        256
+servos                                 16
+prototype_boards                        0
+highspeed_ctrs                          0
+thumbwheels                             0
+digital_displays                       16
+digital_inputs                       1024
+digital_outputs                      1024
+steps                               16384
+flags                                  32
+counters                                8
+registers                           60000
+start_on_input#1                       no
+stop_on_input#2                        no
+reset_on_input#3                       no
+step_on_input#4                        no
+

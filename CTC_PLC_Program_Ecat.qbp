@@ -9225,10 +9225,10 @@ if (R550_GripperCommands)== 3 | (R550_GripperCommands)== 4  then { // Look for '
 
 //***********************************************HomeRoutine****************************************************
 if (R550_GripperCommands)== 5 then { // Wait for 'Home'
-	Gripper.Maxspeed = R531_Speed;// Load Maxspeed
-	Gripper.Accel =R532_Accel;// Load Accel
+	Gripper.Maxspeed = R541_Speed;// Load Maxspeed
+	Gripper.Accel =R542_Accel;// Load Accel
 	Gripper.Decel = R533_Decel;// Load Decel
-	Gripper.Target = R534_Target;// Load Distance (Absolute)
+	Gripper.Target = R544_Target;// Load Distance (Absolute)
 	Gripper.OffsetHome = R545_HomeOffset; // Offset position from initial home
   	Gripper.command= 5;// Trigger 'HomeRoutine' in motion block
 
@@ -9249,8 +9249,12 @@ if (R550_GripperCommands)== 5 then { // Wait for 'Home'
 			R550_GripperCommands = 0;
 	}
 
-
-</code>
+//***********************************************Clear feedback position****************************************************
+if (R550_GripperCommands)== 9 then {
+ 	Gripper.NewPosition = 0;
+	Gripper.command = R550_GripperCommands;
+	R550_GripperCommands = 0;
+}</code>
                     <tport>178</tport>
                     <bport>179</bport>
                     <lport0>180</lport0>
@@ -10631,19 +10635,19 @@ goto StopMove;
 [HomeRoutine]
 // Move off of home
 cmode = 0;
-vmax = 133; 					// set vmax to a speed allowable in the drive's canned homing routine, otherwise it will fault when home involked. (133 = 8000 RPM)
+vmax = 33; 					// set vmax to a speed allowable in the drive's canned homing routine, otherwise it will fault when home involked. (133 = 8000 RPM)
 
 //move at 3 to .25 using 10,10;	// Do any kind of absolute move back to 0 to remove our offset.
 //wait for in position;			// Wait until move is complete
 
 inpos_t = 250;			// 250 millisecond settling (can make it anything want but this is the time the drive
 						// will wait at position before notifying QuickBuilder MSB that it is home.
-homing_method = 17;		// [Hung Lam]mode setting for home to Homing Method 17 - Negative Limit Switch
-homing_speed1 = .25;	// homing_speed1 is not use but set for default anyway
+homing_method = 23;		// [Hung Lam]mode setting for home to Homing Method 23 - Home switch Positive Speed
+homing_speed1 = 1;	// homing_speed1 is not use but set for default anyway [Hung Lam] Adjust homing speed
 homing_speed2 = .1;		// in mode 4 and 6 only the homing_speed2 is used
 cmode = 8;				// Homing mode for drive
-move to 0 using 1,1;	// Tell the drive to initiate the move with accel of 10000.
-wait for in position;	// The drive will stop once it see's the index pulse and tpos = fpos at that position
+move to 0 using 10,10;	// Tell the drive to initiate the move with accel of 10000.
+// wait for in position;	// The drive will stop once it see's the index pulse and tpos = fpos at that position
 						// therefore we will have an offset past home in tpos/fpos, not really absolute 0.
 [HomeHang]
 if command == 0 goto StopMove;
@@ -10655,23 +10659,24 @@ cmode = 0;
 //delay 100 ms;
 //zero feedback position;
 
-move at .1 to 0 using 1,1;		// Do any kind of absolute move back to 0 to remove our offset.
-wait for in position;			// Wait until move is complete
+// move at .1 to 0 using 10,10;	// Do any kind of absolute move back to 0 to remove our offset.
+// wait for in position;			// Wait until move is complete
 
 // We are now at home, 0
 [stall]
-delay 200 ms;
+delay 100 ms;
 
 [MoveToOffset]
-move at (Maxspeed / 1000) to OffsetHome  using Accel / 1000,Decel / 1000;// move twice the Search Speed to get there 
+move at (Maxspeed / 200000) to OffsetHome  using Accel / 1000,Decel / 1000;// move twice the Search Speed to get there 
 
-
+State = 0;
 [Offset]
 if command == 0 goto StopMove;
-if pstate != 2 goto Offset;		// pstate returns a '2' when the motion is complete
-delay 500 ms;
-wait for in position;
-
+delay 5 ms;
+State = pstate;
+if State != 2 goto Offset;		// pstate returns a '2' when the motion is complete
+delay 250 ms;
+// wait for in position;
 zero feedback position;
 
 // We are now at home, 0
@@ -12359,7 +12364,7 @@ goto ScanCommands;
         </item>
         <item>
           <key>
-            <int>175</int>
+            <int>178</int>
           </key>
           <value>
             <string>AxisGripperRot (Task)</string>
@@ -12567,10 +12572,18 @@ goto ScanCommands;
         </item>
         <item>
           <key>
+            <int>175</int>
+          </key>
+          <value>
+            <string>AxisGripper.GripperControl (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
             <int>176</int>
           </key>
           <value>
-            <string>AxisGripperRot.Init (Step)</string>
+            <string>AxisGripper.GripperControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12578,23 +12591,7 @@ goto ScanCommands;
             <int>177</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>203</int>
-          </key>
-          <value>
-            <string>AxisEmpty1 (Task)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>178</int>
-          </key>
-          <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisGripper.GripperControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12602,7 +12599,7 @@ goto ScanCommands;
             <int>179</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisGripperRot.Init (Step)</string>
           </value>
         </item>
         <item>
@@ -12611,6 +12608,14 @@ goto ScanCommands;
           </key>
           <value>
             <string>AxisGripperRot.GripperRotControl (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>206</int>
+          </key>
+          <value>
+            <string>AxisEmpty1 (Task)</string>
           </value>
         </item>
         <item>
@@ -12791,10 +12796,18 @@ goto ScanCommands;
         </item>
         <item>
           <key>
+            <int>203</int>
+          </key>
+          <value>
+            <string>AxisGripperRot.GripperRotControl (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
             <int>204</int>
           </key>
           <value>
-            <string>AxisEmpty1.Init (Step)</string>
+            <string>AxisGripperRot.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12802,23 +12815,7 @@ goto ScanCommands;
             <int>205</int>
           </key>
           <value>
-            <string>AxisEmpty1.Empty1Control (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>231</int>
-          </key>
-          <value>
-            <string>AxisEmpty2 (Task)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>206</int>
-          </key>
-          <value>
-            <string>AxisEmpty1.Empty1Control (Step)</string>
+            <string>AxisGripperRot.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12826,7 +12823,7 @@ goto ScanCommands;
             <int>207</int>
           </key>
           <value>
-            <string>AxisEmpty1.Empty1Control (Step)</string>
+            <string>AxisEmpty1.Init (Step)</string>
           </value>
         </item>
         <item>
@@ -12835,6 +12832,14 @@ goto ScanCommands;
           </key>
           <value>
             <string>AxisEmpty1.Empty1Control (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>234</int>
+          </key>
+          <value>
+            <string>AxisEmpty2 (Task)</string>
           </value>
         </item>
         <item>
@@ -13015,10 +13020,18 @@ goto ScanCommands;
         </item>
         <item>
           <key>
+            <int>231</int>
+          </key>
+          <value>
+            <string>AxisEmpty1.Empty1Control (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
             <int>232</int>
           </key>
           <value>
-            <string>AxisEmpty2.Init (Step)</string>
+            <string>AxisEmpty1.Empty1Control (Step)</string>
           </value>
         </item>
         <item>
@@ -13026,23 +13039,7 @@ goto ScanCommands;
             <int>233</int>
           </key>
           <value>
-            <string>AxisEmpty2.Empty2Control (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>259</int>
-          </key>
-          <value>
-            <string>AxisTransferStation (Task)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>234</int>
-          </key>
-          <value>
-            <string>AxisEmpty2.Empty2Control (Step)</string>
+            <string>AxisEmpty1.Empty1Control (Step)</string>
           </value>
         </item>
         <item>
@@ -13050,7 +13047,7 @@ goto ScanCommands;
             <int>235</int>
           </key>
           <value>
-            <string>AxisEmpty2.Empty2Control (Step)</string>
+            <string>AxisEmpty2.Init (Step)</string>
           </value>
         </item>
         <item>
@@ -13059,6 +13056,14 @@ goto ScanCommands;
           </key>
           <value>
             <string>AxisEmpty2.Empty2Control (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>262</int>
+          </key>
+          <value>
+            <string>AxisTransferStation (Task)</string>
           </value>
         </item>
         <item>
@@ -13239,18 +13244,18 @@ goto ScanCommands;
         </item>
         <item>
           <key>
-            <int>260</int>
+            <int>259</int>
           </key>
           <value>
-            <string>AxisTransferStation.Init (Step)</string>
+            <string>AxisEmpty2.Empty2Control (Step)</string>
           </value>
         </item>
         <item>
           <key>
-            <int>263</int>
+            <int>260</int>
           </key>
           <value>
-            <string>AxisTransferStation.CableElevfControl (Step)</string>
+            <string>AxisEmpty2.Empty2Control (Step)</string>
           </value>
         </item>
         <item>
@@ -13258,39 +13263,15 @@ goto ScanCommands;
             <int>261</int>
           </key>
           <value>
-            <string>AxisTransferStation.Init (Step)</string>
+            <string>AxisEmpty2.Empty2Control (Step)</string>
           </value>
         </item>
         <item>
           <key>
-            <int>262</int>
+            <int>263</int>
           </key>
           <value>
             <string>AxisTransferStation.Init (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>294</int>
-          </key>
-          <value>
-            <string>AxisEmpty3 (Task)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>264</int>
-          </key>
-          <value>
-            <string>AxisTransferStation.CableElevfControl (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>265</int>
-          </key>
-          <value>
-            <string>AxisTransferStation.CableElevfControl (Step)</string>
           </value>
         </item>
         <item>
@@ -13299,6 +13280,30 @@ goto ScanCommands;
           </key>
           <value>
             <string>AxisTransferStation.CableElevfControl (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>264</int>
+          </key>
+          <value>
+            <string>AxisTransferStation.Init (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>265</int>
+          </key>
+          <value>
+            <string>AxisTransferStation.Init (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>297</int>
+          </key>
+          <value>
+            <string>AxisEmpty3 (Task)</string>
           </value>
         </item>
         <item>
@@ -13519,18 +13524,18 @@ goto ScanCommands;
         </item>
         <item>
           <key>
-            <int>295</int>
+            <int>294</int>
           </key>
           <value>
-            <string>AxisEmpty3.Init (Step)</string>
+            <string>AxisTransferStation.CableElevfControl (Step)</string>
           </value>
         </item>
         <item>
           <key>
-            <int>298</int>
+            <int>295</int>
           </key>
           <value>
-            <string>AxisEmpty3.Empty3Control (Step)</string>
+            <string>AxisTransferStation.CableElevfControl (Step)</string>
           </value>
         </item>
         <item>
@@ -13538,39 +13543,15 @@ goto ScanCommands;
             <int>296</int>
           </key>
           <value>
-            <string>AxisEmpty3.Init (Step)</string>
+            <string>AxisTransferStation.CableElevfControl (Step)</string>
           </value>
         </item>
         <item>
           <key>
-            <int>297</int>
+            <int>298</int>
           </key>
           <value>
             <string>AxisEmpty3.Init (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>329</int>
-          </key>
-          <value>
-            <string>FastUpdates (Task)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>299</int>
-          </key>
-          <value>
-            <string>AxisEmpty3.Empty3Control (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>300</int>
-          </key>
-          <value>
-            <string>AxisEmpty3.Empty3Control (Step)</string>
           </value>
         </item>
         <item>
@@ -13579,6 +13560,30 @@ goto ScanCommands;
           </key>
           <value>
             <string>AxisEmpty3.Empty3Control (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>299</int>
+          </key>
+          <value>
+            <string>AxisEmpty3.Init (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>300</int>
+          </key>
+          <value>
+            <string>AxisEmpty3.Init (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>332</int>
+          </key>
+          <value>
+            <string>FastUpdates (Task)</string>
           </value>
         </item>
         <item>
@@ -13799,10 +13804,18 @@ goto ScanCommands;
         </item>
         <item>
           <key>
+            <int>329</int>
+          </key>
+          <value>
+            <string>AxisEmpty3.Empty3Control (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
             <int>330</int>
           </key>
           <value>
-            <string>FastUpdates.Update (Step)</string>
+            <string>AxisEmpty3.Empty3Control (Step)</string>
           </value>
         </item>
         <item>
@@ -13810,15 +13823,7 @@ goto ScanCommands;
             <int>331</int>
           </key>
           <value>
-            <string>Updates (Task)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>332</int>
-          </key>
-          <value>
-            <string>Updates.Update (Step)</string>
+            <string>AxisEmpty3.Empty3Control (Step)</string>
           </value>
         </item>
         <item>
@@ -13826,7 +13831,7 @@ goto ScanCommands;
             <int>333</int>
           </key>
           <value>
-            <string>Updates.Update (Step)</string>
+            <string>FastUpdates.Update (Step)</string>
           </value>
         </item>
         <item>
@@ -13834,7 +13839,7 @@ goto ScanCommands;
             <int>334</int>
           </key>
           <value>
-            <string>Updates.Update (Step)</string>
+            <string>Updates (Task)</string>
           </value>
         </item>
         <item>
@@ -13936,6 +13941,30 @@ goto ScanCommands;
         <item>
           <key>
             <int>347</int>
+          </key>
+          <value>
+            <string>Updates.Update (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>348</int>
+          </key>
+          <value>
+            <string>Updates.Update (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>349</int>
+          </key>
+          <value>
+            <string>Updates.Update (Step)</string>
+          </value>
+        </item>
+        <item>
+          <key>
+            <int>350</int>
           </key>
           <value>
             <string>Updates.Update (Step)</string>
