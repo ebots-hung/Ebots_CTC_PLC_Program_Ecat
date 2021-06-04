@@ -1234,7 +1234,7 @@
                         <id>0</id>
                         <nodetype>plain</nodetype>
                         <guid>92ab1138-2093-4b68-9efb-ece0c18074a5</guid>
-                        <fname>GripperRot</fname>
+                        <fname>EmptyAxis0</fname>
                         <logical>axis 006</logical>
                         <group />
                         <override>0</override>
@@ -7960,7 +7960,7 @@ R10_Mode = 0;
 
 begin (StageControl AxisX AxisY AxisZ) tasks to StageTasks;
 
-begin (Updates FastUpdates AxisTheta AxisGripperRot AxisGripper AxisEmpty1 AxisEmpty2 AxisTransferStation AxisEmpty3);
+begin (Updates FastUpdates AxisTheta AxisGripper AxisEmpty0 AxisEmpty1 AxisEmpty2 AxisTransferStation AxisEmpty3);
 //begin (Updates CableElev IrisCup);
 
 delay 1000 ms;
@@ -8187,7 +8187,7 @@ if R500_RestartProgram == 1 then{// Restart trigger
 	stop ZAxis;
 	stop ThetaAxis;
 	stop Gripper;
-	stop GripperRot;
+	stop EmptyAxis0;
 	stop EmptyAxis1;
 	stop EmptyAxis2;
 	stop TransferStation;
@@ -9269,7 +9269,7 @@ if (R550_GripperCommands)== 9 then {
                   <vobject class="QuickBuilder.SFC.SFCModule">
                     <id>187</id>
                     <bounds x="526" y="290.908844" w="128" h="78.18231" />
-                    <name>AxisGripperRot</name>
+                    <name>AxisEmpty0</name>
                     <code />
                     <tport />
                     <bport>191</bport>
@@ -9289,9 +9289,9 @@ if (R550_GripperCommands)== 9 then {
                     <bounds x="542" y="386" w="96" h="48" />
                     <name>Init</name>
                     <code>// =========================== AxisGripperRot - Init =========================== //
-start GripperRot MaxonMotion; // Start the motion MSB
+start EmptyAxis0 MaxonMotion; // Start the motion MSB
 
-GripperRot.command = 0;
+EmptyAxis0.command = 0;
 R560_GripperRotCommands = 0;
 
 
@@ -9322,14 +9322,14 @@ R560_GripperRotCommands = 0;
 //**************************Scan Commands from other tasks**************************************
 if (R560_GripperRotCommands)== 1 then { // Wait for 'Go' '1' = index forward and '2' = index reverse
 	
-	GripperRot.Maxspeed = R551_Speed;// Load Maxspeed
-	GripperRot.Accel =R552_Accel;// Load Accel
-	GripperRot.Decel = R553_Decel;// Load Decel
-	GripperRot.Target = R554_Target;// Load Target
+	EmptyAxis0.Maxspeed = R551_Speed;// Load Maxspeed
+	EmptyAxis0.Accel =R552_Accel;// Load Accel
+	EmptyAxis0.Decel = R553_Decel;// Load Decel
+	EmptyAxis0.Target = R554_Target;// Load Target
 	
-    GripperRot.command = (R560_GripperRotCommands);// Trigger 'GO' in motion block
+    EmptyAxis0.command = (R560_GripperRotCommands);// Trigger 'GO' in motion block
 	delay 20 ms;
-	while (GripperRot.command == 1 )  &amp;  (R560_GripperRotCommands== 1) repeat { 
+	while (EmptyAxis0.command == 1 )  &amp;  (R560_GripperRotCommands== 1) repeat { 
 		running6 = true;		
 	 }	
  
@@ -9338,27 +9338,27 @@ if (R560_GripperRotCommands)== 1 then { // Wait for 'Go' '1' = index forward and
 //**************************Scan Jog Commands**************************************
 if (R560_GripperRotCommands)== 3 | (R560_GripperRotCommands)== 4  then { // Look for 'JOG' commands '3' = jog forward '4' = jog reverse
 	
-	GripperRot.Maxspeed = R551_Speed;// Load Maxspeed
-	GripperRot.Accel =R552_Accel;// Load Accel
-	GripperRot.Decel = R553_Decel;// Load Decel
+	EmptyAxis0.Maxspeed = R551_Speed;// Load Maxspeed
+	EmptyAxis0.Accel =R552_Accel;// Load Accel
+	EmptyAxis0.Decel = R553_Decel;// Load Decel
 	
- 	GripperRot.command = (R560_GripperRotCommands); // send command.
+ 	EmptyAxis0.command = (R560_GripperRotCommands); // send command.
 	delay 20 ms;
-	while GripperRot.command == (R560_GripperRotCommands)  repeat{ 
+	while EmptyAxis0.command == (R560_GripperRotCommands)  repeat{ 
 		running6 = true;			
 	 }	
 }
 
 //***********************************************HomeRoutine****************************************************
 if (R560_GripperRotCommands)== 5 then { // Wait for 'Home'
-	GripperRot.Maxspeed = R551_Speed;// Load Maxspeed
-	GripperRot.Accel =R552_Accel;// Load Accel
-	GripperRot.Decel = R553_Decel;// Load Decel
-	GripperRot.Target = R554_Target;// Load Distance (Absolute)
-	GripperRot.OffsetHome = R555_HomeOffset; // Offset position from initial home
-  	GripperRot.command= 5;// Trigger 'GO' in motion block
+	EmptyAxis0.Maxspeed = R551_Speed;// Load Maxspeed
+	EmptyAxis0.Accel =R552_Accel;// Load Accel
+	EmptyAxis0.Decel = R553_Decel;// Load Decel
+	EmptyAxis0.Target = R554_Target;// Load Distance (Absolute)
+	EmptyAxis0.OffsetHome = R555_HomeOffset; // Offset position from initial home
+  	EmptyAxis0.command= 5;// Trigger 'GO' in motion block
 
-	while GripperRot.command == 5  &amp;  (R560_GripperRotCommands)== 5  repeat {
+	while EmptyAxis0.command == 5  &amp;  (R560_GripperRotCommands)== 5  repeat {
 		running6 = true;		
 	 }	
  
@@ -9366,12 +9366,12 @@ if (R560_GripperRotCommands)== 5 then { // Wait for 'Home'
 //***********************************************Other****************************************************
 
 	if ((R560_GripperRotCommands)== 0 &amp; running6 == true) then{// Look for 'Stop' commands
- 			GripperRot.command = 0;// Send 'Stop' Command to motion block
+ 			EmptyAxis0.command = 0;// Send 'Stop' Command to motion block
 			running6 = false;
 	}
 	
 	if ((R560_GripperRotCommands )== 6 | (R560_GripperRotCommands )== 7) then{// Look for Enable/Disable commands
- 			 GripperRot.command = R560_GripperRotCommands;
+ 			 EmptyAxis0.command = R560_GripperRotCommands;
 			R560_GripperRotCommands = 0;
 	}
 	
@@ -9993,7 +9993,7 @@ R36101_Temp = Gripper.fpos * 1000;
 R549_fpos = R36101_Temp;
 delay 20 ms;
 
-R36101_Temp = GripperRot.fpos * 1000;
+R36101_Temp = EmptyAxis0.fpos * 1000;
 R559_fpos = R36101_Temp;
 delay 20 ms;
 
@@ -12375,7 +12375,7 @@ goto ScanCommands;
             <int>178</int>
           </key>
           <value>
-            <string>AxisGripperRot (Task)</string>
+            <string>AxisEmpty0 (Task)</string>
           </value>
         </item>
         <item>
@@ -12607,7 +12607,7 @@ goto ScanCommands;
             <int>179</int>
           </key>
           <value>
-            <string>AxisGripperRot.Init (Step)</string>
+            <string>AxisEmpty0.Init (Step)</string>
           </value>
         </item>
         <item>
@@ -12615,7 +12615,7 @@ goto ScanCommands;
             <int>180</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12631,7 +12631,7 @@ goto ScanCommands;
             <int>181</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12639,7 +12639,7 @@ goto ScanCommands;
             <int>182</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12647,7 +12647,7 @@ goto ScanCommands;
             <int>183</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12655,7 +12655,7 @@ goto ScanCommands;
             <int>184</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12663,7 +12663,7 @@ goto ScanCommands;
             <int>185</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12671,7 +12671,7 @@ goto ScanCommands;
             <int>186</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12679,7 +12679,7 @@ goto ScanCommands;
             <int>187</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12687,7 +12687,7 @@ goto ScanCommands;
             <int>188</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12695,7 +12695,7 @@ goto ScanCommands;
             <int>189</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12703,7 +12703,7 @@ goto ScanCommands;
             <int>190</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12711,7 +12711,7 @@ goto ScanCommands;
             <int>191</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12719,7 +12719,7 @@ goto ScanCommands;
             <int>192</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12727,7 +12727,7 @@ goto ScanCommands;
             <int>193</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12735,7 +12735,7 @@ goto ScanCommands;
             <int>194</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12743,7 +12743,7 @@ goto ScanCommands;
             <int>195</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12751,7 +12751,7 @@ goto ScanCommands;
             <int>196</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12759,7 +12759,7 @@ goto ScanCommands;
             <int>197</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12767,7 +12767,7 @@ goto ScanCommands;
             <int>198</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12775,7 +12775,7 @@ goto ScanCommands;
             <int>199</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12783,7 +12783,7 @@ goto ScanCommands;
             <int>200</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12791,7 +12791,7 @@ goto ScanCommands;
             <int>201</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12799,7 +12799,7 @@ goto ScanCommands;
             <int>202</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12807,7 +12807,7 @@ goto ScanCommands;
             <int>203</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12815,7 +12815,7 @@ goto ScanCommands;
             <int>204</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>
@@ -12823,7 +12823,7 @@ goto ScanCommands;
             <int>205</int>
           </key>
           <value>
-            <string>AxisGripperRot.GripperRotControl (Step)</string>
+            <string>AxisEmpty0.GripperRotControl (Step)</string>
           </value>
         </item>
         <item>

@@ -555,7 +555,7 @@ __0021:
 		Q4T(task)->currentStep = (void *)&currentLine[53]; lineYield(task,53);
 		// STORE 36 TO REG#36990
 		process_ATABLE(36, task);
-		// MODULE(kickoff):STEP(Stops):LINE 13->stop GripperRot 0
+		// MODULE(kickoff):STEP(Stops):LINE 13->stop EmptyAxis0 0
 		Q4T(task)->currentStep = (void *)&currentLine[54]; lineYield(task,54);
 		// STORE 37 TO REG#36990
 		process_ATABLE(37, task);
@@ -3261,56 +3261,56 @@ __0168:
 		// GOTO AxisGripper_GripperControl
 		goto AxisGripper_GripperControl;
 // [0178]
-AxisGripperRot:
+AxisEmpty0:
 		// *** START NEW STEP ***
 		stepUnlocked = 1; Q4T(task)->firstPass = 1; start_of_step_timeout_flag = 0;
-AxisGripperRot_ctc_01:
+AxisEmpty0_ctc_01:
 		if (stepUnlocked) {
 			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
 		}
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):LINE 2->goto Init
+		// MODULE(AxisEmpty0):LINE 2->goto Init
 		Q4T(task)->currentStep = (void *)&currentLine[288]; lineYield(task,288);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
-		// GOTO AxisGripperRot_Init
-		goto AxisGripperRot_Init;
+		// GOTO AxisEmpty0_Init
+		goto AxisEmpty0_Init;
 // [0179]
-AxisGripperRot_Init:
+AxisEmpty0_Init:
 		// *** START NEW STEP ***
 		stepUnlocked = 1; Q4T(task)->firstPass = 1; start_of_step_timeout_flag = 0;
-AxisGripperRot_Init_ctc_01:
+AxisEmpty0_Init_ctc_01:
 		if (stepUnlocked) {
 			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
 		}
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(Init):LINE 2->start GripperRot MaxonMotion0
+		// MODULE(AxisEmpty0):STEP(Init):LINE 2->start EmptyAxis0 MaxonMotion0
 		Q4T(task)->currentStep = (void *)&currentLine[289]; lineYield(task,289);
 		// STORE 186 TO REG#36990
 		process_ATABLE(186, task);
-		// MODULE(AxisGripperRot):STEP(Init):LINE 4->GripperRot.command = 0
+		// MODULE(AxisEmpty0):STEP(Init):LINE 4->EmptyAxis0.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[290]; lineYield(task,290);
 		// STORE 187 TO REG#36990
 		process_ATABLE(187, task);
-		// MODULE(AxisGripperRot):STEP(Init):LINE 5->R560_GripperRotCommands = 0
+		// MODULE(AxisEmpty0):STEP(Init):LINE 5->R560_GripperRotCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[291]; lineYield(task,291);
 		// STORE 188 TO REG#36990
 		process_ATABLE(188, task);
-		// MODULE(AxisGripperRot):STEP(Init):LINE 9->goto GripperRotControl
+		// MODULE(AxisEmpty0):STEP(Init):LINE 9->goto GripperRotControl
 		Q4T(task)->currentStep = (void *)&currentLine[292]; lineYield(task,292);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
-		// GOTO AxisGripperRot_GripperRotControl
-		goto AxisGripperRot_GripperRotControl;
+		// GOTO AxisEmpty0_GripperRotControl
+		goto AxisEmpty0_GripperRotControl;
 // [0180]
-AxisGripperRot_GripperRotControl:
+AxisEmpty0_GripperRotControl:
 		// *** START NEW STEP ***
 		stepUnlocked = 1; Q4T(task)->firstPass = 1; start_of_step_timeout_flag = 0;
-AxisGripperRot_GripperRotControl_ctc_01:
+AxisEmpty0_GripperRotControl_ctc_01:
 		if (stepUnlocked) {
 			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
 		}
@@ -3329,7 +3329,7 @@ __0169:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 10->if (R560_GripperRotCommands)==1 then 
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 10->if (R560_GripperRotCommands)==1 then 
 		Q4T(task)->currentStep = (void *)&currentLine[293]; lineYield(task,293);
 		// STORE 61 TO REG#36991
 		R36991 = 61;
@@ -3345,27 +3345,27 @@ __0170:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 12->GripperRot.Maxspeed = R551_Speed
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 12->EmptyAxis0.Maxspeed = R551_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[294]; lineYield(task,294);
 		// STORE 189 TO REG#36990
 		process_ATABLE(189, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 13->GripperRot.Accel = R552_Accel
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 13->EmptyAxis0.Accel = R552_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[295]; lineYield(task,295);
 		// STORE 190 TO REG#36990
 		process_ATABLE(190, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 14->GripperRot.Decel = R553_Decel
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 14->EmptyAxis0.Decel = R553_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[296]; lineYield(task,296);
 		// STORE 191 TO REG#36990
 		process_ATABLE(191, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 15->GripperRot.Target = R554_Target
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 15->EmptyAxis0.Target = R554_Target
 		Q4T(task)->currentStep = (void *)&currentLine[297]; lineYield(task,297);
 		// STORE 192 TO REG#36990
 		process_ATABLE(192, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 17->GripperRot.command = (R560_GripperRotCommands)
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 17->EmptyAxis0.command = (R560_GripperRotCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[298]; lineYield(task,298);
 		// STORE 193 TO REG#36990
 		process_ATABLE(193, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 18->delay = 20
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 18->delay = 20
 		Q4T(task)->currentStep = (void *)&currentLine[299];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -3381,7 +3381,7 @@ __0172:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 18->delay = 20
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 18->delay = 20
 		Q4T(task)->currentStep = (void *)&currentLine[300]; lineYield(task,300);
 		// STORE 62 TO REG#36991
 		R36991 = 62;
@@ -3397,7 +3397,7 @@ __0173:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 19->while (GripperRot.command==1) & (R560_GripperRotCommands==1) repeat
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 19->while (EmptyAxis0.command==1) & (R560_GripperRotCommands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[301];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -3411,7 +3411,7 @@ __0174:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 19->while (GripperRot.command==1) & (R560_GripperRotCommands==1) repeat
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 19->while (EmptyAxis0.command==1) & (R560_GripperRotCommands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[302]; lineYield(task,302);
 		// STORE 63 TO REG#36991
 		R36991 = 63;
@@ -3429,7 +3429,7 @@ __0175:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 20->running6 = true
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 20->running6 = true
 		Q4T(task)->currentStep = (void *)&currentLine[303]; lineYield(task,303);
 		// STORE 195 TO REG#36990
 		process_ATABLE(195, task);
@@ -3457,7 +3457,7 @@ __0177:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 26->if (R560_GripperRotCommands)==3 | (R560_GripperRotCommands)==4 then 
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 26->if (R560_GripperRotCommands)==3 | (R560_GripperRotCommands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[304]; lineYield(task,304);
 		// STORE 64 TO REG#36991
 		R36991 = 64;
@@ -3473,23 +3473,23 @@ __0178:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 28->GripperRot.Maxspeed = R551_Speed
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 28->EmptyAxis0.Maxspeed = R551_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[305]; lineYield(task,305);
 		// STORE 196 TO REG#36990
 		process_ATABLE(196, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 29->GripperRot.Accel = R552_Accel
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 29->EmptyAxis0.Accel = R552_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[306]; lineYield(task,306);
 		// STORE 197 TO REG#36990
 		process_ATABLE(197, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 30->GripperRot.Decel = R553_Decel
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 30->EmptyAxis0.Decel = R553_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[307]; lineYield(task,307);
 		// STORE 198 TO REG#36990
 		process_ATABLE(198, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 32->GripperRot.command = (R560_GripperRotCommands)
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 32->EmptyAxis0.command = (R560_GripperRotCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[308]; lineYield(task,308);
 		// STORE 199 TO REG#36990
 		process_ATABLE(199, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 33->delay = 20
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 33->delay = 20
 		Q4T(task)->currentStep = (void *)&currentLine[309];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -3505,7 +3505,7 @@ __0180:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 33->delay = 20
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 33->delay = 20
 		Q4T(task)->currentStep = (void *)&currentLine[310]; lineYield(task,310);
 		// STORE 65 TO REG#36991
 		R36991 = 65;
@@ -3521,7 +3521,7 @@ __0181:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 34->while GripperRot.command==(R560_GripperRotCommands) repeat
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 34->while EmptyAxis0.command==(R560_GripperRotCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[311];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -3535,7 +3535,7 @@ __0182:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 34->while GripperRot.command==(R560_GripperRotCommands) repeat
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 34->while EmptyAxis0.command==(R560_GripperRotCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[312]; lineYield(task,312);
 		// STORE 66 TO REG#36991
 		R36991 = 66;
@@ -3553,7 +3553,7 @@ __0183:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 35->running6 = true
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 35->running6 = true
 		Q4T(task)->currentStep = (void *)&currentLine[313]; lineYield(task,313);
 		// STORE 201 TO REG#36990
 		process_ATABLE(201, task);
@@ -3581,7 +3581,7 @@ __0185:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 40->if (R560_GripperRotCommands)==5 then 
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 40->if (R560_GripperRotCommands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[314]; lineYield(task,314);
 		// STORE 67 TO REG#36991
 		R36991 = 67;
@@ -3597,31 +3597,31 @@ __0186:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 41->GripperRot.Maxspeed = R551_Speed
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 41->EmptyAxis0.Maxspeed = R551_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[315]; lineYield(task,315);
 		// STORE 202 TO REG#36990
 		process_ATABLE(202, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 42->GripperRot.Accel = R552_Accel
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 42->EmptyAxis0.Accel = R552_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[316]; lineYield(task,316);
 		// STORE 203 TO REG#36990
 		process_ATABLE(203, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 43->GripperRot.Decel = R553_Decel
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 43->EmptyAxis0.Decel = R553_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[317]; lineYield(task,317);
 		// STORE 204 TO REG#36990
 		process_ATABLE(204, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 44->GripperRot.Target = R554_Target
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 44->EmptyAxis0.Target = R554_Target
 		Q4T(task)->currentStep = (void *)&currentLine[318]; lineYield(task,318);
 		// STORE 205 TO REG#36990
 		process_ATABLE(205, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 45->GripperRot.OffsetHome = R555_HomeOffset
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 45->EmptyAxis0.OffsetHome = R555_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[319]; lineYield(task,319);
 		// STORE 206 TO REG#36990
 		process_ATABLE(206, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 46->GripperRot.command = 5
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 46->EmptyAxis0.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[320]; lineYield(task,320);
 		// STORE 207 TO REG#36990
 		process_ATABLE(207, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 48->while GripperRot.command==5 & (R560_GripperRotCommands)==5 repeat
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 48->while EmptyAxis0.command==5 & (R560_GripperRotCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[321];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -3635,7 +3635,7 @@ __0188:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 48->while GripperRot.command==5 & (R560_GripperRotCommands)==5 repeat
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 48->while EmptyAxis0.command==5 & (R560_GripperRotCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[322]; lineYield(task,322);
 		// STORE 68 TO REG#36991
 		R36991 = 68;
@@ -3653,7 +3653,7 @@ __0189:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 49->running6 = true
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 49->running6 = true
 		Q4T(task)->currentStep = (void *)&currentLine[323]; lineYield(task,323);
 		// STORE 208 TO REG#36990
 		process_ATABLE(208, task);
@@ -3681,7 +3681,7 @@ __0191:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 55->if ((R560_GripperRotCommands)==0 & running6==true) then 
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 55->if ((R560_GripperRotCommands)==0 & running6==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[324]; lineYield(task,324);
 		// STORE 69 TO REG#36991
 		R36991 = 69;
@@ -3697,11 +3697,11 @@ __0192:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 56->GripperRot.command = 0
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 56->EmptyAxis0.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[325]; lineYield(task,325);
 		// STORE 209 TO REG#36990
 		process_ATABLE(209, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 57->running6 = false
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 57->running6 = false
 		Q4T(task)->currentStep = (void *)&currentLine[326]; lineYield(task,326);
 		// STORE 210 TO REG#36990
 		process_ATABLE(210, task);
@@ -3727,7 +3727,7 @@ __0194:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 60->if ((R560_GripperRotCommands)==6 | (R560_GripperRotCommands)==7) then 
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 60->if ((R560_GripperRotCommands)==6 | (R560_GripperRotCommands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[327]; lineYield(task,327);
 		// STORE 70 TO REG#36991
 		R36991 = 70;
@@ -3743,11 +3743,11 @@ __0195:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 61->GripperRot.command = R560_GripperRotCommands
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 61->EmptyAxis0.command = R560_GripperRotCommands
 		Q4T(task)->currentStep = (void *)&currentLine[328]; lineYield(task,328);
 		// STORE 211 TO REG#36990
 		process_ATABLE(211, task);
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 62->R560_GripperRotCommands = 0
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 62->R560_GripperRotCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[329]; lineYield(task,329);
 		// STORE 212 TO REG#36990
 		process_ATABLE(212, task);
@@ -3761,12 +3761,12 @@ __0196:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripperRot):STEP(GripperRotControl):LINE 67->goto GripperRotControl
+		// MODULE(AxisEmpty0):STEP(GripperRotControl):LINE 67->goto GripperRotControl
 		Q4T(task)->currentStep = (void *)&currentLine[330]; lineYield(task,330);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
-		// GOTO AxisGripperRot_GripperRotControl
-		goto AxisGripperRot_GripperRotControl;
+		// GOTO AxisEmpty0_GripperRotControl
+		goto AxisEmpty0_GripperRotControl;
 // [0206]
 AxisEmpty1:
 		// *** START NEW STEP ***
@@ -6273,7 +6273,7 @@ __0326:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 10->R36101_Temp = GripperRot.fpos*1000
+		// MODULE(Updates):STEP(Update):LINE 10->R36101_Temp = EmptyAxis0.fpos*1000
 		Q4T(task)->currentStep = (void *)&currentLine[557]; lineYield(task,557);
 		// STORE 364 TO REG#36990
 		process_ATABLE(364, task);
