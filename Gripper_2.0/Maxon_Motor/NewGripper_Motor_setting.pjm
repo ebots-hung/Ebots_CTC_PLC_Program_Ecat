@@ -1,4 +1,4 @@
-<?xml version="1.0"?><EPOS-Studio File="EPOS Studio.exe" Version="3.6.2.0">
+<?xml version="1.0"?><EPOS-Studio File="EPOS Studio.exe" Version="3.7.1.0">
 	<Container>
 		<Project>
 			<Name>EPOS4 Project</Name>
@@ -41,10 +41,10 @@
 					<FunctionId>117440512</FunctionId>
 					<InvokeId>E4E41EF7-AD62-439a-9CD3-B2607B1CA8FE</InvokeId>
 					<Position>
-						<XPosition>-8</XPosition>
-						<YPosition>-31</YPosition>
-						<Width>1282</Width>
-						<Height>580</Height>
+						<XPosition>0</XPosition>
+						<YPosition>0</YPosition>
+						<Width>1084</Width>
+						<Height>385</Height>
 					</Position>
 				</ControlWindow>
 				<ControlWindow>
@@ -77,10 +77,10 @@
 					<FunctionId>33554432</FunctionId>
 					<InvokeId>4743B38F-1560-494f-A025-6B7AD62CA64F</InvokeId>
 					<Position>
-						<XPosition>78</XPosition>
-						<YPosition>78</YPosition>
-						<Width>1110</Width>
-						<Height>385</Height>
+						<XPosition>-8</XPosition>
+						<YPosition>-31</YPosition>
+						<Width>1282</Width>
+						<Height>580</Height>
 					</Position>
 				</ControlWindow>
 			</WindowInformation>
@@ -89,7 +89,7 @@
 	<Dtm>
 		<Name>USB</Name>
 		<SystemTag>B6B3AB64-3321-46d1-BFE3-F9155A6D1E69</SystemTag>
-		<Configuration file="DtmUsb.dll" version="2.9.2.0">
+		<Configuration file="DtmUsb.dll" version="2.10.1.0">
 			<DeviceType>
 				<VersionInformation>
 					<Name>USB</Name>
@@ -110,7 +110,7 @@
 						<Interface>USB</Interface>
 						<Port>USB0</Port>
 						<Baudrate>1000000</Baudrate>
-						<Timeout>500</Timeout>
+						<Timeout>100</Timeout>
 					</Parameters>
 					<NetworkScanning>
 						<ScanningSetting>
@@ -130,7 +130,7 @@
 	<Dtm>
 		<Name>EPOS4 EtherCAT</Name>
 		<SystemTag>537B707D-8114-4e6d-BA72-1296EF36A841</SystemTag>
-		<Configuration file="DtmEpos4.dll" version="3.6.2.0">
+		<Configuration file="DtmEpos4.dll" version="3.7.1.0">
 			<DeviceType>
 				<VersionInformation>
 					<Name>EPOS4</Name>
@@ -200,7 +200,7 @@
 								<configurationValue>
 									<paramIDRef uniqueIDRef="PARAM_InternalRecorderTriggerHighValue"/>
 									<valueEntry>
-										<value>0x00000400</value>
+										<value>0x00000000</value>
 									</valueEntry>
 								</configurationValue>
 								<configurationValue>
@@ -212,13 +212,13 @@
 								<configurationValue>
 									<paramIDRef uniqueIDRef="PARAM_InternalRecorderTriggerMask"/>
 									<valueEntry>
-										<value>0x00000400</value>
+										<value>0xFFFFFFFF</value>
 									</valueEntry>
 								</configurationValue>
 								<configurationValue>
 									<paramIDRef uniqueIDRef="PARAM_InternalRecorderSamplingPeriod"/>
 									<valueEntry>
-										<value>100</value>
+										<value>120</value>
 									</valueEntry>
 								</configurationValue>
 								<configurationValue>
@@ -277,189 +277,6 @@
 								<HighValue>127</HighValue>
 							</Range>
 						</CANopenStdScanningMethod>
-						<CANopenLssScanningMethod>
-							<Enabled>1</Enabled>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>IDX56</ProductName>
-								<ProductCode>0x67510000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>mcd Epos 60W</ProductName>
-								<ProductCode>0x66100000</ProductCode>
-								<RevisionNumberLow>0x20310000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos4 Module 24/1.5</ProductName>
-								<ProductCode>0x60500000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos4 Module 50/5</ProductName>
-								<ProductCode>0x61500000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos4 50/5</ProductName>
-								<ProductCode>0x63500000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos4 70/15</ProductName>
-								<ProductCode>0x64500000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos4 Module 50/8</ProductName>
-								<ProductCode>0x65510000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos4 Module 50/15</ProductName>
-								<ProductCode>0x65520000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos4 Micro 24/5</ProductName>
-								<ProductCode>0x68500000</ProductCode>
-								<RevisionNumberLow>0x01600000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos2 24/2</ProductName>
-								<ProductCode>0x60200000</ProductCode>
-								<RevisionNumberLow>0x21210000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos2 Module 36/2</ProductName>
-								<ProductCode>0x61200000</ProductCode>
-								<RevisionNumberLow>0x21000000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos2 24/5</ProductName>
-								<ProductCode>0x62200000</ProductCode>
-								<RevisionNumberLow>0x21110000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos2 50/5</ProductName>
-								<ProductCode>0x63220000</ProductCode>
-								<RevisionNumberLow>0x21000000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos2 70/10</ProductName>
-								<ProductCode>0x64200000</ProductCode>
-								<RevisionNumberLow>0x21200000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-							<Product>
-								<Enabled>1</Enabled>
-								<Default>1</Default>
-								<VendorName>maxon motor ag</VendorName>
-								<VendorId>0x000000FB</VendorId>
-								<ProductName>Epos2 P 24/5</ProductName>
-								<ProductCode>0x73100000</ProductCode>
-								<RevisionNumberLow>0x01000000</RevisionNumberLow>
-								<RevisionNumberHigh>0xFFFFFFFF</RevisionNumberHigh>
-								<SerialNumberLow>0x00000000</SerialNumberLow>
-								<SerialNumberHigh>0xFFFFFFFF</SerialNumberHigh>
-							</Product>
-						</CANopenLssScanningMethod>
 					</NetworkScanning>
 				</Channel>
 			</DeviceTypeSettings>
@@ -494,7 +311,7 @@
 	<Dtm>
 		<Name>EtherCAT</Name>
 		<SystemTag>09D9D01F-286D-4237-8F98-AF802103C20D</SystemTag>
-		<Configuration file="DtmEpos4.dll" version="3.6.2.0">
+		<Configuration file="DtmEpos4.dll" version="3.7.1.0">
 			<DeviceType>
 				<VersionInformation>
 					<Name>EtherCAT</Name>
