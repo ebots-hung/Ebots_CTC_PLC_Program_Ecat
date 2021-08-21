@@ -165,7 +165,7 @@ LOAD qs4.o
  .ftable        0x21600000       0x3c CoreFunc.o
                 0x21600000                localUserCommand
 
-.text           0x2160003c    0x29450
+.text           0x2160003c    0x2937c
  SORT(*)(.text)
  .text          0x2160003c      0x480 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_addsub_df.o)
                 0x216003f8                __adddf3
@@ -441,7 +441,7 @@ LOAD qs4.o
                 0x2160777c                _sbrk_t
                 0x21607c04                _vfprintf_r
                 0x21609664                vfprintf
- .text          0x21609798    0x15168 qs4.o
+ .text          0x21609798    0x1510c qs4.o
                 0x2160f028                _rol
                 0x2160a6b4                writeCAPDEPTH
                 0x2160e3d0                __reg_index_1
@@ -511,7 +511,7 @@ LOAD qs4.o
                 0x21610c4c                process_ATABLE
                 0x21609b44                FOPEN
                 0x216108ec                getQS4ObjectIndirect
-                0x2161e664                taskMonitor
+                0x2161e608                taskMonitor
                 0x2160e2f8                _FREAD
                 0x2160eb58                INIT_IPM_PARAMs
                 0x2160e9ec                main
@@ -541,9 +541,9 @@ LOAD qs4.o
                 0x2160e358                _FWRITE
                 0x2160affc                raiseError
                 0x21610390                QS4I_READ_FLOAT
-                0x21616364                taskloop
+                0x21616334                taskloop
                 0x2160e494                _DWX
-                0x2161e834                ccCode
+                0x2161e7d8                ccCode
                 0x2160e21c                _DREAD
                 0x2160a178                _IAO
                 0x2160b31c                STRPADR
@@ -570,198 +570,198 @@ LOAD qs4.o
  SORT(*)(.gnu.linkonce.t*)
  SORT(*)(.strings)
  SORT(*)(.slowrom)
-                0x2161e900                . = ALIGN (0x4)
+                0x2161e8a4                . = ALIGN (0x4)
  SORT(*)(.rdata)
-                0x2161e900                . = ALIGN (0x4)
+                0x2161e8a4                . = ALIGN (0x4)
  SORT(*)(.rodata*)
- .rodata        0x2161e900       0x14 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_thenan_df.o)
-                0x2161e900                __thenan_df
+ .rodata        0x2161e8a4       0x14 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_thenan_df.o)
+                0x2161e8a4                __thenan_df
  .rodata.str1.4
-                0x2161e914        0x9 ./usr/arm-elf/lib/libc.a(dtoa.o)
+                0x2161e8b8        0x9 ./usr/arm-elf/lib/libc.a(dtoa.o)
                                  0x14 (size before relaxing)
- *fill*         0x2161e91d        0x3 00
+ *fill*         0x2161e8c1        0x3 00
  .rodata.str1.4
-                0x2161e920        0x2 ./usr/arm-elf/lib/libc.a(impure.o)
+                0x2161e8c4        0x2 ./usr/arm-elf/lib/libc.a(impure.o)
                                   0x4 (size before relaxing)
- *fill*         0x2161e922        0x2 00
+ *fill*         0x2161e8c6        0x2 00
  .rodata.str1.4
-                0x2161e924        0xb ./usr/arm-elf/lib/libc.a(locale.o)
+                0x2161e8c8        0xb ./usr/arm-elf/lib/libc.a(locale.o)
                                  0x18 (size before relaxing)
- *fill*         0x2161e92f        0x1 00
- .rodata        0x2161e930       0x30 ./usr/arm-elf/lib/libc.a(locale.o)
- .rodata        0x2161e960      0x124 ./usr/arm-elf/lib/libc.a(mprec.o)
-                0x2161e960                __mprec_tinytens
-                0x2161e9b0                __mprec_tens
-                0x2161e988                __mprec_bigtens
+ *fill*         0x2161e8d3        0x1 00
+ .rodata        0x2161e8d4       0x30 ./usr/arm-elf/lib/libc.a(locale.o)
+ .rodata        0x2161e904      0x124 ./usr/arm-elf/lib/libc.a(mprec.o)
+                0x2161e904                __mprec_tinytens
+                0x2161e954                __mprec_tens
+                0x2161e92c                __mprec_bigtens
  .rodata.str1.4
-                0x2161ea84        0x4 ./usr/arm-elf/lib/libc.a(syscalls.o)
+                0x2161ea28        0x4 ./usr/arm-elf/lib/libc.a(syscalls.o)
  .rodata.str1.4
-                0x2161ea88       0xcc CoreStart.o
+                0x2161ea2c       0xcc CoreStart.o
                                  0xd0 (size before relaxing)
- .rodata        0x2161eb54       0x20 CoreStart.o
+ .rodata        0x2161eaf8       0x20 CoreStart.o
  .rodata.str1.4
-                0x2161eb74     0xa79a qs4.o
-                               0xa8bc (size before relaxing)
- *fill*         0x2162930e        0x2 00
- .rodata        0x21629310      0x17c qs4.o
-                0x21629328                XVar_float64_Types
-                0x216293e4                PID_Offsets
-                0x21629338                XVar_int_Offsets
-                0x21629310                XVar_float32_Types
-                0x21629314                XVar_float32_Offsets
-                0x2162931c                XVar_string_Types
-                0x21629334                XVar_int_Types
-                0x21629340                PID_Types
-                0x21629320                XVar_string_Offsets
-                0x2162932c                XVar_float64_Offsets
+                0x2161eb18     0xa722 qs4.o
+                               0xa844 (size before relaxing)
+ *fill*         0x2162923a        0x2 00
+ .rodata        0x2162923c      0x17c qs4.o
+                0x21629254                XVar_float64_Types
+                0x21629310                PID_Offsets
+                0x21629264                XVar_int_Offsets
+                0x2162923c                XVar_float32_Types
+                0x21629240                XVar_float32_Offsets
+                0x21629248                XVar_string_Types
+                0x21629260                XVar_int_Types
+                0x2162926c                PID_Types
+                0x2162924c                XVar_string_Offsets
+                0x21629258                XVar_float64_Offsets
  SORT(*)(.gnu.linkonce.r*)
-                0x2162948c                . = ALIGN (0x4)
+                0x216293b8                . = ALIGN (0x4)
  SORT(*)(.slowrom)
-                0x2162948c                _etext = .
+                0x216293b8                _etext = .
 
 .glue_7         0x00000000        0x0
 
 .glue_7t        0x00000000        0x0
 
-.tors           0x2162948c        0x0
-                0x2162948c                PROVIDE (___ctors, .)
-                0x2162948c                PROVIDE (__ctors, .)
+.tors           0x216293b8        0x0
+                0x216293b8                PROVIDE (___ctors, .)
+                0x216293b8                PROVIDE (__ctors, .)
  SORT(*)(.ctors)
-                0x2162948c                __CTOR_END__ = .
-                0x2162948c                PROVIDE (___ctors_end, .)
-                0x2162948c                PROVIDE (__ctors_end, .)
-                0x2162948c                PROVIDE (___dtors, .)
-                0x2162948c                PROVIDE (__dtors, .)
+                0x216293b8                __CTOR_END__ = .
+                0x216293b8                PROVIDE (___ctors_end, .)
+                0x216293b8                PROVIDE (__ctors_end, .)
+                0x216293b8                PROVIDE (___dtors, .)
+                0x216293b8                PROVIDE (__dtors, .)
  SORT(*)(.dtors)
-                0x2162948c                __DTOR_END__ = .
-                0x2162948c                PROVIDE (___dtors_end, .)
-                0x2162948c                PROVIDE (__dtors_end, .)
-                0x2162948c                . = ALIGN (0x4)
-                0x2162948c                PROVIDE (_mdata, .)
-                0x2162948c                PROVIDE (_program_data_end, .)
+                0x216293b8                __DTOR_END__ = .
+                0x216293b8                PROVIDE (___dtors_end, .)
+                0x216293b8                PROVIDE (__dtors_end, .)
+                0x216293b8                . = ALIGN (0x4)
+                0x216293b8                PROVIDE (_mdata, .)
+                0x216293b8                PROVIDE (_program_data_end, .)
 
-.mdata          0x2162948c     0xbc04
+.mdata          0x216293b8     0xbbfc
  *(.data)
- .data          0x2162948c     0xb870 qs4.o
-                0x2162bf14                XVar_string_Names
-                0x216335fe                __aoCM
-                0x2162de9c                __ipm_YAxis_sb_Motion_mopdata
-                0x21634400                __aiCT
-                0x2162d190                __ipm_EmptyAxis1_param
-                0x21630050                __ipm_ThetaAxis_sb_Motion_mopdata
-                0x21630a98                __ipm_Gripper_sbdata
-                0x21633800                __aoEtherCAT
-                0x2163151c                __ipm_EmptyAxis3_sbdata
-                0x21632100                __ipm_EmptyAxis2_sb_MaxonMotion_mopdata
-                0x2162948c                currentLine
-                0x2162d41c                __ipm_ZAxis_sb_Motion_mopdata
-                0x2162d3ec                __QS4IPM_NUMBER
-                0x2162bef8                AutoMode
-                0x21630aa0                __ipm_Gripper_sb_MaxonMotion_mopdata
-                0x21631524                __ipm_EmptyAxis3_sb_StepperMotion_mopdata
-                0x2162a530                QS4SymbolTable
-                0x2162e8e4                __ipm_YAxis_sb_axis_Y_mopdata
-                0x21632b84                __ipm_EmptyAxis1_sb_MaxonMotion_mopdata
-                0x2162e910                __ipm_XAxis_sbdata
-                0x2162a52c                QS4SYMBOLGUID
-                0x2162bff0                __ipm_ZAxis_param
-                0x2162bf18                XVar_float64_Names
-                0x2162bed8                QS4Objects
-                0x216320f8                __ipm_EmptyAxis2_sbdata
-                0x2162de90                __ipm_YAxis_sbdata
-                0x2162c8c0                __ipm_ThetaAxis_param
-                0x21632b7c                __ipm_EmptyAxis1_sbdata
-                0x2162cf5c                __ipm_EmptyAxis2_param
-                0x2162f474                __ipm_TransferStation_sb_StepperMotion_mopdata
-                0x21630048                __ipm_ThetaAxis_sbdata
-                0x2162bed0                QS4ObjectTypes
-                0x2162c68c                __ipm_TransferStation_param
-                0x2162caf4                __ipm_Gripper_param
-                0x2162bf1c                XVar_int_Names
-                0x2162bfc8                __QS4IPMPARAMS
-                0x2162f364                __ipm_XAxis_sb_axis_X_mopdata
-                0x2162c458                __ipm_XAxis_param
-                0x2162bf10                XVar_float32_Names
-                0x2162d410                __ipm_ZAxis_sbdata
-                0x2162f46c                __ipm_TransferStation_sbdata
-                0x2162bee0                ManualMode
-                0x2162c224                __ipm_YAxis_param
-                0x2162e91c                __ipm_XAxis_sb_Motion_mopdata
-                0x2162d3c4                __QS4IPMs
-                0x21634000                __aiEtherCAT
-                0x2162bf20                PID_Names
-                0x2162cd28                __ipm_EmptyAxis3_param
-                0x2162de64                __ipm_ZAxis_sb_axis_Z_mopdata
- .data          0x21634cfc      0x380 ./usr/arm-elf/lib/libc.a(impure.o)
-                0x21634cfc                _impure_ptr
- .data          0x2163507c       0x14 ./usr/arm-elf/lib/libc.a(locale.o)
-                0x21635088                __mb_cur_max
-                0x2163507c                __lc_ctype
+ .data          0x216293b8     0xb868 qs4.o
+                0x2162be38                XVar_string_Names
+                0x21633522                __aoCM
+                0x2162ddc0                __ipm_YAxis_sb_Motion_mopdata
+                0x21634324                __aiCT
+                0x2162d0b4                __ipm_EmptyAxis1_param
+                0x2162ff74                __ipm_ThetaAxis_sb_Motion_mopdata
+                0x216309bc                __ipm_Gripper_sbdata
+                0x21633724                __aoEtherCAT
+                0x21631440                __ipm_EmptyAxis3_sbdata
+                0x21632024                __ipm_EmptyAxis2_sb_MaxonMotion_mopdata
+                0x216293b8                currentLine
+                0x2162d340                __ipm_ZAxis_sb_Motion_mopdata
+                0x2162d310                __QS4IPM_NUMBER
+                0x2162be1c                AutoMode
+                0x216309c4                __ipm_Gripper_sb_MaxonMotion_mopdata
+                0x21631448                __ipm_EmptyAxis3_sb_StepperMotion_mopdata
+                0x2162a454                QS4SymbolTable
+                0x2162e808                __ipm_YAxis_sb_axis_Y_mopdata
+                0x21632aa8                __ipm_EmptyAxis1_sb_MaxonMotion_mopdata
+                0x2162e834                __ipm_XAxis_sbdata
+                0x2162a450                QS4SYMBOLGUID
+                0x2162bf14                __ipm_ZAxis_param
+                0x2162be3c                XVar_float64_Names
+                0x2162bdfc                QS4Objects
+                0x2163201c                __ipm_EmptyAxis2_sbdata
+                0x2162ddb4                __ipm_YAxis_sbdata
+                0x2162c7e4                __ipm_ThetaAxis_param
+                0x21632aa0                __ipm_EmptyAxis1_sbdata
+                0x2162ce80                __ipm_EmptyAxis2_param
+                0x2162f398                __ipm_TransferStation_sb_StepperMotion_mopdata
+                0x2162ff6c                __ipm_ThetaAxis_sbdata
+                0x2162bdf4                QS4ObjectTypes
+                0x2162c5b0                __ipm_TransferStation_param
+                0x2162ca18                __ipm_Gripper_param
+                0x2162be40                XVar_int_Names
+                0x2162beec                __QS4IPMPARAMS
+                0x2162f288                __ipm_XAxis_sb_axis_X_mopdata
+                0x2162c37c                __ipm_XAxis_param
+                0x2162be34                XVar_float32_Names
+                0x2162d334                __ipm_ZAxis_sbdata
+                0x2162f390                __ipm_TransferStation_sbdata
+                0x2162be04                ManualMode
+                0x2162c148                __ipm_YAxis_param
+                0x2162e840                __ipm_XAxis_sb_Motion_mopdata
+                0x2162d2e8                __QS4IPMs
+                0x21633f24                __aiEtherCAT
+                0x2162be44                PID_Names
+                0x2162cc4c                __ipm_EmptyAxis3_param
+                0x2162dd88                __ipm_ZAxis_sb_axis_Z_mopdata
+ .data          0x21634c20      0x380 ./usr/arm-elf/lib/libc.a(impure.o)
+                0x21634c20                _impure_ptr
+ .data          0x21634fa0       0x14 ./usr/arm-elf/lib/libc.a(locale.o)
+                0x21634fac                __mb_cur_max
+                0x21634fa0                __lc_ctype
  SORT(*)(.gnu.linkonce.d*)
  SORT(*)(.gcc_except_table)
-                0x2162948c                _data = ADDR (.mdata)
-                0x21635090                _edata = (ADDR (.mdata) + SIZEOF (.mdata))
+                0x216293b8                _data = ADDR (.mdata)
+                0x21634fb4                _edata = (ADDR (.mdata) + SIZEOF (.mdata))
 
-.common         0x21635090   0x11ca68
-                0x21635090                PROVIDE (_s_common, .)
-                0x21635090                PROVIDE (s_common, .)
+.common         0x21634fb4   0x11ca68
+                0x21634fb4                PROVIDE (_s_common, .)
+                0x21634fb4                PROVIDE (s_common, .)
  *(.bss)
- .bss           0x21635090       0x5c CoreStart.o
- .bss           0x216350ec     0x2cf4 qs4.o
-                0x216350f8                __capptr
-                0x2163510c                ccResourceHandle
-                0x21636114                __aoScale
-                0x216350fc                __GRDT
-                0x21635114                __aoOffset
-                0x216350f0                globalLastTick
-                0x21635914                __aoScaleI
-                0x21635104                __GDT
-                0x216350f4                __nobj
-                0x21636914                __aiRS
-                0x21636d14                __aiOffset
-                0x21637514                __aiScale
-                0x21635110                __RUNTICK
-                0x216350ec                globalLastSubTick
- .bss           0x21637de0        0x4 ./usr/arm-elf/lib/libc.a(findfp.o)
- .bss           0x21637de4        0xc ./usr/arm-elf/lib/libc.a(locale.o)
-                0x21637dec                __nlocale_changed
-                0x21637de8                __mlocale_changed
-                0x21637de4                _PathLocale
- .bss           0x21637df0       0xb4 ./usr/arm-elf/lib/libc.a(syscalls.o)
+ .bss           0x21634fb4       0x5c CoreStart.o
+ .bss           0x21635010     0x2cf4 qs4.o
+                0x2163501c                __capptr
+                0x21635030                ccResourceHandle
+                0x21636038                __aoScale
+                0x21635020                __GRDT
+                0x21635038                __aoOffset
+                0x21635014                globalLastTick
+                0x21635838                __aoScaleI
+                0x21635028                __GDT
+                0x21635018                __nobj
+                0x21636838                __aiRS
+                0x21636c38                __aiOffset
+                0x21637438                __aiScale
+                0x21635034                __RUNTICK
+                0x21635010                globalLastSubTick
+ .bss           0x21637d04        0x4 ./usr/arm-elf/lib/libc.a(findfp.o)
+ .bss           0x21637d08        0xc ./usr/arm-elf/lib/libc.a(locale.o)
+                0x21637d10                __nlocale_changed
+                0x21637d0c                __mlocale_changed
+                0x21637d08                _PathLocale
+ .bss           0x21637d14       0xb4 ./usr/arm-elf/lib/libc.a(syscalls.o)
  *(COMMON)
- COMMON         0x21637ea4        0x4 CoreFunc.o
+ COMMON         0x21637dc8        0x4 CoreFunc.o
                                   0x0 (size before relaxing)
-                0x21637ea4                coreTable
- COMMON         0x21637ea8   0x100034 CoreStart.o
+                0x21637dc8                coreTable
+ COMMON         0x21637dcc   0x100034 CoreStart.o
                                   0x0 (size before relaxing)
-                0x21637ea8                main_byte_pool
-                0x21637edc                allocatable_memory
- COMMON         0x21737edc    0x19c18 qs4.o
+                0x21637dcc                main_byte_pool
+                0x21637e00                allocatable_memory
+ COMMON         0x21737e00    0x19c18 qs4.o
                                   0x0 (size before relaxing)
-                0x21737edc                __ioCapture
-                0x21739e1c                TASK_THREADS
-                0x21745c9c                __captureVType
-                0x21745cbc                __capturePropNum
-                0x21745cdc                evts
-                0x21745e5c                __qs4_task_mutex
-                0x21745e90                __captureRegObjNum
-                0x21745eb0                files
-                0x21745ef0                DBLOCK
-                0x21747e30                ccResource
-                0x21747e40                __captureType
-                0x21747e60                IBLOCK
-                0x21748e00                __deltaCapture
-                0x21749da0                __capturePtrs
-                0x21749dc0                __qs4_control_mutex
-                0x21749df4                __dataCapture
- COMMON         0x21751af4        0x4 ./usr/arm-elf/lib/libc.a(reent.o)
+                0x21737e00                __ioCapture
+                0x21739d40                TASK_THREADS
+                0x21745bc0                __captureVType
+                0x21745be0                __capturePropNum
+                0x21745c00                evts
+                0x21745d80                __qs4_task_mutex
+                0x21745db4                __captureRegObjNum
+                0x21745dd4                files
+                0x21745e14                DBLOCK
+                0x21747d54                ccResource
+                0x21747d64                __captureType
+                0x21747d84                IBLOCK
+                0x21748d24                __deltaCapture
+                0x21749cc4                __capturePtrs
+                0x21749ce4                __qs4_control_mutex
+                0x21749d18                __dataCapture
+ COMMON         0x21751a18        0x4 ./usr/arm-elf/lib/libc.a(reent.o)
                                   0x0 (size before relaxing)
-                0x21751af4                errno
-                0x21751b00                __end = ALIGN (0x10)
-                0x21751af8                _end = .
-                0x21751af8                PROVIDE (end, .)
-                0x21751af8                PROVIDE (_e_common, .)
-                0x21751af8                PROVIDE (e_common, .)
+                0x21751a18                errno
+                0x21751a20                __end = ALIGN (0x10)
+                0x21751a1c                _end = .
+                0x21751a1c                PROVIDE (end, .)
+                0x21751a1c                PROVIDE (_e_common, .)
+                0x21751a1c                PROVIDE (e_common, .)
 LOAD ./usr/arm-elf/lib/libc.a
 LOAD ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a
 LOAD ./usr/arm-elf/lib/libstdc++.a
@@ -898,70 +898,70 @@ OUTPUT(C:\Projects\Denali\PLC_CTC\Ebots_CTC_PLC_Program_Ecat\CTC_PLC_Program_Eca
  .debug_info    0x00021fc2      0x213 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_fpcmp_parts_df.o)
  .debug_info    0x000221d5      0x188 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_ashldi3.o)
 
-.debug_line     0x00000000     0x5f94
+.debug_line     0x00000000     0x5f90
  .debug_line    0x00000000      0x411 CoreFunc.o
  .debug_line    0x00000411      0x57f CoreStart.o
- .debug_line    0x00000990     0x22fd qs4.o
- .debug_line    0x00002c8d      0x415 ./usr/arm-elf/lib/libc.a(dtoa.o)
- .debug_line    0x000030a2      0x133 ./usr/arm-elf/lib/libc.a(fflush.o)
- .debug_line    0x000031d5      0x17b ./usr/arm-elf/lib/libc.a(findfp.o)
- .debug_line    0x00003350      0x1a9 ./usr/arm-elf/lib/libc.a(fvwrite.o)
- .debug_line    0x000034f9      0x11d ./usr/arm-elf/lib/libc.a(fwalk.o)
- .debug_line    0x00003616       0xbb ./usr/arm-elf/lib/libc.a(impure.o)
- .debug_line    0x000036d1      0x121 ./usr/arm-elf/lib/libc.a(locale.o)
- .debug_line    0x000037f2       0xd3 ./usr/arm-elf/lib/libc.a(malloc.o)
- .debug_line    0x000038c5      0x110 ./usr/arm-elf/lib/libc.a(mbtowc_r.o)
- .debug_line    0x000039d5       0xb0 ./usr/arm-elf/lib/libc.a(memchr.o)
- .debug_line    0x00003a85       0xa1 ./usr/arm-elf/lib/libc.a(memcpy.o)
- .debug_line    0x00003b26       0xb1 ./usr/arm-elf/lib/libc.a(memmove.o)
- .debug_line    0x00003bd7       0x9f ./usr/arm-elf/lib/libc.a(memset.o)
- .debug_line    0x00003c76      0x358 ./usr/arm-elf/lib/libc.a(mprec.o)
- .debug_line    0x00003fce       0xd8 ./usr/arm-elf/lib/libc.a(s_isinf.o)
- .debug_line    0x000040a6       0x9a ./usr/arm-elf/lib/libc.a(s_isnan.o)
- .debug_line    0x00004140      0x140 ./usr/arm-elf/lib/libc.a(stdio.o)
- .debug_line    0x00004280       0x6f ./usr/arm-elf/lib/libc.a(strcat.o)
- .debug_line    0x000042ef       0x70 ./usr/arm-elf/lib/libc.a(strchr.o)
- .debug_line    0x0000435f       0x72 ./usr/arm-elf/lib/libc.a(strcmp.o)
- .debug_line    0x000043d1       0x6e ./usr/arm-elf/lib/libc.a(strcpy.o)
- .debug_line    0x0000443f       0x8e ./usr/arm-elf/lib/libc.a(strlen.o)
- .debug_line    0x000044cd       0x9a ./usr/arm-elf/lib/libc.a(strstr.o)
- .debug_line    0x00004567       0xd2 ./usr/arm-elf/lib/libc.a(writer.o)
- .debug_line    0x00004639      0x124 ./usr/arm-elf/lib/libc.a(wsetup.o)
- .debug_line    0x0000475d       0xd2 ./usr/arm-elf/lib/libc.a(closer.o)
- .debug_line    0x0000482f       0xd2 ./usr/arm-elf/lib/libc.a(lseekr.o)
- .debug_line    0x00004901      0x150 ./usr/arm-elf/lib/libc.a(makebuf.o)
- .debug_line    0x00004a51       0xd1 ./usr/arm-elf/lib/libc.a(readr.o)
- .debug_line    0x00004b22      0x10d ./usr/arm-elf/lib/libc.a(reent.o)
- .debug_line    0x00004c2f      0x2af ./usr/arm-elf/lib/libc.a(syscalls.o)
- .debug_line    0x00004ede       0xca ./usr/arm-elf/lib/libc.a(errno.o)
- .debug_line    0x00004fa8      0x11b ./usr/arm-elf/lib/libc.a(fstatr.o)
- .debug_line    0x000050c3       0x82 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_udivsi3.o)
- .debug_line    0x00005145       0x5f ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_dvmd_tls.o)
- .debug_line    0x000051a4       0x77 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_si_to_sf.o)
- .debug_line    0x0000521b       0x80 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_sf_to_si.o)
- .debug_line    0x0000529b       0x68 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_sf_to_df.o)
- .debug_line    0x00005303      0x110 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_addsub_df.o)
- .debug_line    0x00005413      0x101 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_mul_df.o)
- .debug_line    0x00005514       0xba ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_div_df.o)
- .debug_line    0x000055ce       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_eq_df.o)
- .debug_line    0x00005646       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_ne_df.o)
- .debug_line    0x000056be       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_gt_df.o)
- .debug_line    0x00005736       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_ge_df.o)
- .debug_line    0x000057ae       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_lt_df.o)
- .debug_line    0x00005826       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_le_df.o)
- .debug_line    0x0000589e       0x7d ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_si_to_df.o)
- .debug_line    0x0000591b       0x80 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_df_to_si.o)
- .debug_line    0x0000599b       0x6c ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_make_df.o)
- .debug_line    0x00005a07       0x73 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_df_to_sf.o)
- .debug_line    0x00005a7a       0x52 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_thenan_df.o)
- .debug_line    0x00005acc       0x6e ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_lshrdi3.o)
- .debug_line    0x00005b3a       0xca ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_pack_sf.o)
- .debug_line    0x00005c04       0x95 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_unpack_sf.o)
- .debug_line    0x00005c99       0x69 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_make_sf.o)
- .debug_line    0x00005d02       0xcf ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_pack_df.o)
- .debug_line    0x00005dd1       0xb6 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_unpack_df.o)
- .debug_line    0x00005e87       0x9f ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_fpcmp_parts_df.o)
- .debug_line    0x00005f26       0x6e ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_ashldi3.o)
+ .debug_line    0x00000990     0x22f9 qs4.o
+ .debug_line    0x00002c89      0x415 ./usr/arm-elf/lib/libc.a(dtoa.o)
+ .debug_line    0x0000309e      0x133 ./usr/arm-elf/lib/libc.a(fflush.o)
+ .debug_line    0x000031d1      0x17b ./usr/arm-elf/lib/libc.a(findfp.o)
+ .debug_line    0x0000334c      0x1a9 ./usr/arm-elf/lib/libc.a(fvwrite.o)
+ .debug_line    0x000034f5      0x11d ./usr/arm-elf/lib/libc.a(fwalk.o)
+ .debug_line    0x00003612       0xbb ./usr/arm-elf/lib/libc.a(impure.o)
+ .debug_line    0x000036cd      0x121 ./usr/arm-elf/lib/libc.a(locale.o)
+ .debug_line    0x000037ee       0xd3 ./usr/arm-elf/lib/libc.a(malloc.o)
+ .debug_line    0x000038c1      0x110 ./usr/arm-elf/lib/libc.a(mbtowc_r.o)
+ .debug_line    0x000039d1       0xb0 ./usr/arm-elf/lib/libc.a(memchr.o)
+ .debug_line    0x00003a81       0xa1 ./usr/arm-elf/lib/libc.a(memcpy.o)
+ .debug_line    0x00003b22       0xb1 ./usr/arm-elf/lib/libc.a(memmove.o)
+ .debug_line    0x00003bd3       0x9f ./usr/arm-elf/lib/libc.a(memset.o)
+ .debug_line    0x00003c72      0x358 ./usr/arm-elf/lib/libc.a(mprec.o)
+ .debug_line    0x00003fca       0xd8 ./usr/arm-elf/lib/libc.a(s_isinf.o)
+ .debug_line    0x000040a2       0x9a ./usr/arm-elf/lib/libc.a(s_isnan.o)
+ .debug_line    0x0000413c      0x140 ./usr/arm-elf/lib/libc.a(stdio.o)
+ .debug_line    0x0000427c       0x6f ./usr/arm-elf/lib/libc.a(strcat.o)
+ .debug_line    0x000042eb       0x70 ./usr/arm-elf/lib/libc.a(strchr.o)
+ .debug_line    0x0000435b       0x72 ./usr/arm-elf/lib/libc.a(strcmp.o)
+ .debug_line    0x000043cd       0x6e ./usr/arm-elf/lib/libc.a(strcpy.o)
+ .debug_line    0x0000443b       0x8e ./usr/arm-elf/lib/libc.a(strlen.o)
+ .debug_line    0x000044c9       0x9a ./usr/arm-elf/lib/libc.a(strstr.o)
+ .debug_line    0x00004563       0xd2 ./usr/arm-elf/lib/libc.a(writer.o)
+ .debug_line    0x00004635      0x124 ./usr/arm-elf/lib/libc.a(wsetup.o)
+ .debug_line    0x00004759       0xd2 ./usr/arm-elf/lib/libc.a(closer.o)
+ .debug_line    0x0000482b       0xd2 ./usr/arm-elf/lib/libc.a(lseekr.o)
+ .debug_line    0x000048fd      0x150 ./usr/arm-elf/lib/libc.a(makebuf.o)
+ .debug_line    0x00004a4d       0xd1 ./usr/arm-elf/lib/libc.a(readr.o)
+ .debug_line    0x00004b1e      0x10d ./usr/arm-elf/lib/libc.a(reent.o)
+ .debug_line    0x00004c2b      0x2af ./usr/arm-elf/lib/libc.a(syscalls.o)
+ .debug_line    0x00004eda       0xca ./usr/arm-elf/lib/libc.a(errno.o)
+ .debug_line    0x00004fa4      0x11b ./usr/arm-elf/lib/libc.a(fstatr.o)
+ .debug_line    0x000050bf       0x82 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_udivsi3.o)
+ .debug_line    0x00005141       0x5f ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_dvmd_tls.o)
+ .debug_line    0x000051a0       0x77 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_si_to_sf.o)
+ .debug_line    0x00005217       0x80 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_sf_to_si.o)
+ .debug_line    0x00005297       0x68 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_sf_to_df.o)
+ .debug_line    0x000052ff      0x110 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_addsub_df.o)
+ .debug_line    0x0000540f      0x101 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_mul_df.o)
+ .debug_line    0x00005510       0xba ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_div_df.o)
+ .debug_line    0x000055ca       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_eq_df.o)
+ .debug_line    0x00005642       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_ne_df.o)
+ .debug_line    0x000056ba       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_gt_df.o)
+ .debug_line    0x00005732       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_ge_df.o)
+ .debug_line    0x000057aa       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_lt_df.o)
+ .debug_line    0x00005822       0x78 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_le_df.o)
+ .debug_line    0x0000589a       0x7d ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_si_to_df.o)
+ .debug_line    0x00005917       0x80 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_df_to_si.o)
+ .debug_line    0x00005997       0x6c ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_make_df.o)
+ .debug_line    0x00005a03       0x73 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_df_to_sf.o)
+ .debug_line    0x00005a76       0x52 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_thenan_df.o)
+ .debug_line    0x00005ac8       0x6e ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_lshrdi3.o)
+ .debug_line    0x00005b36       0xca ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_pack_sf.o)
+ .debug_line    0x00005c00       0x95 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_unpack_sf.o)
+ .debug_line    0x00005c95       0x69 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_make_sf.o)
+ .debug_line    0x00005cfe       0xcf ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_pack_df.o)
+ .debug_line    0x00005dcd       0xb6 ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_unpack_df.o)
+ .debug_line    0x00005e83       0x9f ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_fpcmp_parts_df.o)
+ .debug_line    0x00005f22       0x6e ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a(_ashldi3.o)
 
 .debug_frame    0x00000000     0x3128
  .debug_frame   0x00000000      0xb7c CoreFunc.o

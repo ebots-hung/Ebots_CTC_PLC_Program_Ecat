@@ -7802,7 +7802,8 @@ repeat {
 R520_YAxisCommands = 0;
 R530_ZAxisCommands = 0;
 R540_ThetaCommands = 0;
-delay 20 ms;
+// HL: change from 20ms to 2ms
+delay 2 ms;
 
 R36701_Speed = R501_Speed;
 R36702_Accel = R502_Accel;
@@ -8041,7 +8042,8 @@ if (R510_XAxisCommands)== 1  | (R510_XAxisCommands)==11 then { // Wait for 'Go' 
 	XAxis.Target = R504_Target;// Load Target1
 
 	XAxis.command = (R510_XAxisCommands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 
 	
 	while (XAxis.command == 1 | XAxis.command == 11) &amp;  (R510_XAxisCommands== 1  | R510_XAxisCommands == 11) repeat { 
@@ -8057,7 +8059,8 @@ if (R510_XAxisCommands)== 3 | (R510_XAxisCommands)== 4  then { // Look for 'JOG'
 	XAxis.Decel = R503_Decel;// Load Decel
 
  	XAxis.command = (R510_XAxisCommands); 
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while XAxis.command == (R510_XAxisCommands)  repeat{ 
 		running1 = true;			
 	 }	
@@ -8586,7 +8589,8 @@ if (R520_YAxisCommands)== 1 | (R520_YAxisCommands)== 11 then { // Wait for 'Go' 
 	YAxis.Target = R514_Target;// Load Target
    
 	YAxis.command = (R520_YAxisCommands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while (YAxis.command == 1 | YAxis.command == 11)  &amp;  (R520_YAxisCommands== 1 | R520_YAxisCommands== 11) repeat {
 		running2 = true;		
 	 }	
@@ -8600,7 +8604,8 @@ if (R520_YAxisCommands)== 3 | (R520_YAxisCommands)== 4  then { // Look for 'JOG'
 	YAxis.Decel = R513_Decel;// Load Decel
  	YAxis.command = (R520_YAxisCommands); 
 	
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while YAxis.command == (R520_YAxisCommands)  repeat{ 
 		running2 = true;			
 	 }	
@@ -8710,7 +8715,8 @@ if (R530_ZAxisCommands)== 1 | (R530_ZAxisCommands)== 11 then { // Wait for 'Go' 
 	ZAxis.Target = R524_Target;// Load Target
 	
     ZAxis.command = (R530_ZAxisCommands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while (ZAxis.command == 1  | ZAxis.command == 11 )  &amp;  (R530_ZAxisCommands== 1 | R530_ZAxisCommands== 11) repeat { 
 		running3 = true;		
 	 }	
@@ -8725,7 +8731,8 @@ if (R530_ZAxisCommands)== 3 | (R530_ZAxisCommands)== 4  then { // Look for 'JOG'
 	ZAxis.Decel = R523_Decel;// Load Decel
 	
  	ZAxis.command = (R530_ZAxisCommands); // send command.
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while ZAxis.command == (R530_ZAxisCommands)  repeat{ 
 		running3 = true;			
 	 }	
@@ -8851,7 +8858,8 @@ if (R540_ThetaCommands)== 1 | (R540_ThetaCommands)== 11 then { // Wait for 'Go' 
 	ThetaAxis.Target = R534_Target;// Load Target
 	
     ThetaAxis.command = (R540_ThetaCommands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while (ThetaAxis.command == 1 | ThetaAxis.command == 11)   &amp;  (R540_ThetaCommands== 1 | R540_ThetaCommands== 11) repeat { 
 		running4 = true;		
 	 }	
@@ -8866,7 +8874,8 @@ if (R540_ThetaCommands)== 3 | (R540_ThetaCommands)== 4  then { // Look for 'JOG'
 	ThetaAxis.Decel = R533_Decel;// Load Decel
 	
  	ThetaAxis.command = (R540_ThetaCommands); // send command.
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while ThetaAxis.command == (R540_ThetaCommands)  repeat{ 
 		running4 = true;		
 	 }	
@@ -8975,7 +8984,8 @@ if (R550_GripperCommands)== 1 then { // Wait for 'Go' '1' = index forward and '2
 	Gripper.Target = R544_Target;// Load Target
 	
     Gripper.command = (R550_GripperCommands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while (Gripper.command == 1 )  &amp;  (R550_GripperCommands== 1) repeat { 
 		running5 = true;		
 	 }	
@@ -8990,7 +9000,8 @@ if (R550_GripperCommands)== 3 | (R550_GripperCommands)== 4  then { // Look for '
 	Gripper.Decel = R543_Decel;// Load Decel
 	
  	Gripper.command = (R550_GripperCommands); // send command.
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while Gripper.command == (R550_GripperCommands)  repeat{ 
 		running5 = true;			
 	 }	
@@ -9101,7 +9112,8 @@ if (R570_Empty1Commands)== 1 then { // Wait for 'Go' '1' = index forward and '2'
 	EmptyAxis1.Target = R564_Target;// Load Target
 	
     EmptyAxis1.command = (R570_Empty1Commands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while (EmptyAxis1.command == 1 )  &amp;  (R570_Empty1Commands== 1) repeat { 
 		running7 = true;		
 	 }	
@@ -9116,7 +9128,8 @@ if (R570_Empty1Commands)== 3 | (R570_Empty1Commands)== 4  then { // Look for 'JO
 	EmptyAxis1.Decel = R563_Decel;// Load Decel
 	
  	EmptyAxis1.command = (R570_Empty1Commands); // send command.
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while EmptyAxis1.command == (R570_Empty1Commands)  repeat{ 
 		running7 = true;			
 	 }	
@@ -9223,7 +9236,8 @@ if (R580_Empty2Commands)== 1 then { // Wait for 'Go' '1' = index forward and '2'
 	EmptyAxis2.Target = R574_Target;// Load Target
 	
     EmptyAxis2.command = (R580_Empty2Commands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while (EmptyAxis2.command == 1 )  &amp;  (R580_Empty2Commands== 1) repeat { 
 		running8 = true;		
 	 }	
@@ -9238,7 +9252,8 @@ if (R580_Empty2Commands)== 3 | (R580_Empty2Commands)== 4  then { // Look for 'JO
 	EmptyAxis2.Decel = R573_Decel;// Load Decel
 	
  	EmptyAxis2.command = (R580_Empty2Commands); // send command.
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while EmptyAxis2.command == (R580_Empty2Commands)  repeat{ 
 		running8 = true;			
 	 }	
@@ -9348,7 +9363,8 @@ if (R590_TransferStationCommands)== 1 then { // Wait for 'Go' '1' = index forwar
 	TransferStation.Target = R584_Target;// Load Target
 	
     TransferStation.command = (R590_TransferStationCommands);// Trigger 'GO' in motion block
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while (TransferStation.command == 1 )  &amp;  (R590_TransferStationCommands== 1) repeat { 
 		running9 = true;		
 	 }	
@@ -9363,7 +9379,8 @@ if (R590_TransferStationCommands)== 3 | (R590_TransferStationCommands)== 4  then
 	TransferStation.Decel = R583_Decel;// Load Decel
 	
  	TransferStation.command = (R590_TransferStationCommands); // send command.
-	delay 20 ms;
+	// HL: change from 20ms to 2ms
+	delay 2 ms;
 	while TransferStation.command == (R590_TransferStationCommands)  repeat{ 
 		running9 = true;			
 	 }	
@@ -9565,7 +9582,7 @@ if (R600_Empty3Commands)== 5 then { // Wait for 'Home'
                     <bounds x="62" y="386" w="96" h="48" />
                     <name>Update</name>
                     <code>// =========================== FastUpdate - Update =========================== //
-$REGISTERS[13002] = 0;
+// $REGISTERS[13002] = 0;
 
 
 R36711_Ax1Fpos = XAxis.fpos * 1000;
@@ -9638,11 +9655,13 @@ R9_Dwell = $REGISTERS[13002];
                     <code>// =========================== Updates - Update =========================== //
 R36101_Temp = ThetaAxis.fpos * 1000;
 R539_fpos = R36101_Temp;
-delay 20 ms;
+// HL: change from 20ms to 2ms
+delay 2 ms;
 
 R36101_Temp = Gripper.fpos * 1000;
 R549_fpos = R36101_Temp;
-delay 20 ms;
+// HL: change from 20ms to 2ms
+delay 2 ms;
 
 //R36101_Temp = EmptyAxis0.fpos * 1000;
 //R559_fpos = R36101_Temp;
@@ -9650,19 +9669,23 @@ delay 20 ms;
 
 R36101_Temp = EmptyAxis1.fpos * 1000;
 R569_fpos = R36101_Temp;
-delay 20 ms;
+// HL: change from 20ms to 2ms
+delay 2 ms;
 
 R36101_Temp = EmptyAxis2.fpos * 1000;
 R579_fpos = R36101_Temp;
-delay 20 ms;
+// HL: change from 20ms to 2ms
+delay 2 ms;
 
 R36101_Temp = TransferStation.fpos * 1000;
 R589_fpos = R36101_Temp;
-delay 20 ms;
+// HL: change from 20ms to 2ms
+delay 2 ms;
 
 R36101_Temp = EmptyAxis3.fpos * 1000;
 R599_fpos = R36101_Temp;
-delay 20 ms;
+// HL: change from 20ms to 2ms
+delay 2 ms;
 </code>
                     <tport>280</tport>
                     <bport>281</bport>
