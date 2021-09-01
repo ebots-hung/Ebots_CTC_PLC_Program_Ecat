@@ -5415,50 +5415,49 @@ void process_ATABLE(STDVAL value, TASK *task) {
 		case 301:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
 		case 302:  /* R600_Empty3Commands=0 */ _IW(task,600,(int)(0),(int)(0),(int)(0)); return;
 		case 303:  /* R9_Dwell=0 */ _IW(task,9,(int)(0),(int)(0),(int)(0)); return;
-		case 304:  /* $REGISTERS[13002]=0 */ _IW(task,-5,(int)((int)(13002)),(int)(0),(int)(0)); return;
-		case 305:  /* R36711_Ax1Fpos=XAxis.fpos*1000 */ _FW(task,36711,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[0]-1),(int)(32))*1000)); return;
-		case 306:  /* R36712_Ax1Fpos=YAxis.fpos*1000 */ _FW(task,36712,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[1]-1),(int)(32))*1000)); return;
-		case 307:  /* R36713_Ax1Fpos=ZAxis.fpos*1000 */ _FW(task,36713,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[2]-1),(int)(32))*1000)); return;
-		case 308:  /* R36714_Ax1Fpos=ThetaAxis.fpos*1000 */ _FW(task,36714,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[3]-1),(int)(32))*1000)); return;
-		case 309:  /* R509_X_fpos=R36711_Ax1Fpos */ _IW(task,509,(int)(0),(int)(0),(int)(_F(task,36711,(int)(0),(int)(0)))); return;
-		case 310:  /* R519_Y_fpos=R36712_Ax1Fpos */ _IW(task,519,(int)(0),(int)(0),(int)(_F(task,36712,(int)(0),(int)(0)))); return;
-		case 311:  /* R529_Z_fpos=R36713_Ax1Fpos */ _IW(task,529,(int)(0),(int)(0),(int)(_F(task,36713,(int)(0),(int)(0)))); return;
-		case 312:  /* R539_fpos=R36714_Ax1Fpos */ _IW(task,539,(int)(0),(int)(0),(int)(_F(task,36714,(int)(0),(int)(0)))); return;
-		case 313:  /* XAxis.Maxspeed=R501_Speed */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Maxspeed,(double)(_I(task,501,(int)(0),(int)(0)))); return;
-		case 314:  /* XAxis.Accel=R502_Accel */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Accel,(double)(_I(task,502,(int)(0),(int)(0)))); return;
-		case 315:  /* XAxis.Decel=R503_Decel */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Decel,(double)(_I(task,503,(int)(0),(int)(0)))); return;
-		case 316:  /* XAxis.Target=R504_Target */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Target,(double)(_I(task,504,(int)(0),(int)(0)))); return;
-		case 317:  /* YAxis.Maxspeed=R511_Speed */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Maxspeed,(double)(_I(task,511,(int)(0),(int)(0)))); return;
-		case 318:  /* YAxis.Accel=R512_Accel */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Accel,(double)(_I(task,512,(int)(0),(int)(0)))); return;
-		case 319:  /* YAxis.Decel=R513_Decel */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Decel,(double)(_I(task,513,(int)(0),(int)(0)))); return;
-		case 320:  /* YAxis.Target=R514_Target */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Target,(double)(_I(task,514,(int)(0),(int)(0)))); return;
-		case 321:  /* ZAxis.Maxspeed=R521_Speed */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Maxspeed,(double)(_I(task,521,(int)(0),(int)(0)))); return;
-		case 322:  /* ZAxis.Accel=R522_Accel */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Accel,(double)(_I(task,522,(int)(0),(int)(0)))); return;
-		case 323:  /* ZAxis.Decel=R523_Decel */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Decel,(double)(_I(task,523,(int)(0),(int)(0)))); return;
-		case 324:  /* ZAxis.Target=R524_Target */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Target,(double)(_I(task,524,(int)(0),(int)(0)))); return;
-		case 325:  /* ThetaAxis.Maxspeed=R531_Speed */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Maxspeed,(double)(_I(task,531,(int)(0),(int)(0)))); return;
-		case 326:  /* ThetaAxis.Accel=R532_Accel */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Accel,(double)(_I(task,532,(int)(0),(int)(0)))); return;
-		case 327:  /* ThetaAxis.Decel=R533_Decel */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Decel,(double)(_I(task,533,(int)(0),(int)(0)))); return;
-		case 328:  /* ThetaAxis.Target=R534_Target */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Target,(double)(_I(task,534,(int)(0),(int)(0)))); return;
-		case 329:  /* R9_Dwell=$REGISTERS[13002] */ _IW(task,9,(int)(0),(int)(0),(int)(_I(task,-5,(int)((int)(13002)),(int)(0)))); return;
-		case 330:  /* R36101_Temp=ThetaAxis.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[3]-1),(int)(32))*1000)); return;
-		case 331:  /* R539_fpos=R36101_Temp */ _IW(task,539,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
-		case 332:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
-		case 333:  /* R36101_Temp=Gripper.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[4]-1),(int)(32))*1000)); return;
-		case 334:  /* R549_fpos=R36101_Temp */ _IW(task,549,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
-		case 335:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
-		case 336:  /* R36101_Temp=EmptyAxis1.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[5]-1),(int)(32))*1000)); return;
-		case 337:  /* R569_fpos=R36101_Temp */ _IW(task,569,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
-		case 338:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
-		case 339:  /* R36101_Temp=EmptyAxis2.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[6]-1),(int)(32))*1000)); return;
-		case 340:  /* R579_fpos=R36101_Temp */ _IW(task,579,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
-		case 341:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
-		case 342:  /* R36101_Temp=TransferStation.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[7]-1),(int)(32))*1000)); return;
-		case 343:  /* R589_fpos=R36101_Temp */ _IW(task,589,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
-		case 344:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
-		case 345:  /* R36101_Temp=EmptyAxis3.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[8]-1),(int)(32))*1000)); return;
-		case 346:  /* R599_fpos=R36101_Temp */ _IW(task,599,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
-		case 347:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
+		case 304:  /* R36711_Ax1Fpos=XAxis.fpos*1000 */ _FW(task,36711,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[0]-1),(int)(32))*1000)); return;
+		case 305:  /* R36712_Ax1Fpos=YAxis.fpos*1000 */ _FW(task,36712,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[1]-1),(int)(32))*1000)); return;
+		case 306:  /* R36713_Ax1Fpos=ZAxis.fpos*1000 */ _FW(task,36713,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[2]-1),(int)(32))*1000)); return;
+		case 307:  /* R36714_Ax1Fpos=ThetaAxis.fpos*1000 */ _FW(task,36714,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[3]-1),(int)(32))*1000)); return;
+		case 308:  /* R509_X_fpos=R36711_Ax1Fpos */ _IW(task,509,(int)(0),(int)(0),(int)(_F(task,36711,(int)(0),(int)(0)))); return;
+		case 309:  /* R519_Y_fpos=R36712_Ax1Fpos */ _IW(task,519,(int)(0),(int)(0),(int)(_F(task,36712,(int)(0),(int)(0)))); return;
+		case 310:  /* R529_Z_fpos=R36713_Ax1Fpos */ _IW(task,529,(int)(0),(int)(0),(int)(_F(task,36713,(int)(0),(int)(0)))); return;
+		case 311:  /* R539_fpos=R36714_Ax1Fpos */ _IW(task,539,(int)(0),(int)(0),(int)(_F(task,36714,(int)(0),(int)(0)))); return;
+		case 312:  /* XAxis.Maxspeed=R501_Speed */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Maxspeed,(double)(_I(task,501,(int)(0),(int)(0)))); return;
+		case 313:  /* XAxis.Accel=R502_Accel */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Accel,(double)(_I(task,502,(int)(0),(int)(0)))); return;
+		case 314:  /* XAxis.Decel=R503_Decel */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Decel,(double)(_I(task,503,(int)(0),(int)(0)))); return;
+		case 315:  /* XAxis.Target=R504_Target */ _DW(task,36822,__axisMap[0]-1,__IPMVAR_CTC_XAxis_Target,(double)(_I(task,504,(int)(0),(int)(0)))); return;
+		case 316:  /* YAxis.Maxspeed=R511_Speed */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Maxspeed,(double)(_I(task,511,(int)(0),(int)(0)))); return;
+		case 317:  /* YAxis.Accel=R512_Accel */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Accel,(double)(_I(task,512,(int)(0),(int)(0)))); return;
+		case 318:  /* YAxis.Decel=R513_Decel */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Decel,(double)(_I(task,513,(int)(0),(int)(0)))); return;
+		case 319:  /* YAxis.Target=R514_Target */ _DW(task,36822,__axisMap[1]-1,__IPMVAR_CTC_YAxis_Target,(double)(_I(task,514,(int)(0),(int)(0)))); return;
+		case 320:  /* ZAxis.Maxspeed=R521_Speed */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Maxspeed,(double)(_I(task,521,(int)(0),(int)(0)))); return;
+		case 321:  /* ZAxis.Accel=R522_Accel */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Accel,(double)(_I(task,522,(int)(0),(int)(0)))); return;
+		case 322:  /* ZAxis.Decel=R523_Decel */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Decel,(double)(_I(task,523,(int)(0),(int)(0)))); return;
+		case 323:  /* ZAxis.Target=R524_Target */ _DW(task,36822,__axisMap[2]-1,__IPMVAR_CTC_ZAxis_Target,(double)(_I(task,524,(int)(0),(int)(0)))); return;
+		case 324:  /* ThetaAxis.Maxspeed=R531_Speed */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Maxspeed,(double)(_I(task,531,(int)(0),(int)(0)))); return;
+		case 325:  /* ThetaAxis.Accel=R532_Accel */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Accel,(double)(_I(task,532,(int)(0),(int)(0)))); return;
+		case 326:  /* ThetaAxis.Decel=R533_Decel */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Decel,(double)(_I(task,533,(int)(0),(int)(0)))); return;
+		case 327:  /* ThetaAxis.Target=R534_Target */ _DW(task,36822,__axisMap[3]-1,__IPMVAR_CTC_ThetaAxis_Target,(double)(_I(task,534,(int)(0),(int)(0)))); return;
+		case 328:  /* R9_Dwell=$REGISTERS[13002] */ _IW(task,9,(int)(0),(int)(0),(int)(_I(task,-5,(int)((int)(13002)),(int)(0)))); return;
+		case 329:  /* R36101_Temp=ThetaAxis.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[3]-1),(int)(32))*1000)); return;
+		case 330:  /* R539_fpos=R36101_Temp */ _IW(task,539,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
+		case 331:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
+		case 332:  /* R36101_Temp=Gripper.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[4]-1),(int)(32))*1000)); return;
+		case 333:  /* R549_fpos=R36101_Temp */ _IW(task,549,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
+		case 334:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
+		case 335:  /* R36101_Temp=EmptyAxis1.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[5]-1),(int)(32))*1000)); return;
+		case 336:  /* R569_fpos=R36101_Temp */ _IW(task,569,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
+		case 337:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
+		case 338:  /* R36101_Temp=EmptyAxis2.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[6]-1),(int)(32))*1000)); return;
+		case 339:  /* R579_fpos=R36101_Temp */ _IW(task,579,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
+		case 340:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
+		case 341:  /* R36101_Temp=TransferStation.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[7]-1),(int)(32))*1000)); return;
+		case 342:  /* R589_fpos=R36101_Temp */ _IW(task,589,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
+		case 343:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
+		case 344:  /* R36101_Temp=EmptyAxis3.fpos*1000 */ _FW(task,36101,(int)(0),(int)(0),(float)(_D(task,36822,(int)(__axisMap[8]-1),(int)(32))*1000)); return;
+		case 345:  /* R599_fpos=R36101_Temp */ _IW(task,599,(int)(0),(int)(0),(int)(_F(task,36101,(int)(0),(int)(0)))); return;
+		case 346:  /* $_DELAYTIMER=0 */ _IW(task,-2,(int)(0),(int)(0),(int)(0)); return;
 	}
 }
 
@@ -5468,57 +5467,57 @@ int process_CTABLE(STDVAL value, TASK *task) {
 		case 1: { /* R13464_EtherCATStatus!=1 */ return (int)(_I(task,13464,(int)(0),(int)(0))!=1);; }
 		case 2: { /* $_DELAYTIMER<(1000) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(1000));; }
 		case 3: { /* F1_Trigger==true | R510_XAxisCommands==10 */ return (int)(_I(task,13201,(int)(0),(int)(0))==____true | _I(task,510,(int)(0),(int)(0))==10);; }
-		case 4: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 4: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 5: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
 		case 6: { /* XAxis.command==0 */ return (int)(_D(task,36822,(int)(__axisMap[0]-1),(int)(__IPMVAR_CTC_XAxis_command))==0);; }
 		case 7: { /* R500_RestartProgram==1 */ return (int)(_I(task,500,(int)(0),(int)(0))==1);; }
 		case 8: { /* $_DELAYTIMER<(3000) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(3000));; }
 		case 9: { /* $_DELAYTIMER<(2000) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2000));; }
 		case 10: { /* (R510_XAxisCommands)==1 | (R510_XAxisCommands)==11 */ return (int)((_I(task,510,(int)(0),(int)(0)))==1 | (_I(task,510,(int)(0),(int)(0)))==11);; }
-		case 11: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 11: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 12: { /* (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) */ return (int)((_D(task,36822,(int)(__axisMap[0]-1),(int)(__IPMVAR_CTC_XAxis_command))==1 | _D(task,36822,(int)(__axisMap[0]-1),(int)(__IPMVAR_CTC_XAxis_command))==11) & (_I(task,510,(int)(0),(int)(0))==1 | _I(task,510,(int)(0),(int)(0))==11));; }
 		case 13: { /* (R510_XAxisCommands)==3 | (R510_XAxisCommands)==4 */ return (int)((_I(task,510,(int)(0),(int)(0)))==3 | (_I(task,510,(int)(0),(int)(0)))==4);; }
-		case 14: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 14: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 15: { /* XAxis.command==(R510_XAxisCommands) */ return (int)(_D(task,36822,(int)(__axisMap[0]-1),(int)(__IPMVAR_CTC_XAxis_command))==(_I(task,510,(int)(0),(int)(0))));; }
 		case 16: { /* (R510_XAxisCommands)==5 */ return (int)((_I(task,510,(int)(0),(int)(0)))==5);; }
 		case 17: { /* XAxis.command==5 & (R510_XAxisCommands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[0]-1),(int)(__IPMVAR_CTC_XAxis_command))==5 & (_I(task,510,(int)(0),(int)(0)))==5);; }
 		case 18: { /* ((R510_XAxisCommands)==0 & running1==true) */ return (int)(((_I(task,510,(int)(0),(int)(0)))==0 & _I(task,20,(int)(0),(int)(0))==____true));; }
 		case 19: { /* ((R510_XAxisCommands)==6 | (R510_XAxisCommands)==7) */ return (int)(((_I(task,510,(int)(0),(int)(0)))==6 | (_I(task,510,(int)(0),(int)(0)))==7));; }
 		case 20: { /* (R520_YAxisCommands)==1 | (R520_YAxisCommands)==11 */ return (int)((_I(task,520,(int)(0),(int)(0)))==1 | (_I(task,520,(int)(0),(int)(0)))==11);; }
-		case 21: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 21: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 22: { /* (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) */ return (int)((_D(task,36822,(int)(__axisMap[1]-1),(int)(__IPMVAR_CTC_YAxis_command))==1 | _D(task,36822,(int)(__axisMap[1]-1),(int)(__IPMVAR_CTC_YAxis_command))==11) & (_I(task,520,(int)(0),(int)(0))==1 | _I(task,520,(int)(0),(int)(0))==11));; }
 		case 23: { /* (R520_YAxisCommands)==3 | (R520_YAxisCommands)==4 */ return (int)((_I(task,520,(int)(0),(int)(0)))==3 | (_I(task,520,(int)(0),(int)(0)))==4);; }
-		case 24: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 24: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 25: { /* YAxis.command==(R520_YAxisCommands) */ return (int)(_D(task,36822,(int)(__axisMap[1]-1),(int)(__IPMVAR_CTC_YAxis_command))==(_I(task,520,(int)(0),(int)(0))));; }
 		case 26: { /* (R520_YAxisCommands)==5 */ return (int)((_I(task,520,(int)(0),(int)(0)))==5);; }
 		case 27: { /* YAxis.command==5 & (R520_YAxisCommands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[1]-1),(int)(__IPMVAR_CTC_YAxis_command))==5 & (_I(task,520,(int)(0),(int)(0)))==5);; }
 		case 28: { /* ((R520_YAxisCommands)==0 & running2==true) */ return (int)(((_I(task,520,(int)(0),(int)(0)))==0 & _I(task,21,(int)(0),(int)(0))==____true));; }
 		case 29: { /* ((R520_YAxisCommands)==6 | (R520_YAxisCommands)==7) */ return (int)(((_I(task,520,(int)(0),(int)(0)))==6 | (_I(task,520,(int)(0),(int)(0)))==7));; }
 		case 30: { /* (R530_ZAxisCommands)==1 | (R530_ZAxisCommands)==11 */ return (int)((_I(task,530,(int)(0),(int)(0)))==1 | (_I(task,530,(int)(0),(int)(0)))==11);; }
-		case 31: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 31: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 32: { /* (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) */ return (int)((_D(task,36822,(int)(__axisMap[2]-1),(int)(__IPMVAR_CTC_ZAxis_command))==1 | _D(task,36822,(int)(__axisMap[2]-1),(int)(__IPMVAR_CTC_ZAxis_command))==11) & (_I(task,530,(int)(0),(int)(0))==1 | _I(task,530,(int)(0),(int)(0))==11));; }
 		case 33: { /* (R530_ZAxisCommands)==3 | (R530_ZAxisCommands)==4 */ return (int)((_I(task,530,(int)(0),(int)(0)))==3 | (_I(task,530,(int)(0),(int)(0)))==4);; }
-		case 34: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 34: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 35: { /* ZAxis.command==(R530_ZAxisCommands) */ return (int)(_D(task,36822,(int)(__axisMap[2]-1),(int)(__IPMVAR_CTC_ZAxis_command))==(_I(task,530,(int)(0),(int)(0))));; }
 		case 36: { /* (R530_ZAxisCommands)==5 */ return (int)((_I(task,530,(int)(0),(int)(0)))==5);; }
 		case 37: { /* ZAxis.command==5 & (R530_ZAxisCommands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[2]-1),(int)(__IPMVAR_CTC_ZAxis_command))==5 & (_I(task,530,(int)(0),(int)(0)))==5);; }
 		case 38: { /* ((R530_ZAxisCommands)==0 & running3==true) */ return (int)(((_I(task,530,(int)(0),(int)(0)))==0 & _I(task,22,(int)(0),(int)(0))==____true));; }
 		case 39: { /* ((R530_ZAxisCommands)==6 | (R530_ZAxisCommands)==7) */ return (int)(((_I(task,530,(int)(0),(int)(0)))==6 | (_I(task,530,(int)(0),(int)(0)))==7));; }
 		case 40: { /* (R540_ThetaCommands)==1 | (R540_ThetaCommands)==11 */ return (int)((_I(task,540,(int)(0),(int)(0)))==1 | (_I(task,540,(int)(0),(int)(0)))==11);; }
-		case 41: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 41: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 42: { /* (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) */ return (int)((_D(task,36822,(int)(__axisMap[3]-1),(int)(__IPMVAR_CTC_ThetaAxis_command))==1 | _D(task,36822,(int)(__axisMap[3]-1),(int)(__IPMVAR_CTC_ThetaAxis_command))==11) & (_I(task,540,(int)(0),(int)(0))==1 | _I(task,540,(int)(0),(int)(0))==11));; }
 		case 43: { /* (R540_ThetaCommands)==3 | (R540_ThetaCommands)==4 */ return (int)((_I(task,540,(int)(0),(int)(0)))==3 | (_I(task,540,(int)(0),(int)(0)))==4);; }
-		case 44: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 44: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 45: { /* ThetaAxis.command==(R540_ThetaCommands) */ return (int)(_D(task,36822,(int)(__axisMap[3]-1),(int)(__IPMVAR_CTC_ThetaAxis_command))==(_I(task,540,(int)(0),(int)(0))));; }
 		case 46: { /* (R540_ThetaCommands)==5 */ return (int)((_I(task,540,(int)(0),(int)(0)))==5);; }
 		case 47: { /* ThetaAxis.command==5 & (R540_ThetaCommands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[3]-1),(int)(__IPMVAR_CTC_ThetaAxis_command))==5 & (_I(task,540,(int)(0),(int)(0)))==5);; }
 		case 48: { /* ((R540_ThetaCommands)==0 & running4==true) */ return (int)(((_I(task,540,(int)(0),(int)(0)))==0 & _I(task,23,(int)(0),(int)(0))==____true));; }
 		case 49: { /* ((R540_ThetaCommands)==6 | (R540_ThetaCommands)==7) */ return (int)(((_I(task,540,(int)(0),(int)(0)))==6 | (_I(task,540,(int)(0),(int)(0)))==7));; }
 		case 50: { /* (R550_GripperCommands)==1 */ return (int)((_I(task,550,(int)(0),(int)(0)))==1);; }
-		case 51: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 51: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 52: { /* (Gripper.command==1) & (R550_GripperCommands==1) */ return (int)((_D(task,36822,(int)(__axisMap[4]-1),(int)(__IPMVAR_CTC_Gripper_command))==1) & (_I(task,550,(int)(0),(int)(0))==1));; }
 		case 53: { /* (R550_GripperCommands)==3 | (R550_GripperCommands)==4 */ return (int)((_I(task,550,(int)(0),(int)(0)))==3 | (_I(task,550,(int)(0),(int)(0)))==4);; }
-		case 54: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 54: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 55: { /* Gripper.command==(R550_GripperCommands) */ return (int)(_D(task,36822,(int)(__axisMap[4]-1),(int)(__IPMVAR_CTC_Gripper_command))==(_I(task,550,(int)(0),(int)(0))));; }
 		case 56: { /* (R550_GripperCommands)==5 */ return (int)((_I(task,550,(int)(0),(int)(0)))==5);; }
 		case 57: { /* Gripper.command==5 & (R550_GripperCommands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[4]-1),(int)(__IPMVAR_CTC_Gripper_command))==5 & (_I(task,550,(int)(0),(int)(0)))==5);; }
@@ -5526,20 +5525,20 @@ int process_CTABLE(STDVAL value, TASK *task) {
 		case 59: { /* ((R550_GripperCommands)==6 | (R550_GripperCommands)==7) */ return (int)(((_I(task,550,(int)(0),(int)(0)))==6 | (_I(task,550,(int)(0),(int)(0)))==7));; }
 		case 60: { /* (R550_GripperCommands)==9 */ return (int)((_I(task,550,(int)(0),(int)(0)))==9);; }
 		case 61: { /* (R570_Empty1Commands)==1 */ return (int)((_I(task,570,(int)(0),(int)(0)))==1);; }
-		case 62: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 62: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 63: { /* (EmptyAxis1.command==1) & (R570_Empty1Commands==1) */ return (int)((_D(task,36822,(int)(__axisMap[5]-1),(int)(__IPMVAR_CTC_EmptyAxis1_command))==1) & (_I(task,570,(int)(0),(int)(0))==1));; }
 		case 64: { /* (R570_Empty1Commands)==3 | (R570_Empty1Commands)==4 */ return (int)((_I(task,570,(int)(0),(int)(0)))==3 | (_I(task,570,(int)(0),(int)(0)))==4);; }
-		case 65: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 65: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 66: { /* EmptyAxis1.command==(R570_Empty1Commands) */ return (int)(_D(task,36822,(int)(__axisMap[5]-1),(int)(__IPMVAR_CTC_EmptyAxis1_command))==(_I(task,570,(int)(0),(int)(0))));; }
 		case 67: { /* (R570_Empty1Commands)==5 */ return (int)((_I(task,570,(int)(0),(int)(0)))==5);; }
 		case 68: { /* EmptyAxis1.command==5 & (R570_Empty1Commands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[5]-1),(int)(__IPMVAR_CTC_EmptyAxis1_command))==5 & (_I(task,570,(int)(0),(int)(0)))==5);; }
 		case 69: { /* ((R570_Empty1Commands)==0 & running7==true) */ return (int)(((_I(task,570,(int)(0),(int)(0)))==0 & _I(task,26,(int)(0),(int)(0))==____true));; }
 		case 70: { /* ((R570_Empty1Commands)==6 | (R570_Empty1Commands)==7) */ return (int)(((_I(task,570,(int)(0),(int)(0)))==6 | (_I(task,570,(int)(0),(int)(0)))==7));; }
 		case 71: { /* (R580_Empty2Commands)==1 */ return (int)((_I(task,580,(int)(0),(int)(0)))==1);; }
-		case 72: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 72: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 73: { /* (EmptyAxis2.command==1) & (R580_Empty2Commands==1) */ return (int)((_D(task,36822,(int)(__axisMap[6]-1),(int)(__IPMVAR_CTC_EmptyAxis2_command))==1) & (_I(task,580,(int)(0),(int)(0))==1));; }
 		case 74: { /* (R580_Empty2Commands)==3 | (R580_Empty2Commands)==4 */ return (int)((_I(task,580,(int)(0),(int)(0)))==3 | (_I(task,580,(int)(0),(int)(0)))==4);; }
-		case 75: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 75: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 76: { /* EmptyAxis2.command==(R580_Empty2Commands) */ return (int)(_D(task,36822,(int)(__axisMap[6]-1),(int)(__IPMVAR_CTC_EmptyAxis2_command))==(_I(task,580,(int)(0),(int)(0))));; }
 		case 77: { /* (R580_Empty2Commands)==5 */ return (int)((_I(task,580,(int)(0),(int)(0)))==5);; }
 		case 78: { /* EmptyAxis2.command==5 & (R580_Empty2Commands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[6]-1),(int)(__IPMVAR_CTC_EmptyAxis2_command))==5 & (_I(task,580,(int)(0),(int)(0)))==5);; }
@@ -5547,10 +5546,10 @@ int process_CTABLE(STDVAL value, TASK *task) {
 		case 80: { /* ((R580_Empty2Commands)==6 | (R580_Empty2Commands)==7) */ return (int)(((_I(task,580,(int)(0),(int)(0)))==6 | (_I(task,580,(int)(0),(int)(0)))==7));; }
 		case 81: { /* $_DELAYTIMER<(100) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(100));; }
 		case 82: { /* (R590_TransferStationCommands)==1 */ return (int)((_I(task,590,(int)(0),(int)(0)))==1);; }
-		case 83: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 83: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 84: { /* (TransferStation.command==1) & (R590_TransferStationCommands==1) */ return (int)((_D(task,36822,(int)(__axisMap[7]-1),(int)(__IPMVAR_CTC_TransferStation_command))==1) & (_I(task,590,(int)(0),(int)(0))==1));; }
 		case 85: { /* (R590_TransferStationCommands)==3 | (R590_TransferStationCommands)==4 */ return (int)((_I(task,590,(int)(0),(int)(0)))==3 | (_I(task,590,(int)(0),(int)(0)))==4);; }
-		case 86: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 86: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 		case 87: { /* TransferStation.command==(R590_TransferStationCommands) */ return (int)(_D(task,36822,(int)(__axisMap[7]-1),(int)(__IPMVAR_CTC_TransferStation_command))==(_I(task,590,(int)(0),(int)(0))));; }
 		case 88: { /* (R590_TransferStationCommands)==5 */ return (int)((_I(task,590,(int)(0),(int)(0)))==5);; }
 		case 89: { /* TransferStation.command==5 & (R590_TransferStationCommands)==5 */ return (int)(_D(task,36822,(int)(__axisMap[7]-1),(int)(__IPMVAR_CTC_TransferStation_command))==5 & (_I(task,590,(int)(0),(int)(0)))==5);; }
@@ -5571,12 +5570,12 @@ int process_CTABLE(STDVAL value, TASK *task) {
 		case 104: { /* ((R600_Empty3Commands)==6 | (R600_Empty3Commands)==7) */ return (int)(((_I(task,600,(int)(0),(int)(0)))==6 | (_I(task,600,(int)(0),(int)(0)))==7));; }
 		case 105: { /* (R600_Empty3Commands)==8 */ return (int)((_I(task,600,(int)(0),(int)(0)))==8);; }
 		case 106: { /* $_DELAYTIMER<(10) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(10));; }
-		case 107: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
-		case 108: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
-		case 109: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
-		case 110: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
-		case 111: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
-		case 112: { /* $_DELAYTIMER<(20) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(20));; }
+		case 107: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
+		case 108: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
+		case 109: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
+		case 110: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
+		case 111: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
+		case 112: { /* $_DELAYTIMER<(2) */ return (int)(_I(task,-2,(int)(0),(int)(0))<(2));; }
 	}
 	return 0;
 }
@@ -5653,7 +5652,7 @@ static void *steptable[] = {
 			task->step_num = 1;
 		};
 		// MODULE(++++++):LINE 1->*** STARTING ****
-		Q4T(task)->currentStep = (void *)&currentLine[530];
+		Q4T(task)->currentStep = (void *)&currentLine[529];
 #ifdef ABSTRACT_INTIME
 		switch(thrd->stepStart - 1)
 		{
@@ -6593,7 +6592,7 @@ __0009:
 		Q4T(task)->currentStep = (void *)&currentLine[22]; lineYield(task,22);
 		// STORE 13 TO REG#36990
 		process_ATABLE(13, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 9->delay = 20
+		// MODULE(StageControl):STEP(StageAuto):LINE 10->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[23];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -6609,7 +6608,7 @@ __0010:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(StageControl):STEP(StageAuto):LINE 9->delay = 20
+		// MODULE(StageControl):STEP(StageAuto):LINE 10->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[24]; lineYield(task,24);
 		// STORE 4 TO REG#36991
 		R36991 = 4;
@@ -6625,59 +6624,59 @@ __0011:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(StageControl):STEP(StageAuto):LINE 11->R36701_Speed = R501_Speed
+		// MODULE(StageControl):STEP(StageAuto):LINE 12->R36701_Speed = R501_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[25]; lineYield(task,25);
 		// STORE 15 TO REG#36990
 		process_ATABLE(15, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 12->R36702_Accel = R502_Accel
+		// MODULE(StageControl):STEP(StageAuto):LINE 13->R36702_Accel = R502_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[26]; lineYield(task,26);
 		// STORE 16 TO REG#36990
 		process_ATABLE(16, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 13->R36703_Decel = R503_Decel
+		// MODULE(StageControl):STEP(StageAuto):LINE 14->R36703_Decel = R503_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[27]; lineYield(task,27);
 		// STORE 17 TO REG#36990
 		process_ATABLE(17, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 15->R36704_XTarget = R504_Target
+		// MODULE(StageControl):STEP(StageAuto):LINE 16->R36704_XTarget = R504_Target
 		Q4T(task)->currentStep = (void *)&currentLine[28]; lineYield(task,28);
 		// STORE 18 TO REG#36990
 		process_ATABLE(18, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 16->R36705_YTarget = R514_Target
+		// MODULE(StageControl):STEP(StageAuto):LINE 17->R36705_YTarget = R514_Target
 		Q4T(task)->currentStep = (void *)&currentLine[29]; lineYield(task,29);
 		// STORE 19 TO REG#36990
 		process_ATABLE(19, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 17->R36706_ZTarget = R524_Target
+		// MODULE(StageControl):STEP(StageAuto):LINE 18->R36706_ZTarget = R524_Target
 		Q4T(task)->currentStep = (void *)&currentLine[30]; lineYield(task,30);
 		// STORE 20 TO REG#36990
 		process_ATABLE(20, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 20->XAxis.speed = R36701_Speed/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 21->XAxis.speed = R36701_Speed/1000
 		Q4T(task)->currentStep = (void *)&currentLine[31]; lineYield(task,31);
 		// STORE 21 TO REG#36990
 		process_ATABLE(21, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 21->XAxis.Accel = R36702_Accel/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 22->XAxis.Accel = R36702_Accel/1000
 		Q4T(task)->currentStep = (void *)&currentLine[32]; lineYield(task,32);
 		// STORE 22 TO REG#36990
 		process_ATABLE(22, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 22->XAxis.Decel = R36703_Decel/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 23->XAxis.Decel = R36703_Decel/1000
 		Q4T(task)->currentStep = (void *)&currentLine[33]; lineYield(task,33);
 		// STORE 23 TO REG#36990
 		process_ATABLE(23, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 24->XAxis.XTarget = R36704_XTarget/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 25->XAxis.XTarget = R36704_XTarget/1000
 		Q4T(task)->currentStep = (void *)&currentLine[34]; lineYield(task,34);
 		// STORE 24 TO REG#36990
 		process_ATABLE(24, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 25->XAxis.YTarget = R36705_YTarget/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 26->XAxis.YTarget = R36705_YTarget/1000
 		Q4T(task)->currentStep = (void *)&currentLine[35]; lineYield(task,35);
 		// STORE 25 TO REG#36990
 		process_ATABLE(25, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 26->XAxis.ZTarget = R36706_ZTarget/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 27->XAxis.ZTarget = R36706_ZTarget/1000
 		Q4T(task)->currentStep = (void *)&currentLine[36]; lineYield(task,36);
 		// STORE 26 TO REG#36990
 		process_ATABLE(26, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 28->XAxis.command = 10
+		// MODULE(StageControl):STEP(StageAuto):LINE 29->XAxis.command = 10
 		Q4T(task)->currentStep = (void *)&currentLine[37]; lineYield(task,37);
 		// STORE 27 TO REG#36990
 		process_ATABLE(27, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 30->repeat ( 
+		// MODULE(StageControl):STEP(StageAuto):LINE 31->repeat ( 
 		Q4T(task)->currentStep = (void *)&currentLine[38]; lineYield(task,38);
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -6691,7 +6690,7 @@ __0013:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(StageControl):STEP(StageAuto):LINE 31->delay = 20
+		// MODULE(StageControl):STEP(StageAuto):LINE 32->delay = 20
 		Q4T(task)->currentStep = (void *)&currentLine[39];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -6707,7 +6706,7 @@ __0015:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(StageControl):STEP(StageAuto):LINE 31->delay = 20
+		// MODULE(StageControl):STEP(StageAuto):LINE 32->delay = 20
 		Q4T(task)->currentStep = (void *)&currentLine[40]; lineYield(task,40);
 		// STORE 5 TO REG#36991
 		R36991 = 5;
@@ -6737,7 +6736,7 @@ __0012:
 		/*-----------------------------------------------------------------*/
 		// STORE 6 TO REG#36991
 		R36991 = 6;
-		// MODULE(StageControl):STEP(StageAuto):LINE 30->repeat ( 
+		// MODULE(StageControl):STEP(StageAuto):LINE 31->repeat ( 
 		Q4T(task)->currentStep = (void *)&currentLine[41]; lineYield(task,41);
 		// IF REG#36991=0 GOTO __0013
 		if (process_CTABLE(R36991, task) == 0) goto __0013;
@@ -6753,21 +6752,21 @@ __0014:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(StageControl):STEP(StageAuto):LINE 33->F1_Trigger = false
+		// MODULE(StageControl):STEP(StageAuto):LINE 34->F1_Trigger = false
 		Q4T(task)->currentStep = (void *)&currentLine[42]; lineYield(task,42);
 		// STORE 29 TO REG#36990
 		process_ATABLE(29, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 34->R510_XAxisCommands = 0
+		// MODULE(StageControl):STEP(StageAuto):LINE 35->R510_XAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[43]; lineYield(task,43);
 		// STORE 30 TO REG#36990
 		process_ATABLE(30, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 36->goto StageAuto
+		// MODULE(StageControl):STEP(StageAuto):LINE 37->goto StageAuto
 		Q4T(task)->currentStep = (void *)&currentLine[44]; lineYield(task,44);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO StageControl_StageAuto
 		goto StageControl_StageAuto;
-		// MODULE(StageControl):STEP(StageAuto):LINE 38->goto StageAuto
+		// MODULE(StageControl):STEP(StageAuto):LINE 39->goto StageAuto
 		Q4T(task)->currentStep = (void *)&currentLine[45]; lineYield(task,45);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -7062,7 +7061,7 @@ __0027:
 		Q4T(task)->currentStep = (void *)&currentLine[77]; lineYield(task,77);
 		// STORE 54 TO REG#36990
 		process_ATABLE(54, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 16->delay = 20
+		// MODULE(AxisX):STEP(AxisXControl):LINE 17->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[78];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7078,7 +7077,7 @@ __0029:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 16->delay = 20
+		// MODULE(AxisX):STEP(AxisXControl):LINE 17->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[79]; lineYield(task,79);
 		// STORE 11 TO REG#36991
 		R36991 = 11;
@@ -7094,7 +7093,7 @@ __0030:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 19->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat
+		// MODULE(AxisX):STEP(AxisXControl):LINE 20->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[80];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7108,7 +7107,7 @@ __0031:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 19->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat
+		// MODULE(AxisX):STEP(AxisXControl):LINE 20->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[81]; lineYield(task,81);
 		// STORE 12 TO REG#36991
 		R36991 = 12;
@@ -7126,7 +7125,7 @@ __0032:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 20->running1 = true
+		// MODULE(AxisX):STEP(AxisXControl):LINE 21->running1 = true
 		Q4T(task)->currentStep = (void *)&currentLine[82]; lineYield(task,82);
 		// STORE 56 TO REG#36990
 		process_ATABLE(56, task);
@@ -7154,7 +7153,7 @@ __0034:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 26->if (R510_XAxisCommands)==3 | (R510_XAxisCommands)==4 then 
+		// MODULE(AxisX):STEP(AxisXControl):LINE 27->if (R510_XAxisCommands)==3 | (R510_XAxisCommands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[83]; lineYield(task,83);
 		// STORE 13 TO REG#36991
 		R36991 = 13;
@@ -7170,23 +7169,23 @@ __0035:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 27->XAxis.Maxspeed = R501_Speed
+		// MODULE(AxisX):STEP(AxisXControl):LINE 28->XAxis.Maxspeed = R501_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[84]; lineYield(task,84);
 		// STORE 57 TO REG#36990
 		process_ATABLE(57, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 28->XAxis.Accel = R502_Accel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 29->XAxis.Accel = R502_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[85]; lineYield(task,85);
 		// STORE 58 TO REG#36990
 		process_ATABLE(58, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 29->XAxis.Decel = R503_Decel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 30->XAxis.Decel = R503_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[86]; lineYield(task,86);
 		// STORE 59 TO REG#36990
 		process_ATABLE(59, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 31->XAxis.command = (R510_XAxisCommands)
+		// MODULE(AxisX):STEP(AxisXControl):LINE 32->XAxis.command = (R510_XAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[87]; lineYield(task,87);
 		// STORE 60 TO REG#36990
 		process_ATABLE(60, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 32->delay = 20
+		// MODULE(AxisX):STEP(AxisXControl):LINE 34->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[88];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7202,7 +7201,7 @@ __0037:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 32->delay = 20
+		// MODULE(AxisX):STEP(AxisXControl):LINE 34->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[89]; lineYield(task,89);
 		// STORE 14 TO REG#36991
 		R36991 = 14;
@@ -7218,7 +7217,7 @@ __0038:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 33->while XAxis.command==(R510_XAxisCommands) repeat
+		// MODULE(AxisX):STEP(AxisXControl):LINE 35->while XAxis.command==(R510_XAxisCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[90];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7232,7 +7231,7 @@ __0039:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 33->while XAxis.command==(R510_XAxisCommands) repeat
+		// MODULE(AxisX):STEP(AxisXControl):LINE 35->while XAxis.command==(R510_XAxisCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[91]; lineYield(task,91);
 		// STORE 15 TO REG#36991
 		R36991 = 15;
@@ -7250,7 +7249,7 @@ __0040:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 34->running1 = true
+		// MODULE(AxisX):STEP(AxisXControl):LINE 36->running1 = true
 		Q4T(task)->currentStep = (void *)&currentLine[92]; lineYield(task,92);
 		// STORE 62 TO REG#36990
 		process_ATABLE(62, task);
@@ -7278,7 +7277,7 @@ __0042:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 39->if (R510_XAxisCommands)==5 then 
+		// MODULE(AxisX):STEP(AxisXControl):LINE 41->if (R510_XAxisCommands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[93]; lineYield(task,93);
 		// STORE 16 TO REG#36991
 		R36991 = 16;
@@ -7294,31 +7293,31 @@ __0043:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 40->XAxis.Maxspeed = R501_Speed
+		// MODULE(AxisX):STEP(AxisXControl):LINE 42->XAxis.Maxspeed = R501_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[94]; lineYield(task,94);
 		// STORE 63 TO REG#36990
 		process_ATABLE(63, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 41->XAxis.Accel = R502_Accel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 43->XAxis.Accel = R502_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[95]; lineYield(task,95);
 		// STORE 64 TO REG#36990
 		process_ATABLE(64, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 42->XAxis.Decel = R503_Decel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 44->XAxis.Decel = R503_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[96]; lineYield(task,96);
 		// STORE 65 TO REG#36990
 		process_ATABLE(65, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 45->XAxis.Target = R504_Target
+		// MODULE(AxisX):STEP(AxisXControl):LINE 47->XAxis.Target = R504_Target
 		Q4T(task)->currentStep = (void *)&currentLine[97]; lineYield(task,97);
 		// STORE 66 TO REG#36990
 		process_ATABLE(66, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 46->XAxis.OffsetHome = R505_HomeOffset
+		// MODULE(AxisX):STEP(AxisXControl):LINE 48->XAxis.OffsetHome = R505_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[98]; lineYield(task,98);
 		// STORE 67 TO REG#36990
 		process_ATABLE(67, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 47->XAxis.command = 5
+		// MODULE(AxisX):STEP(AxisXControl):LINE 49->XAxis.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[99]; lineYield(task,99);
 		// STORE 68 TO REG#36990
 		process_ATABLE(68, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 49->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat
+		// MODULE(AxisX):STEP(AxisXControl):LINE 51->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[100];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7332,7 +7331,7 @@ __0045:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 49->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat
+		// MODULE(AxisX):STEP(AxisXControl):LINE 51->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[101]; lineYield(task,101);
 		// STORE 17 TO REG#36991
 		R36991 = 17;
@@ -7350,7 +7349,7 @@ __0046:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 50->running1 = true
+		// MODULE(AxisX):STEP(AxisXControl):LINE 52->running1 = true
 		Q4T(task)->currentStep = (void *)&currentLine[102]; lineYield(task,102);
 		// STORE 69 TO REG#36990
 		process_ATABLE(69, task);
@@ -7378,7 +7377,7 @@ __0048:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 56->if ((R510_XAxisCommands)==0 & running1==true) then 
+		// MODULE(AxisX):STEP(AxisXControl):LINE 58->if ((R510_XAxisCommands)==0 & running1==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[103]; lineYield(task,103);
 		// STORE 18 TO REG#36991
 		R36991 = 18;
@@ -7394,11 +7393,11 @@ __0049:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 57->XAxis.command = 0
+		// MODULE(AxisX):STEP(AxisXControl):LINE 59->XAxis.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[104]; lineYield(task,104);
 		// STORE 70 TO REG#36990
 		process_ATABLE(70, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 58->running1 = false
+		// MODULE(AxisX):STEP(AxisXControl):LINE 60->running1 = false
 		Q4T(task)->currentStep = (void *)&currentLine[105]; lineYield(task,105);
 		// STORE 71 TO REG#36990
 		process_ATABLE(71, task);
@@ -7424,7 +7423,7 @@ __0051:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 62->if ((R510_XAxisCommands)==6 | (R510_XAxisCommands)==7) then 
+		// MODULE(AxisX):STEP(AxisXControl):LINE 64->if ((R510_XAxisCommands)==6 | (R510_XAxisCommands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[106]; lineYield(task,106);
 		// STORE 19 TO REG#36991
 		R36991 = 19;
@@ -7440,11 +7439,11 @@ __0052:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 63->XAxis.command = R510_XAxisCommands
+		// MODULE(AxisX):STEP(AxisXControl):LINE 65->XAxis.command = R510_XAxisCommands
 		Q4T(task)->currentStep = (void *)&currentLine[107]; lineYield(task,107);
 		// STORE 72 TO REG#36990
 		process_ATABLE(72, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 64->R510_XAxisCommands = 0
+		// MODULE(AxisX):STEP(AxisXControl):LINE 66->R510_XAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[108]; lineYield(task,108);
 		// STORE 73 TO REG#36990
 		process_ATABLE(73, task);
@@ -7458,7 +7457,7 @@ __0053:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisX):STEP(AxisXControl):LINE 71->goto AxisXControl
+		// MODULE(AxisX):STEP(AxisXControl):LINE 73->goto AxisXControl
 		Q4T(task)->currentStep = (void *)&currentLine[109]; lineYield(task,109);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -7569,7 +7568,7 @@ __0055:
 		Q4T(task)->currentStep = (void *)&currentLine[120]; lineYield(task,120);
 		// STORE 81 TO REG#36990
 		process_ATABLE(81, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 15->delay = 20
+		// MODULE(AxisY):STEP(AxisYControl):LINE 16->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[121];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7585,7 +7584,7 @@ __0057:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 15->delay = 20
+		// MODULE(AxisY):STEP(AxisYControl):LINE 16->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[122]; lineYield(task,122);
 		// STORE 21 TO REG#36991
 		R36991 = 21;
@@ -7601,7 +7600,7 @@ __0058:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 16->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat
+		// MODULE(AxisY):STEP(AxisYControl):LINE 17->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[123];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7615,7 +7614,7 @@ __0059:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 16->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat
+		// MODULE(AxisY):STEP(AxisYControl):LINE 17->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[124]; lineYield(task,124);
 		// STORE 22 TO REG#36991
 		R36991 = 22;
@@ -7633,7 +7632,7 @@ __0060:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 17->running2 = true
+		// MODULE(AxisY):STEP(AxisYControl):LINE 18->running2 = true
 		Q4T(task)->currentStep = (void *)&currentLine[125]; lineYield(task,125);
 		// STORE 83 TO REG#36990
 		process_ATABLE(83, task);
@@ -7661,7 +7660,7 @@ __0062:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 23->if (R520_YAxisCommands)==3 | (R520_YAxisCommands)==4 then 
+		// MODULE(AxisY):STEP(AxisYControl):LINE 24->if (R520_YAxisCommands)==3 | (R520_YAxisCommands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[126]; lineYield(task,126);
 		// STORE 23 TO REG#36991
 		R36991 = 23;
@@ -7677,23 +7676,23 @@ __0063:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 24->YAxis.Maxspeed = R511_Speed
+		// MODULE(AxisY):STEP(AxisYControl):LINE 25->YAxis.Maxspeed = R511_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[127]; lineYield(task,127);
 		// STORE 84 TO REG#36990
 		process_ATABLE(84, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 25->YAxis.Accel = R512_Accel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 26->YAxis.Accel = R512_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[128]; lineYield(task,128);
 		// STORE 85 TO REG#36990
 		process_ATABLE(85, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 26->YAxis.Decel = R513_Decel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 27->YAxis.Decel = R513_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[129]; lineYield(task,129);
 		// STORE 86 TO REG#36990
 		process_ATABLE(86, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 27->YAxis.command = (R520_YAxisCommands)
+		// MODULE(AxisY):STEP(AxisYControl):LINE 28->YAxis.command = (R520_YAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[130]; lineYield(task,130);
 		// STORE 87 TO REG#36990
 		process_ATABLE(87, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 29->delay = 20
+		// MODULE(AxisY):STEP(AxisYControl):LINE 31->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[131];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7709,7 +7708,7 @@ __0065:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 29->delay = 20
+		// MODULE(AxisY):STEP(AxisYControl):LINE 31->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[132]; lineYield(task,132);
 		// STORE 24 TO REG#36991
 		R36991 = 24;
@@ -7725,7 +7724,7 @@ __0066:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 30->while YAxis.command==(R520_YAxisCommands) repeat
+		// MODULE(AxisY):STEP(AxisYControl):LINE 32->while YAxis.command==(R520_YAxisCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[133];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7739,7 +7738,7 @@ __0067:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 30->while YAxis.command==(R520_YAxisCommands) repeat
+		// MODULE(AxisY):STEP(AxisYControl):LINE 32->while YAxis.command==(R520_YAxisCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[134]; lineYield(task,134);
 		// STORE 25 TO REG#36991
 		R36991 = 25;
@@ -7757,7 +7756,7 @@ __0068:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 31->running2 = true
+		// MODULE(AxisY):STEP(AxisYControl):LINE 33->running2 = true
 		Q4T(task)->currentStep = (void *)&currentLine[135]; lineYield(task,135);
 		// STORE 89 TO REG#36990
 		process_ATABLE(89, task);
@@ -7785,7 +7784,7 @@ __0070:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 36->if (R520_YAxisCommands)==5 then 
+		// MODULE(AxisY):STEP(AxisYControl):LINE 38->if (R520_YAxisCommands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[136]; lineYield(task,136);
 		// STORE 26 TO REG#36991
 		R36991 = 26;
@@ -7801,31 +7800,31 @@ __0071:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 37->YAxis.Maxspeed = R511_Speed
+		// MODULE(AxisY):STEP(AxisYControl):LINE 39->YAxis.Maxspeed = R511_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[137]; lineYield(task,137);
 		// STORE 90 TO REG#36990
 		process_ATABLE(90, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 38->YAxis.Accel = R512_Accel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 40->YAxis.Accel = R512_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[138]; lineYield(task,138);
 		// STORE 91 TO REG#36990
 		process_ATABLE(91, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 39->YAxis.Decel = R513_Decel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 41->YAxis.Decel = R513_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[139]; lineYield(task,139);
 		// STORE 92 TO REG#36990
 		process_ATABLE(92, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 40->YAxis.Target = R514_Target
+		// MODULE(AxisY):STEP(AxisYControl):LINE 42->YAxis.Target = R514_Target
 		Q4T(task)->currentStep = (void *)&currentLine[140]; lineYield(task,140);
 		// STORE 93 TO REG#36990
 		process_ATABLE(93, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 41->YAxis.OffsetHome = R515_HomeOffset
+		// MODULE(AxisY):STEP(AxisYControl):LINE 43->YAxis.OffsetHome = R515_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[141]; lineYield(task,141);
 		// STORE 94 TO REG#36990
 		process_ATABLE(94, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 42->YAxis.command = 5
+		// MODULE(AxisY):STEP(AxisYControl):LINE 44->YAxis.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[142]; lineYield(task,142);
 		// STORE 95 TO REG#36990
 		process_ATABLE(95, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 44->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat
+		// MODULE(AxisY):STEP(AxisYControl):LINE 46->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[143];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -7839,7 +7838,7 @@ __0073:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 44->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat
+		// MODULE(AxisY):STEP(AxisYControl):LINE 46->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[144]; lineYield(task,144);
 		// STORE 27 TO REG#36991
 		R36991 = 27;
@@ -7857,7 +7856,7 @@ __0074:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 45->running2 = true
+		// MODULE(AxisY):STEP(AxisYControl):LINE 47->running2 = true
 		Q4T(task)->currentStep = (void *)&currentLine[145]; lineYield(task,145);
 		// STORE 96 TO REG#36990
 		process_ATABLE(96, task);
@@ -7885,7 +7884,7 @@ __0076:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 51->if ((R520_YAxisCommands)==0 & running2==true) then 
+		// MODULE(AxisY):STEP(AxisYControl):LINE 53->if ((R520_YAxisCommands)==0 & running2==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[146]; lineYield(task,146);
 		// STORE 28 TO REG#36991
 		R36991 = 28;
@@ -7901,11 +7900,11 @@ __0077:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 52->YAxis.command = 0
+		// MODULE(AxisY):STEP(AxisYControl):LINE 54->YAxis.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[147]; lineYield(task,147);
 		// STORE 97 TO REG#36990
 		process_ATABLE(97, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 53->running2 = false
+		// MODULE(AxisY):STEP(AxisYControl):LINE 55->running2 = false
 		Q4T(task)->currentStep = (void *)&currentLine[148]; lineYield(task,148);
 		// STORE 98 TO REG#36990
 		process_ATABLE(98, task);
@@ -7931,7 +7930,7 @@ __0079:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 58->if ((R520_YAxisCommands)==6 | (R520_YAxisCommands)==7) then 
+		// MODULE(AxisY):STEP(AxisYControl):LINE 60->if ((R520_YAxisCommands)==6 | (R520_YAxisCommands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[149]; lineYield(task,149);
 		// STORE 29 TO REG#36991
 		R36991 = 29;
@@ -7947,11 +7946,11 @@ __0080:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 59->YAxis.command = R520_YAxisCommands
+		// MODULE(AxisY):STEP(AxisYControl):LINE 61->YAxis.command = R520_YAxisCommands
 		Q4T(task)->currentStep = (void *)&currentLine[150]; lineYield(task,150);
 		// STORE 99 TO REG#36990
 		process_ATABLE(99, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 60->R520_YAxisCommands = 0
+		// MODULE(AxisY):STEP(AxisYControl):LINE 62->R520_YAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[151]; lineYield(task,151);
 		// STORE 100 TO REG#36990
 		process_ATABLE(100, task);
@@ -7965,7 +7964,7 @@ __0081:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisY):STEP(AxisYControl):LINE 66->goto AxisYControl
+		// MODULE(AxisY):STEP(AxisYControl):LINE 68->goto AxisYControl
 		Q4T(task)->currentStep = (void *)&currentLine[152]; lineYield(task,152);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -8076,7 +8075,7 @@ __0083:
 		Q4T(task)->currentStep = (void *)&currentLine[163]; lineYield(task,163);
 		// STORE 108 TO REG#36990
 		process_ATABLE(108, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 19->delay = 20
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 20->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[164];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8092,7 +8091,7 @@ __0085:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 19->delay = 20
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 20->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[165]; lineYield(task,165);
 		// STORE 31 TO REG#36991
 		R36991 = 31;
@@ -8108,7 +8107,7 @@ __0086:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 20->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 21->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[166];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8122,7 +8121,7 @@ __0087:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 20->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 21->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[167]; lineYield(task,167);
 		// STORE 32 TO REG#36991
 		R36991 = 32;
@@ -8140,7 +8139,7 @@ __0088:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 21->running3 = true
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 22->running3 = true
 		Q4T(task)->currentStep = (void *)&currentLine[168]; lineYield(task,168);
 		// STORE 110 TO REG#36990
 		process_ATABLE(110, task);
@@ -8168,7 +8167,7 @@ __0090:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 27->if (R530_ZAxisCommands)==3 | (R530_ZAxisCommands)==4 then 
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 28->if (R530_ZAxisCommands)==3 | (R530_ZAxisCommands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[169]; lineYield(task,169);
 		// STORE 33 TO REG#36991
 		R36991 = 33;
@@ -8184,23 +8183,23 @@ __0091:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 29->ZAxis.Maxspeed = R521_Speed
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 30->ZAxis.Maxspeed = R521_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[170]; lineYield(task,170);
 		// STORE 111 TO REG#36990
 		process_ATABLE(111, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 30->ZAxis.Accel = R522_Accel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 31->ZAxis.Accel = R522_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[171]; lineYield(task,171);
 		// STORE 112 TO REG#36990
 		process_ATABLE(112, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 31->ZAxis.Decel = R523_Decel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 32->ZAxis.Decel = R523_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[172]; lineYield(task,172);
 		// STORE 113 TO REG#36990
 		process_ATABLE(113, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 33->ZAxis.command = (R530_ZAxisCommands)
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 34->ZAxis.command = (R530_ZAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[173]; lineYield(task,173);
 		// STORE 114 TO REG#36990
 		process_ATABLE(114, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 34->delay = 20
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 36->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[174];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8216,7 +8215,7 @@ __0093:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 34->delay = 20
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 36->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[175]; lineYield(task,175);
 		// STORE 34 TO REG#36991
 		R36991 = 34;
@@ -8232,7 +8231,7 @@ __0094:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 35->while ZAxis.command==(R530_ZAxisCommands) repeat
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 37->while ZAxis.command==(R530_ZAxisCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[176];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8246,7 +8245,7 @@ __0095:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 35->while ZAxis.command==(R530_ZAxisCommands) repeat
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 37->while ZAxis.command==(R530_ZAxisCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[177]; lineYield(task,177);
 		// STORE 35 TO REG#36991
 		R36991 = 35;
@@ -8264,7 +8263,7 @@ __0096:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 36->running3 = true
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 38->running3 = true
 		Q4T(task)->currentStep = (void *)&currentLine[178]; lineYield(task,178);
 		// STORE 116 TO REG#36990
 		process_ATABLE(116, task);
@@ -8292,7 +8291,7 @@ __0098:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 41->if (R530_ZAxisCommands)==5 then 
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 43->if (R530_ZAxisCommands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[179]; lineYield(task,179);
 		// STORE 36 TO REG#36991
 		R36991 = 36;
@@ -8308,31 +8307,31 @@ __0099:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 42->ZAxis.Maxspeed = R521_Speed
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 44->ZAxis.Maxspeed = R521_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[180]; lineYield(task,180);
 		// STORE 117 TO REG#36990
 		process_ATABLE(117, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 43->ZAxis.Accel = R522_Accel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 45->ZAxis.Accel = R522_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[181]; lineYield(task,181);
 		// STORE 118 TO REG#36990
 		process_ATABLE(118, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 44->ZAxis.Decel = R523_Decel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 46->ZAxis.Decel = R523_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[182]; lineYield(task,182);
 		// STORE 119 TO REG#36990
 		process_ATABLE(119, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 45->ZAxis.Target = R524_Target
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 47->ZAxis.Target = R524_Target
 		Q4T(task)->currentStep = (void *)&currentLine[183]; lineYield(task,183);
 		// STORE 120 TO REG#36990
 		process_ATABLE(120, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 46->ZAxis.OffsetHome = R525_HomeOffset
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 48->ZAxis.OffsetHome = R525_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[184]; lineYield(task,184);
 		// STORE 121 TO REG#36990
 		process_ATABLE(121, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 47->ZAxis.command = 5
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 49->ZAxis.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[185]; lineYield(task,185);
 		// STORE 122 TO REG#36990
 		process_ATABLE(122, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 49->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 51->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[186];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8346,7 +8345,7 @@ __0101:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 49->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 51->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[187]; lineYield(task,187);
 		// STORE 37 TO REG#36991
 		R36991 = 37;
@@ -8364,7 +8363,7 @@ __0102:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 50->running3 = true
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 52->running3 = true
 		Q4T(task)->currentStep = (void *)&currentLine[188]; lineYield(task,188);
 		// STORE 123 TO REG#36990
 		process_ATABLE(123, task);
@@ -8392,7 +8391,7 @@ __0104:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 56->if ((R530_ZAxisCommands)==0 & running3==true) then 
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 58->if ((R530_ZAxisCommands)==0 & running3==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[189]; lineYield(task,189);
 		// STORE 38 TO REG#36991
 		R36991 = 38;
@@ -8408,11 +8407,11 @@ __0105:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 57->ZAxis.command = 0
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 59->ZAxis.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[190]; lineYield(task,190);
 		// STORE 124 TO REG#36990
 		process_ATABLE(124, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 58->running3 = false
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 60->running3 = false
 		Q4T(task)->currentStep = (void *)&currentLine[191]; lineYield(task,191);
 		// STORE 125 TO REG#36990
 		process_ATABLE(125, task);
@@ -8438,7 +8437,7 @@ __0107:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 62->if ((R530_ZAxisCommands)==6 | (R530_ZAxisCommands)==7) then 
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 64->if ((R530_ZAxisCommands)==6 | (R530_ZAxisCommands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[192]; lineYield(task,192);
 		// STORE 39 TO REG#36991
 		R36991 = 39;
@@ -8454,11 +8453,11 @@ __0108:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 63->ZAxis.command = R530_ZAxisCommands
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 65->ZAxis.command = R530_ZAxisCommands
 		Q4T(task)->currentStep = (void *)&currentLine[193]; lineYield(task,193);
 		// STORE 126 TO REG#36990
 		process_ATABLE(126, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 64->R530_ZAxisCommands = 0
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 66->R530_ZAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[194]; lineYield(task,194);
 		// STORE 127 TO REG#36990
 		process_ATABLE(127, task);
@@ -8472,7 +8471,7 @@ __0109:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 69->goto AxisZControl
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 71->goto AxisZControl
 		Q4T(task)->currentStep = (void *)&currentLine[195]; lineYield(task,195);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -8600,7 +8599,7 @@ __0111:
 		Q4T(task)->currentStep = (void *)&currentLine[207]; lineYield(task,207);
 		// STORE 135 TO REG#36990
 		process_ATABLE(135, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 19->delay = 20
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 20->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[208];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8616,7 +8615,7 @@ __0113:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 19->delay = 20
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 20->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[209]; lineYield(task,209);
 		// STORE 41 TO REG#36991
 		R36991 = 41;
@@ -8632,7 +8631,7 @@ __0114:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 20->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 21->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[210];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8646,7 +8645,7 @@ __0115:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 20->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 21->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[211]; lineYield(task,211);
 		// STORE 42 TO REG#36991
 		R36991 = 42;
@@ -8664,7 +8663,7 @@ __0116:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 21->running4 = true
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 22->running4 = true
 		Q4T(task)->currentStep = (void *)&currentLine[212]; lineYield(task,212);
 		// STORE 137 TO REG#36990
 		process_ATABLE(137, task);
@@ -8692,7 +8691,7 @@ __0118:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 27->if (R540_ThetaCommands)==3 | (R540_ThetaCommands)==4 then 
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 28->if (R540_ThetaCommands)==3 | (R540_ThetaCommands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[213]; lineYield(task,213);
 		// STORE 43 TO REG#36991
 		R36991 = 43;
@@ -8708,23 +8707,23 @@ __0119:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 29->ThetaAxis.Maxspeed = R531_Speed
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 30->ThetaAxis.Maxspeed = R531_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[214]; lineYield(task,214);
 		// STORE 138 TO REG#36990
 		process_ATABLE(138, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 30->ThetaAxis.Accel = R532_Accel
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 31->ThetaAxis.Accel = R532_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[215]; lineYield(task,215);
 		// STORE 139 TO REG#36990
 		process_ATABLE(139, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 31->ThetaAxis.Decel = R533_Decel
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 32->ThetaAxis.Decel = R533_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[216]; lineYield(task,216);
 		// STORE 140 TO REG#36990
 		process_ATABLE(140, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 33->ThetaAxis.command = (R540_ThetaCommands)
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 34->ThetaAxis.command = (R540_ThetaCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[217]; lineYield(task,217);
 		// STORE 141 TO REG#36990
 		process_ATABLE(141, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 34->delay = 20
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 36->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[218];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8740,7 +8739,7 @@ __0121:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 34->delay = 20
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 36->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[219]; lineYield(task,219);
 		// STORE 44 TO REG#36991
 		R36991 = 44;
@@ -8756,7 +8755,7 @@ __0122:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 35->while ThetaAxis.command==(R540_ThetaCommands) repeat
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 37->while ThetaAxis.command==(R540_ThetaCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[220];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8770,7 +8769,7 @@ __0123:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 35->while ThetaAxis.command==(R540_ThetaCommands) repeat
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 37->while ThetaAxis.command==(R540_ThetaCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[221]; lineYield(task,221);
 		// STORE 45 TO REG#36991
 		R36991 = 45;
@@ -8788,7 +8787,7 @@ __0124:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 36->running4 = true
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 38->running4 = true
 		Q4T(task)->currentStep = (void *)&currentLine[222]; lineYield(task,222);
 		// STORE 143 TO REG#36990
 		process_ATABLE(143, task);
@@ -8816,7 +8815,7 @@ __0126:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 41->if (R540_ThetaCommands)==5 then 
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 43->if (R540_ThetaCommands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[223]; lineYield(task,223);
 		// STORE 46 TO REG#36991
 		R36991 = 46;
@@ -8832,31 +8831,31 @@ __0127:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 42->ThetaAxis.Maxspeed = R531_Speed
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 44->ThetaAxis.Maxspeed = R531_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[224]; lineYield(task,224);
 		// STORE 144 TO REG#36990
 		process_ATABLE(144, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 43->ThetaAxis.Accel = R532_Accel
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 45->ThetaAxis.Accel = R532_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[225]; lineYield(task,225);
 		// STORE 145 TO REG#36990
 		process_ATABLE(145, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 44->ThetaAxis.Decel = R533_Decel
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 46->ThetaAxis.Decel = R533_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[226]; lineYield(task,226);
 		// STORE 146 TO REG#36990
 		process_ATABLE(146, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 45->ThetaAxis.Target = R534_Target
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 47->ThetaAxis.Target = R534_Target
 		Q4T(task)->currentStep = (void *)&currentLine[227]; lineYield(task,227);
 		// STORE 147 TO REG#36990
 		process_ATABLE(147, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 46->ThetaAxis.OffsetHome = R535_HomeOffset
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 48->ThetaAxis.OffsetHome = R535_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[228]; lineYield(task,228);
 		// STORE 148 TO REG#36990
 		process_ATABLE(148, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 47->ThetaAxis.command = 5
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 49->ThetaAxis.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[229]; lineYield(task,229);
 		// STORE 149 TO REG#36990
 		process_ATABLE(149, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 49->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 51->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[230];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -8870,7 +8869,7 @@ __0129:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 49->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 51->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[231]; lineYield(task,231);
 		// STORE 47 TO REG#36991
 		R36991 = 47;
@@ -8888,7 +8887,7 @@ __0130:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 50->running4 = true
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 52->running4 = true
 		Q4T(task)->currentStep = (void *)&currentLine[232]; lineYield(task,232);
 		// STORE 150 TO REG#36990
 		process_ATABLE(150, task);
@@ -8916,7 +8915,7 @@ __0132:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 56->if ((R540_ThetaCommands)==0 & running4==true) then 
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 58->if ((R540_ThetaCommands)==0 & running4==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[233]; lineYield(task,233);
 		// STORE 48 TO REG#36991
 		R36991 = 48;
@@ -8932,11 +8931,11 @@ __0133:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 57->ThetaAxis.command = 0
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 59->ThetaAxis.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[234]; lineYield(task,234);
 		// STORE 151 TO REG#36990
 		process_ATABLE(151, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 58->running4 = false
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 60->running4 = false
 		Q4T(task)->currentStep = (void *)&currentLine[235]; lineYield(task,235);
 		// STORE 152 TO REG#36990
 		process_ATABLE(152, task);
@@ -8962,7 +8961,7 @@ __0135:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 63->if ((R540_ThetaCommands)==6 | (R540_ThetaCommands)==7) then 
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 65->if ((R540_ThetaCommands)==6 | (R540_ThetaCommands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[236]; lineYield(task,236);
 		// STORE 49 TO REG#36991
 		R36991 = 49;
@@ -8978,11 +8977,11 @@ __0136:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 64->ThetaAxis.command = R540_ThetaCommands
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 66->ThetaAxis.command = R540_ThetaCommands
 		Q4T(task)->currentStep = (void *)&currentLine[237]; lineYield(task,237);
 		// STORE 153 TO REG#36990
 		process_ATABLE(153, task);
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 65->R540_ThetaCommands = 0
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 67->R540_ThetaCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[238]; lineYield(task,238);
 		// STORE 154 TO REG#36990
 		process_ATABLE(154, task);
@@ -8996,7 +8995,7 @@ __0137:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTheta):STEP(ThetaControl):LINE 70->goto ThetaControl
+		// MODULE(AxisTheta):STEP(ThetaControl):LINE 72->goto ThetaControl
 		Q4T(task)->currentStep = (void *)&currentLine[239]; lineYield(task,239);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -9107,7 +9106,7 @@ __0139:
 		Q4T(task)->currentStep = (void *)&currentLine[250]; lineYield(task,250);
 		// STORE 162 TO REG#36990
 		process_ATABLE(162, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 18->delay = 20
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[251];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9123,7 +9122,7 @@ __0141:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 18->delay = 20
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[252]; lineYield(task,252);
 		// STORE 51 TO REG#36991
 		R36991 = 51;
@@ -9139,7 +9138,7 @@ __0142:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 19->while (Gripper.command==1) & (R550_GripperCommands==1) repeat
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 20->while (Gripper.command==1) & (R550_GripperCommands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[253];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9153,7 +9152,7 @@ __0143:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 19->while (Gripper.command==1) & (R550_GripperCommands==1) repeat
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 20->while (Gripper.command==1) & (R550_GripperCommands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[254]; lineYield(task,254);
 		// STORE 52 TO REG#36991
 		R36991 = 52;
@@ -9171,7 +9170,7 @@ __0144:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 20->running5 = true
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 21->running5 = true
 		Q4T(task)->currentStep = (void *)&currentLine[255]; lineYield(task,255);
 		// STORE 164 TO REG#36990
 		process_ATABLE(164, task);
@@ -9199,7 +9198,7 @@ __0146:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 26->if (R550_GripperCommands)==3 | (R550_GripperCommands)==4 then 
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 27->if (R550_GripperCommands)==3 | (R550_GripperCommands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[256]; lineYield(task,256);
 		// STORE 53 TO REG#36991
 		R36991 = 53;
@@ -9215,23 +9214,23 @@ __0147:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 28->Gripper.Maxspeed = R541_Speed
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 29->Gripper.Maxspeed = R541_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[257]; lineYield(task,257);
 		// STORE 165 TO REG#36990
 		process_ATABLE(165, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 29->Gripper.Accel = R542_Accel
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 30->Gripper.Accel = R542_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[258]; lineYield(task,258);
 		// STORE 166 TO REG#36990
 		process_ATABLE(166, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 30->Gripper.Decel = R543_Decel
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 31->Gripper.Decel = R543_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[259]; lineYield(task,259);
 		// STORE 167 TO REG#36990
 		process_ATABLE(167, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 32->Gripper.command = (R550_GripperCommands)
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 33->Gripper.command = (R550_GripperCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[260]; lineYield(task,260);
 		// STORE 168 TO REG#36990
 		process_ATABLE(168, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 33->delay = 20
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[261];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9247,7 +9246,7 @@ __0149:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 33->delay = 20
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[262]; lineYield(task,262);
 		// STORE 54 TO REG#36991
 		R36991 = 54;
@@ -9263,7 +9262,7 @@ __0150:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 34->while Gripper.command==(R550_GripperCommands) repeat
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 36->while Gripper.command==(R550_GripperCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[263];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9277,7 +9276,7 @@ __0151:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 34->while Gripper.command==(R550_GripperCommands) repeat
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 36->while Gripper.command==(R550_GripperCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[264]; lineYield(task,264);
 		// STORE 55 TO REG#36991
 		R36991 = 55;
@@ -9295,7 +9294,7 @@ __0152:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 35->running5 = true
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 37->running5 = true
 		Q4T(task)->currentStep = (void *)&currentLine[265]; lineYield(task,265);
 		// STORE 170 TO REG#36990
 		process_ATABLE(170, task);
@@ -9323,7 +9322,7 @@ __0154:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 40->if (R550_GripperCommands)==5 then 
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 42->if (R550_GripperCommands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[266]; lineYield(task,266);
 		// STORE 56 TO REG#36991
 		R36991 = 56;
@@ -9339,31 +9338,31 @@ __0155:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 41->Gripper.Maxspeed = R541_Speed
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 43->Gripper.Maxspeed = R541_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[267]; lineYield(task,267);
 		// STORE 171 TO REG#36990
 		process_ATABLE(171, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 42->Gripper.Accel = R542_Accel
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 44->Gripper.Accel = R542_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[268]; lineYield(task,268);
 		// STORE 172 TO REG#36990
 		process_ATABLE(172, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 43->Gripper.Decel = R533_Decel
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 45->Gripper.Decel = R533_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[269]; lineYield(task,269);
 		// STORE 173 TO REG#36990
 		process_ATABLE(173, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 44->Gripper.Target = R544_Target
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 46->Gripper.Target = R544_Target
 		Q4T(task)->currentStep = (void *)&currentLine[270]; lineYield(task,270);
 		// STORE 174 TO REG#36990
 		process_ATABLE(174, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 45->Gripper.OffsetHome = R545_HomeOffset
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 47->Gripper.OffsetHome = R545_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[271]; lineYield(task,271);
 		// STORE 175 TO REG#36990
 		process_ATABLE(175, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 46->Gripper.command = 5
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 48->Gripper.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[272]; lineYield(task,272);
 		// STORE 176 TO REG#36990
 		process_ATABLE(176, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 48->while Gripper.command==5 & (R550_GripperCommands)==5 repeat
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 50->while Gripper.command==5 & (R550_GripperCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[273];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9377,7 +9376,7 @@ __0157:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 48->while Gripper.command==5 & (R550_GripperCommands)==5 repeat
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 50->while Gripper.command==5 & (R550_GripperCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[274]; lineYield(task,274);
 		// STORE 57 TO REG#36991
 		R36991 = 57;
@@ -9395,7 +9394,7 @@ __0158:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 49->running5 = true
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 51->running5 = true
 		Q4T(task)->currentStep = (void *)&currentLine[275]; lineYield(task,275);
 		// STORE 177 TO REG#36990
 		process_ATABLE(177, task);
@@ -9423,7 +9422,7 @@ __0160:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 55->if ((R550_GripperCommands)==0 & running5==true) then 
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 57->if ((R550_GripperCommands)==0 & running5==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[276]; lineYield(task,276);
 		// STORE 58 TO REG#36991
 		R36991 = 58;
@@ -9439,11 +9438,11 @@ __0161:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 56->Gripper.command = 0
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 58->Gripper.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[277]; lineYield(task,277);
 		// STORE 178 TO REG#36990
 		process_ATABLE(178, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 57->running5 = false
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 59->running5 = false
 		Q4T(task)->currentStep = (void *)&currentLine[278]; lineYield(task,278);
 		// STORE 179 TO REG#36990
 		process_ATABLE(179, task);
@@ -9469,7 +9468,7 @@ __0163:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 60->if ((R550_GripperCommands)==6 | (R550_GripperCommands)==7) then 
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 62->if ((R550_GripperCommands)==6 | (R550_GripperCommands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[279]; lineYield(task,279);
 		// STORE 59 TO REG#36991
 		R36991 = 59;
@@ -9485,11 +9484,11 @@ __0164:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 61->Gripper.command = R550_GripperCommands
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 63->Gripper.command = R550_GripperCommands
 		Q4T(task)->currentStep = (void *)&currentLine[280]; lineYield(task,280);
 		// STORE 180 TO REG#36990
 		process_ATABLE(180, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 62->R550_GripperCommands = 0
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 64->R550_GripperCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[281]; lineYield(task,281);
 		// STORE 181 TO REG#36990
 		process_ATABLE(181, task);
@@ -9515,7 +9514,7 @@ __0166:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 66->if (R550_GripperCommands)==9 then 
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 68->if (R550_GripperCommands)==9 then 
 		Q4T(task)->currentStep = (void *)&currentLine[282]; lineYield(task,282);
 		// STORE 60 TO REG#36991
 		R36991 = 60;
@@ -9531,15 +9530,15 @@ __0167:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 67->Gripper.NewPosition = 0
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 69->Gripper.NewPosition = 0
 		Q4T(task)->currentStep = (void *)&currentLine[283]; lineYield(task,283);
 		// STORE 182 TO REG#36990
 		process_ATABLE(182, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 68->Gripper.command = R550_GripperCommands
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 70->Gripper.command = R550_GripperCommands
 		Q4T(task)->currentStep = (void *)&currentLine[284]; lineYield(task,284);
 		// STORE 183 TO REG#36990
 		process_ATABLE(183, task);
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 69->R550_GripperCommands = 0
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 71->R550_GripperCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[285]; lineYield(task,285);
 		// STORE 184 TO REG#36990
 		process_ATABLE(184, task);
@@ -9553,7 +9552,7 @@ __0168:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisGripper):STEP(GripperControl):LINE 71->goto GripperControl
+		// MODULE(AxisGripper):STEP(GripperControl):LINE 73->goto GripperControl
 		Q4T(task)->currentStep = (void *)&currentLine[286]; lineYield(task,286);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -9664,7 +9663,7 @@ __0170:
 		Q4T(task)->currentStep = (void *)&currentLine[297]; lineYield(task,297);
 		// STORE 192 TO REG#36990
 		process_ATABLE(192, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 18->delay = 20
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[298];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9680,7 +9679,7 @@ __0172:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 18->delay = 20
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[299]; lineYield(task,299);
 		// STORE 62 TO REG#36991
 		R36991 = 62;
@@ -9696,7 +9695,7 @@ __0173:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 20->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[300];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9710,7 +9709,7 @@ __0174:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 20->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[301]; lineYield(task,301);
 		// STORE 63 TO REG#36991
 		R36991 = 63;
@@ -9728,7 +9727,7 @@ __0175:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 20->running7 = true
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 21->running7 = true
 		Q4T(task)->currentStep = (void *)&currentLine[302]; lineYield(task,302);
 		// STORE 194 TO REG#36990
 		process_ATABLE(194, task);
@@ -9756,7 +9755,7 @@ __0177:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 26->if (R570_Empty1Commands)==3 | (R570_Empty1Commands)==4 then 
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 27->if (R570_Empty1Commands)==3 | (R570_Empty1Commands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[303]; lineYield(task,303);
 		// STORE 64 TO REG#36991
 		R36991 = 64;
@@ -9772,23 +9771,23 @@ __0178:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 28->EmptyAxis1.Maxspeed = R561_Speed
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 29->EmptyAxis1.Maxspeed = R561_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[304]; lineYield(task,304);
 		// STORE 195 TO REG#36990
 		process_ATABLE(195, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 29->EmptyAxis1.Accel = R562_Accel
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 30->EmptyAxis1.Accel = R562_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[305]; lineYield(task,305);
 		// STORE 196 TO REG#36990
 		process_ATABLE(196, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 30->EmptyAxis1.Decel = R563_Decel
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 31->EmptyAxis1.Decel = R563_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[306]; lineYield(task,306);
 		// STORE 197 TO REG#36990
 		process_ATABLE(197, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 32->EmptyAxis1.command = (R570_Empty1Commands)
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 33->EmptyAxis1.command = (R570_Empty1Commands)
 		Q4T(task)->currentStep = (void *)&currentLine[307]; lineYield(task,307);
 		// STORE 198 TO REG#36990
 		process_ATABLE(198, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 33->delay = 20
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[308];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9804,7 +9803,7 @@ __0180:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 33->delay = 20
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[309]; lineYield(task,309);
 		// STORE 65 TO REG#36991
 		R36991 = 65;
@@ -9820,7 +9819,7 @@ __0181:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 34->while EmptyAxis1.command==(R570_Empty1Commands) repeat
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 36->while EmptyAxis1.command==(R570_Empty1Commands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[310];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9834,7 +9833,7 @@ __0182:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 34->while EmptyAxis1.command==(R570_Empty1Commands) repeat
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 36->while EmptyAxis1.command==(R570_Empty1Commands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[311]; lineYield(task,311);
 		// STORE 66 TO REG#36991
 		R36991 = 66;
@@ -9852,7 +9851,7 @@ __0183:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 35->running7 = true
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 37->running7 = true
 		Q4T(task)->currentStep = (void *)&currentLine[312]; lineYield(task,312);
 		// STORE 200 TO REG#36990
 		process_ATABLE(200, task);
@@ -9880,7 +9879,7 @@ __0185:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 40->if (R570_Empty1Commands)==5 then 
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 42->if (R570_Empty1Commands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[313]; lineYield(task,313);
 		// STORE 67 TO REG#36991
 		R36991 = 67;
@@ -9896,31 +9895,31 @@ __0186:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 41->EmptyAxis1.Maxspeed = R561_Speed
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 43->EmptyAxis1.Maxspeed = R561_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[314]; lineYield(task,314);
 		// STORE 201 TO REG#36990
 		process_ATABLE(201, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 42->EmptyAxis1.Accel = R562_Accel
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 44->EmptyAxis1.Accel = R562_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[315]; lineYield(task,315);
 		// STORE 202 TO REG#36990
 		process_ATABLE(202, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 43->EmptyAxis1.Decel = R563_Decel
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 45->EmptyAxis1.Decel = R563_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[316]; lineYield(task,316);
 		// STORE 203 TO REG#36990
 		process_ATABLE(203, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 44->EmptyAxis1.Target = R564_Target
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 46->EmptyAxis1.Target = R564_Target
 		Q4T(task)->currentStep = (void *)&currentLine[317]; lineYield(task,317);
 		// STORE 204 TO REG#36990
 		process_ATABLE(204, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 45->EmptyAxis1.OffsetHome = R565_HomeOffset
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 47->EmptyAxis1.OffsetHome = R565_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[318]; lineYield(task,318);
 		// STORE 205 TO REG#36990
 		process_ATABLE(205, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 46->EmptyAxis1.command = 5
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 48->EmptyAxis1.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[319]; lineYield(task,319);
 		// STORE 206 TO REG#36990
 		process_ATABLE(206, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 48->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 50->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[320];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -9934,7 +9933,7 @@ __0188:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 48->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 50->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[321]; lineYield(task,321);
 		// STORE 68 TO REG#36991
 		R36991 = 68;
@@ -9952,7 +9951,7 @@ __0189:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 49->running7 = true
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 51->running7 = true
 		Q4T(task)->currentStep = (void *)&currentLine[322]; lineYield(task,322);
 		// STORE 207 TO REG#36990
 		process_ATABLE(207, task);
@@ -9980,7 +9979,7 @@ __0191:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 55->if ((R570_Empty1Commands)==0 & running7==true) then 
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 57->if ((R570_Empty1Commands)==0 & running7==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[323]; lineYield(task,323);
 		// STORE 69 TO REG#36991
 		R36991 = 69;
@@ -9996,11 +9995,11 @@ __0192:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 56->EmptyAxis1.command = 0
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 58->EmptyAxis1.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[324]; lineYield(task,324);
 		// STORE 208 TO REG#36990
 		process_ATABLE(208, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 57->running7 = false
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 59->running7 = false
 		Q4T(task)->currentStep = (void *)&currentLine[325]; lineYield(task,325);
 		// STORE 209 TO REG#36990
 		process_ATABLE(209, task);
@@ -10026,7 +10025,7 @@ __0194:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 60->if ((R570_Empty1Commands)==6 | (R570_Empty1Commands)==7) then 
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 62->if ((R570_Empty1Commands)==6 | (R570_Empty1Commands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[326]; lineYield(task,326);
 		// STORE 70 TO REG#36991
 		R36991 = 70;
@@ -10042,11 +10041,11 @@ __0195:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 61->EmptyAxis1.command = R570_Empty1Commands
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 63->EmptyAxis1.command = R570_Empty1Commands
 		Q4T(task)->currentStep = (void *)&currentLine[327]; lineYield(task,327);
 		// STORE 210 TO REG#36990
 		process_ATABLE(210, task);
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 62->R570_Empty1Commands = 0
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 64->R570_Empty1Commands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[328]; lineYield(task,328);
 		// STORE 211 TO REG#36990
 		process_ATABLE(211, task);
@@ -10060,7 +10059,7 @@ __0196:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 67->goto Empty1Control
+		// MODULE(AxisEmpty1):STEP(Empty1Control):LINE 69->goto Empty1Control
 		Q4T(task)->currentStep = (void *)&currentLine[329]; lineYield(task,329);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -10171,7 +10170,7 @@ __0198:
 		Q4T(task)->currentStep = (void *)&currentLine[340]; lineYield(task,340);
 		// STORE 219 TO REG#36990
 		process_ATABLE(219, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 18->delay = 20
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[341];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10187,7 +10186,7 @@ __0200:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 18->delay = 20
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[342]; lineYield(task,342);
 		// STORE 72 TO REG#36991
 		R36991 = 72;
@@ -10203,7 +10202,7 @@ __0201:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 20->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[343];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10217,7 +10216,7 @@ __0202:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 20->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[344]; lineYield(task,344);
 		// STORE 73 TO REG#36991
 		R36991 = 73;
@@ -10235,7 +10234,7 @@ __0203:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 20->running8 = true
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 21->running8 = true
 		Q4T(task)->currentStep = (void *)&currentLine[345]; lineYield(task,345);
 		// STORE 221 TO REG#36990
 		process_ATABLE(221, task);
@@ -10263,7 +10262,7 @@ __0205:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 26->if (R580_Empty2Commands)==3 | (R580_Empty2Commands)==4 then 
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 27->if (R580_Empty2Commands)==3 | (R580_Empty2Commands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[346]; lineYield(task,346);
 		// STORE 74 TO REG#36991
 		R36991 = 74;
@@ -10279,23 +10278,23 @@ __0206:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 28->EmptyAxis2.Maxspeed = R571_Speed
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 29->EmptyAxis2.Maxspeed = R571_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[347]; lineYield(task,347);
 		// STORE 222 TO REG#36990
 		process_ATABLE(222, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 29->EmptyAxis2.Accel = R572_Accel
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 30->EmptyAxis2.Accel = R572_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[348]; lineYield(task,348);
 		// STORE 223 TO REG#36990
 		process_ATABLE(223, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 30->EmptyAxis2.Decel = R573_Decel
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 31->EmptyAxis2.Decel = R573_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[349]; lineYield(task,349);
 		// STORE 224 TO REG#36990
 		process_ATABLE(224, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 32->EmptyAxis2.command = (R580_Empty2Commands)
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 33->EmptyAxis2.command = (R580_Empty2Commands)
 		Q4T(task)->currentStep = (void *)&currentLine[350]; lineYield(task,350);
 		// STORE 225 TO REG#36990
 		process_ATABLE(225, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 33->delay = 20
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[351];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10311,7 +10310,7 @@ __0208:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 33->delay = 20
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[352]; lineYield(task,352);
 		// STORE 75 TO REG#36991
 		R36991 = 75;
@@ -10327,7 +10326,7 @@ __0209:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 34->while EmptyAxis2.command==(R580_Empty2Commands) repeat
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 36->while EmptyAxis2.command==(R580_Empty2Commands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[353];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10341,7 +10340,7 @@ __0210:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 34->while EmptyAxis2.command==(R580_Empty2Commands) repeat
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 36->while EmptyAxis2.command==(R580_Empty2Commands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[354]; lineYield(task,354);
 		// STORE 76 TO REG#36991
 		R36991 = 76;
@@ -10359,7 +10358,7 @@ __0211:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 35->running8 = true
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 37->running8 = true
 		Q4T(task)->currentStep = (void *)&currentLine[355]; lineYield(task,355);
 		// STORE 227 TO REG#36990
 		process_ATABLE(227, task);
@@ -10387,7 +10386,7 @@ __0213:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 40->if (R580_Empty2Commands)==5 then 
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 42->if (R580_Empty2Commands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[356]; lineYield(task,356);
 		// STORE 77 TO REG#36991
 		R36991 = 77;
@@ -10403,31 +10402,31 @@ __0214:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 41->EmptyAxis2.Maxspeed = R571_Speed
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 43->EmptyAxis2.Maxspeed = R571_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[357]; lineYield(task,357);
 		// STORE 228 TO REG#36990
 		process_ATABLE(228, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 42->EmptyAxis2.Accel = R572_Accel
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 44->EmptyAxis2.Accel = R572_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[358]; lineYield(task,358);
 		// STORE 229 TO REG#36990
 		process_ATABLE(229, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 43->EmptyAxis2.Decel = R573_Decel
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 45->EmptyAxis2.Decel = R573_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[359]; lineYield(task,359);
 		// STORE 230 TO REG#36990
 		process_ATABLE(230, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 44->EmptyAxis2.Target = R574_Target
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 46->EmptyAxis2.Target = R574_Target
 		Q4T(task)->currentStep = (void *)&currentLine[360]; lineYield(task,360);
 		// STORE 231 TO REG#36990
 		process_ATABLE(231, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 45->EmptyAxis2.OffsetHome = R575_HomeOffset
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 47->EmptyAxis2.OffsetHome = R575_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[361]; lineYield(task,361);
 		// STORE 232 TO REG#36990
 		process_ATABLE(232, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 46->EmptyAxis2.command = 5
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 48->EmptyAxis2.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[362]; lineYield(task,362);
 		// STORE 233 TO REG#36990
 		process_ATABLE(233, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 48->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 50->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[363];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10441,7 +10440,7 @@ __0216:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 48->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 50->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[364]; lineYield(task,364);
 		// STORE 78 TO REG#36991
 		R36991 = 78;
@@ -10459,7 +10458,7 @@ __0217:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 49->running8 = true
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 51->running8 = true
 		Q4T(task)->currentStep = (void *)&currentLine[365]; lineYield(task,365);
 		// STORE 234 TO REG#36990
 		process_ATABLE(234, task);
@@ -10487,7 +10486,7 @@ __0219:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 55->if ((R580_Empty2Commands)==0 & running8==true) then 
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 57->if ((R580_Empty2Commands)==0 & running8==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[366]; lineYield(task,366);
 		// STORE 79 TO REG#36991
 		R36991 = 79;
@@ -10503,11 +10502,11 @@ __0220:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 56->EmptyAxis2.command = 0
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 58->EmptyAxis2.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[367]; lineYield(task,367);
 		// STORE 235 TO REG#36990
 		process_ATABLE(235, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 57->running8 = false
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 59->running8 = false
 		Q4T(task)->currentStep = (void *)&currentLine[368]; lineYield(task,368);
 		// STORE 236 TO REG#36990
 		process_ATABLE(236, task);
@@ -10533,7 +10532,7 @@ __0222:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 60->if ((R580_Empty2Commands)==6 | (R580_Empty2Commands)==7) then 
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 62->if ((R580_Empty2Commands)==6 | (R580_Empty2Commands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[369]; lineYield(task,369);
 		// STORE 80 TO REG#36991
 		R36991 = 80;
@@ -10549,11 +10548,11 @@ __0223:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 61->EmptyAxis2.command = R580_Empty2Commands
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 63->EmptyAxis2.command = R580_Empty2Commands
 		Q4T(task)->currentStep = (void *)&currentLine[370]; lineYield(task,370);
 		// STORE 237 TO REG#36990
 		process_ATABLE(237, task);
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 62->R580_Empty2Commands = 0
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 64->R580_Empty2Commands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[371]; lineYield(task,371);
 		// STORE 238 TO REG#36990
 		process_ATABLE(238, task);
@@ -10567,7 +10566,7 @@ __0224:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 67->goto Empty2Control
+		// MODULE(AxisEmpty2):STEP(Empty2Control):LINE 69->goto Empty2Control
 		Q4T(task)->currentStep = (void *)&currentLine[372]; lineYield(task,372);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -10714,7 +10713,7 @@ __0228:
 		Q4T(task)->currentStep = (void *)&currentLine[386]; lineYield(task,386);
 		// STORE 248 TO REG#36990
 		process_ATABLE(248, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 18->delay = 20
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[387];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10730,7 +10729,7 @@ __0230:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 18->delay = 20
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[388]; lineYield(task,388);
 		// STORE 83 TO REG#36991
 		R36991 = 83;
@@ -10746,7 +10745,7 @@ __0231:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 20->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[389];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10760,7 +10759,7 @@ __0232:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 20->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[390]; lineYield(task,390);
 		// STORE 84 TO REG#36991
 		R36991 = 84;
@@ -10778,7 +10777,7 @@ __0233:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 20->running9 = true
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 21->running9 = true
 		Q4T(task)->currentStep = (void *)&currentLine[391]; lineYield(task,391);
 		// STORE 250 TO REG#36990
 		process_ATABLE(250, task);
@@ -10806,7 +10805,7 @@ __0235:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 26->if (R590_TransferStationCommands)==3 | (R590_TransferStationCommands)==4 then 
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 27->if (R590_TransferStationCommands)==3 | (R590_TransferStationCommands)==4 then 
 		Q4T(task)->currentStep = (void *)&currentLine[392]; lineYield(task,392);
 		// STORE 85 TO REG#36991
 		R36991 = 85;
@@ -10822,23 +10821,23 @@ __0236:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 28->TransferStation.Maxspeed = R581_Speed
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 29->TransferStation.Maxspeed = R581_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[393]; lineYield(task,393);
 		// STORE 251 TO REG#36990
 		process_ATABLE(251, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 29->TransferStation.Accel = R582_Accel
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 30->TransferStation.Accel = R582_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[394]; lineYield(task,394);
 		// STORE 252 TO REG#36990
 		process_ATABLE(252, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 30->TransferStation.Decel = R583_Decel
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 31->TransferStation.Decel = R583_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[395]; lineYield(task,395);
 		// STORE 253 TO REG#36990
 		process_ATABLE(253, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 32->TransferStation.command = (R590_TransferStationCommands)
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 33->TransferStation.command = (R590_TransferStationCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[396]; lineYield(task,396);
 		// STORE 254 TO REG#36990
 		process_ATABLE(254, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 33->delay = 20
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[397];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10854,7 +10853,7 @@ __0238:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 33->delay = 20
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 35->delay = 2
 		Q4T(task)->currentStep = (void *)&currentLine[398]; lineYield(task,398);
 		// STORE 86 TO REG#36991
 		R36991 = 86;
@@ -10870,7 +10869,7 @@ __0239:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 34->while TransferStation.command==(R590_TransferStationCommands) repeat
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 36->while TransferStation.command==(R590_TransferStationCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[399];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10884,7 +10883,7 @@ __0240:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 34->while TransferStation.command==(R590_TransferStationCommands) repeat
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 36->while TransferStation.command==(R590_TransferStationCommands) repeat
 		Q4T(task)->currentStep = (void *)&currentLine[400]; lineYield(task,400);
 		// STORE 87 TO REG#36991
 		R36991 = 87;
@@ -10902,7 +10901,7 @@ __0241:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 35->running9 = true
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 37->running9 = true
 		Q4T(task)->currentStep = (void *)&currentLine[401]; lineYield(task,401);
 		// STORE 256 TO REG#36990
 		process_ATABLE(256, task);
@@ -10930,7 +10929,7 @@ __0243:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 40->if (R590_TransferStationCommands)==5 then 
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 42->if (R590_TransferStationCommands)==5 then 
 		Q4T(task)->currentStep = (void *)&currentLine[402]; lineYield(task,402);
 		// STORE 88 TO REG#36991
 		R36991 = 88;
@@ -10946,31 +10945,31 @@ __0244:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 41->TransferStation.Maxspeed = R581_Speed
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 43->TransferStation.Maxspeed = R581_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[403]; lineYield(task,403);
 		// STORE 257 TO REG#36990
 		process_ATABLE(257, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 42->TransferStation.Accel = R582_Accel
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 44->TransferStation.Accel = R582_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[404]; lineYield(task,404);
 		// STORE 258 TO REG#36990
 		process_ATABLE(258, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 43->TransferStation.Decel = R583_Decel
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 45->TransferStation.Decel = R583_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[405]; lineYield(task,405);
 		// STORE 259 TO REG#36990
 		process_ATABLE(259, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 44->TransferStation.Target = R584_Target
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 46->TransferStation.Target = R584_Target
 		Q4T(task)->currentStep = (void *)&currentLine[406]; lineYield(task,406);
 		// STORE 260 TO REG#36990
 		process_ATABLE(260, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 45->TransferStation.OffsetHome = R585_HomeOffset
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 47->TransferStation.OffsetHome = R585_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[407]; lineYield(task,407);
 		// STORE 261 TO REG#36990
 		process_ATABLE(261, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 46->TransferStation.command = 5
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 48->TransferStation.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[408]; lineYield(task,408);
 		// STORE 262 TO REG#36990
 		process_ATABLE(262, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 48->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 50->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[409];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -10984,7 +10983,7 @@ __0246:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 48->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 50->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat
 		Q4T(task)->currentStep = (void *)&currentLine[410]; lineYield(task,410);
 		// STORE 89 TO REG#36991
 		R36991 = 89;
@@ -11002,7 +11001,7 @@ __0247:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 49->running9 = true
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 51->running9 = true
 		Q4T(task)->currentStep = (void *)&currentLine[411]; lineYield(task,411);
 		// STORE 263 TO REG#36990
 		process_ATABLE(263, task);
@@ -11030,7 +11029,7 @@ __0249:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 55->if ((R590_TransferStationCommands)==0 & running9==true) then 
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 57->if ((R590_TransferStationCommands)==0 & running9==true) then 
 		Q4T(task)->currentStep = (void *)&currentLine[412]; lineYield(task,412);
 		// STORE 90 TO REG#36991
 		R36991 = 90;
@@ -11046,11 +11045,11 @@ __0250:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 56->TransferStation.command = 0
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 58->TransferStation.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[413]; lineYield(task,413);
 		// STORE 264 TO REG#36990
 		process_ATABLE(264, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 57->running9 = false
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 59->running9 = false
 		Q4T(task)->currentStep = (void *)&currentLine[414]; lineYield(task,414);
 		// STORE 265 TO REG#36990
 		process_ATABLE(265, task);
@@ -11076,7 +11075,7 @@ __0252:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 60->if ((R590_TransferStationCommands)==6 | (R590_TransferStationCommands)==7) then 
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 62->if ((R590_TransferStationCommands)==6 | (R590_TransferStationCommands)==7) then 
 		Q4T(task)->currentStep = (void *)&currentLine[415]; lineYield(task,415);
 		// STORE 91 TO REG#36991
 		R36991 = 91;
@@ -11092,11 +11091,11 @@ __0253:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 61->TransferStation.command = R590_TransferStationCommands
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 63->TransferStation.command = R590_TransferStationCommands
 		Q4T(task)->currentStep = (void *)&currentLine[416]; lineYield(task,416);
 		// STORE 266 TO REG#36990
 		process_ATABLE(266, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 62->R590_TransferStationCommands = 0
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 64->R590_TransferStationCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[417]; lineYield(task,417);
 		// STORE 267 TO REG#36990
 		process_ATABLE(267, task);
@@ -11122,7 +11121,7 @@ __0255:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 64->if (R590_TransferStationCommands)==8 then 
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 66->if (R590_TransferStationCommands)==8 then 
 		Q4T(task)->currentStep = (void *)&currentLine[418]; lineYield(task,418);
 		// STORE 92 TO REG#36991
 		R36991 = 92;
@@ -11138,11 +11137,11 @@ __0256:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 65->TransferStation.command = R590_TransferStationCommands
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 67->TransferStation.command = R590_TransferStationCommands
 		Q4T(task)->currentStep = (void *)&currentLine[419]; lineYield(task,419);
 		// STORE 268 TO REG#36990
 		process_ATABLE(268, task);
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 66->delay = 10
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 68->delay = 10
 		Q4T(task)->currentStep = (void *)&currentLine[420];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
@@ -11158,7 +11157,7 @@ __0258:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 66->delay = 10
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 68->delay = 10
 		Q4T(task)->currentStep = (void *)&currentLine[421]; lineYield(task,421);
 		// STORE 93 TO REG#36991
 		R36991 = 93;
@@ -11174,7 +11173,7 @@ __0259:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 67->R590_TransferStationCommands = 0
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 69->R590_TransferStationCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[422]; lineYield(task,422);
 		// STORE 270 TO REG#36990
 		process_ATABLE(270, task);
@@ -11188,7 +11187,7 @@ __0257:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 71->goto CableElevfControl
+		// MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 73->goto CableElevfControl
 		Q4T(task)->currentStep = (void *)&currentLine[423]; lineYield(task,423);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -11847,112 +11846,108 @@ FastUpdates_Update_ctc_01:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(FastUpdates):STEP(Update):LINE 2->$REGISTERS[13002] = 0
+		// MODULE(FastUpdates):STEP(Update):LINE 5->R36711_Ax1Fpos = XAxis.fpos*1000
 		Q4T(task)->currentStep = (void *)&currentLine[477]; lineYield(task,477);
 		// STORE 304 TO REG#36990
 		process_ATABLE(304, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 5->R36711_Ax1Fpos = XAxis.fpos*1000
+		// MODULE(FastUpdates):STEP(Update):LINE 6->R36712_Ax1Fpos = YAxis.fpos*1000
 		Q4T(task)->currentStep = (void *)&currentLine[478]; lineYield(task,478);
 		// STORE 305 TO REG#36990
 		process_ATABLE(305, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 6->R36712_Ax1Fpos = YAxis.fpos*1000
+		// MODULE(FastUpdates):STEP(Update):LINE 7->R36713_Ax1Fpos = ZAxis.fpos*1000
 		Q4T(task)->currentStep = (void *)&currentLine[479]; lineYield(task,479);
 		// STORE 306 TO REG#36990
 		process_ATABLE(306, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 7->R36713_Ax1Fpos = ZAxis.fpos*1000
+		// MODULE(FastUpdates):STEP(Update):LINE 8->R36714_Ax1Fpos = ThetaAxis.fpos*1000
 		Q4T(task)->currentStep = (void *)&currentLine[480]; lineYield(task,480);
 		// STORE 307 TO REG#36990
 		process_ATABLE(307, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 8->R36714_Ax1Fpos = ThetaAxis.fpos*1000
+		// MODULE(FastUpdates):STEP(Update):LINE 10->R509_X_fpos = R36711_Ax1Fpos
 		Q4T(task)->currentStep = (void *)&currentLine[481]; lineYield(task,481);
 		// STORE 308 TO REG#36990
 		process_ATABLE(308, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 10->R509_X_fpos = R36711_Ax1Fpos
+		// MODULE(FastUpdates):STEP(Update):LINE 11->R519_Y_fpos = R36712_Ax1Fpos
 		Q4T(task)->currentStep = (void *)&currentLine[482]; lineYield(task,482);
 		// STORE 309 TO REG#36990
 		process_ATABLE(309, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 11->R519_Y_fpos = R36712_Ax1Fpos
+		// MODULE(FastUpdates):STEP(Update):LINE 12->R529_Z_fpos = R36713_Ax1Fpos
 		Q4T(task)->currentStep = (void *)&currentLine[483]; lineYield(task,483);
 		// STORE 310 TO REG#36990
 		process_ATABLE(310, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 12->R529_Z_fpos = R36713_Ax1Fpos
+		// MODULE(FastUpdates):STEP(Update):LINE 13->R539_fpos = R36714_Ax1Fpos
 		Q4T(task)->currentStep = (void *)&currentLine[484]; lineYield(task,484);
 		// STORE 311 TO REG#36990
 		process_ATABLE(311, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 13->R539_fpos = R36714_Ax1Fpos
+		// MODULE(FastUpdates):STEP(Update):LINE 15->XAxis.Maxspeed = R501_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[485]; lineYield(task,485);
 		// STORE 312 TO REG#36990
 		process_ATABLE(312, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 15->XAxis.Maxspeed = R501_Speed
+		// MODULE(FastUpdates):STEP(Update):LINE 16->XAxis.Accel = R502_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[486]; lineYield(task,486);
 		// STORE 313 TO REG#36990
 		process_ATABLE(313, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 16->XAxis.Accel = R502_Accel
+		// MODULE(FastUpdates):STEP(Update):LINE 17->XAxis.Decel = R503_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[487]; lineYield(task,487);
 		// STORE 314 TO REG#36990
 		process_ATABLE(314, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 17->XAxis.Decel = R503_Decel
+		// MODULE(FastUpdates):STEP(Update):LINE 18->XAxis.Target = R504_Target
 		Q4T(task)->currentStep = (void *)&currentLine[488]; lineYield(task,488);
 		// STORE 315 TO REG#36990
 		process_ATABLE(315, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 18->XAxis.Target = R504_Target
+		// MODULE(FastUpdates):STEP(Update):LINE 20->YAxis.Maxspeed = R511_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[489]; lineYield(task,489);
 		// STORE 316 TO REG#36990
 		process_ATABLE(316, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 20->YAxis.Maxspeed = R511_Speed
+		// MODULE(FastUpdates):STEP(Update):LINE 21->YAxis.Accel = R512_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[490]; lineYield(task,490);
 		// STORE 317 TO REG#36990
 		process_ATABLE(317, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 21->YAxis.Accel = R512_Accel
+		// MODULE(FastUpdates):STEP(Update):LINE 22->YAxis.Decel = R513_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[491]; lineYield(task,491);
 		// STORE 318 TO REG#36990
 		process_ATABLE(318, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 22->YAxis.Decel = R513_Decel
+		// MODULE(FastUpdates):STEP(Update):LINE 23->YAxis.Target = R514_Target
 		Q4T(task)->currentStep = (void *)&currentLine[492]; lineYield(task,492);
 		// STORE 319 TO REG#36990
 		process_ATABLE(319, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 23->YAxis.Target = R514_Target
+		// MODULE(FastUpdates):STEP(Update):LINE 25->ZAxis.Maxspeed = R521_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[493]; lineYield(task,493);
 		// STORE 320 TO REG#36990
 		process_ATABLE(320, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 25->ZAxis.Maxspeed = R521_Speed
+		// MODULE(FastUpdates):STEP(Update):LINE 26->ZAxis.Accel = R522_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[494]; lineYield(task,494);
 		// STORE 321 TO REG#36990
 		process_ATABLE(321, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 26->ZAxis.Accel = R522_Accel
+		// MODULE(FastUpdates):STEP(Update):LINE 27->ZAxis.Decel = R523_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[495]; lineYield(task,495);
 		// STORE 322 TO REG#36990
 		process_ATABLE(322, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 27->ZAxis.Decel = R523_Decel
+		// MODULE(FastUpdates):STEP(Update):LINE 28->ZAxis.Target = R524_Target
 		Q4T(task)->currentStep = (void *)&currentLine[496]; lineYield(task,496);
 		// STORE 323 TO REG#36990
 		process_ATABLE(323, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 28->ZAxis.Target = R524_Target
+		// MODULE(FastUpdates):STEP(Update):LINE 30->ThetaAxis.Maxspeed = R531_Speed
 		Q4T(task)->currentStep = (void *)&currentLine[497]; lineYield(task,497);
 		// STORE 324 TO REG#36990
 		process_ATABLE(324, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 30->ThetaAxis.Maxspeed = R531_Speed
+		// MODULE(FastUpdates):STEP(Update):LINE 31->ThetaAxis.Accel = R532_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[498]; lineYield(task,498);
 		// STORE 325 TO REG#36990
 		process_ATABLE(325, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 31->ThetaAxis.Accel = R532_Accel
+		// MODULE(FastUpdates):STEP(Update):LINE 32->ThetaAxis.Decel = R533_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[499]; lineYield(task,499);
 		// STORE 326 TO REG#36990
 		process_ATABLE(326, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 32->ThetaAxis.Decel = R533_Decel
+		// MODULE(FastUpdates):STEP(Update):LINE 33->ThetaAxis.Target = R534_Target
 		Q4T(task)->currentStep = (void *)&currentLine[500]; lineYield(task,500);
 		// STORE 327 TO REG#36990
 		process_ATABLE(327, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 33->ThetaAxis.Target = R534_Target
+		// MODULE(FastUpdates):STEP(Update):LINE 36->R9_Dwell = $REGISTERS[13002]
 		Q4T(task)->currentStep = (void *)&currentLine[501]; lineYield(task,501);
 		// STORE 328 TO REG#36990
 		process_ATABLE(328, task);
-		// MODULE(FastUpdates):STEP(Update):LINE 36->R9_Dwell = $REGISTERS[13002]
-		Q4T(task)->currentStep = (void *)&currentLine[502]; lineYield(task,502);
-		// STORE 329 TO REG#36990
-		process_ATABLE(329, task);
 		// MODULE(FastUpdates):STEP(Update):LINE 39->goto Update
-		Q4T(task)->currentStep = (void *)&currentLine[503]; lineYield(task,503);
+		Q4T(task)->currentStep = (void *)&currentLine[502]; lineYield(task,502);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO FastUpdates_Update
@@ -11969,7 +11964,7 @@ Updates_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(Updates):LINE 2->goto Update
-		Q4T(task)->currentStep = (void *)&currentLine[504]; lineYield(task,504);
+		Q4T(task)->currentStep = (void *)&currentLine[503]; lineYield(task,503);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO Updates_Update
@@ -11986,19 +11981,19 @@ Updates_Update_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(Updates):STEP(Update):LINE 2->R36101_Temp = ThetaAxis.fpos*1000
+		Q4T(task)->currentStep = (void *)&currentLine[504]; lineYield(task,504);
+		// STORE 329 TO REG#36990
+		process_ATABLE(329, task);
+		// MODULE(Updates):STEP(Update):LINE 3->R539_fpos = R36101_Temp
 		Q4T(task)->currentStep = (void *)&currentLine[505]; lineYield(task,505);
 		// STORE 330 TO REG#36990
 		process_ATABLE(330, task);
-		// MODULE(Updates):STEP(Update):LINE 3->R539_fpos = R36101_Temp
-		Q4T(task)->currentStep = (void *)&currentLine[506]; lineYield(task,506);
-		// STORE 331 TO REG#36990
-		process_ATABLE(331, task);
-		// MODULE(Updates):STEP(Update):LINE 4->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[507];
+		// MODULE(Updates):STEP(Update):LINE 5->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[506];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 332 TO REG#36990
-		process_ATABLE(332, task); start_of_step_timeout_flag = 0;
+		// STORE 331 TO REG#36990
+		process_ATABLE(331, task); start_of_step_timeout_flag = 0;
 		// GOTO __0295
 		goto __0295;
 // [0308]
@@ -12009,8 +12004,8 @@ __0295:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 4->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[508]; lineYield(task,508);
+		// MODULE(Updates):STEP(Update):LINE 5->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[507]; lineYield(task,507);
 		// STORE 107 TO REG#36991
 		R36991 = 107;
 		// IF REG#36991=0 GOTO __0296
@@ -12025,20 +12020,20 @@ __0296:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 6->R36101_Temp = Gripper.fpos*1000
+		// MODULE(Updates):STEP(Update):LINE 7->R36101_Temp = Gripper.fpos*1000
+		Q4T(task)->currentStep = (void *)&currentLine[508]; lineYield(task,508);
+		// STORE 332 TO REG#36990
+		process_ATABLE(332, task);
+		// MODULE(Updates):STEP(Update):LINE 8->R549_fpos = R36101_Temp
 		Q4T(task)->currentStep = (void *)&currentLine[509]; lineYield(task,509);
 		// STORE 333 TO REG#36990
 		process_ATABLE(333, task);
-		// MODULE(Updates):STEP(Update):LINE 7->R549_fpos = R36101_Temp
-		Q4T(task)->currentStep = (void *)&currentLine[510]; lineYield(task,510);
-		// STORE 334 TO REG#36990
-		process_ATABLE(334, task);
-		// MODULE(Updates):STEP(Update):LINE 8->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[511];
+		// MODULE(Updates):STEP(Update):LINE 10->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[510];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 335 TO REG#36990
-		process_ATABLE(335, task); start_of_step_timeout_flag = 0;
+		// STORE 334 TO REG#36990
+		process_ATABLE(334, task); start_of_step_timeout_flag = 0;
 		// GOTO __0297
 		goto __0297;
 // [0310]
@@ -12049,8 +12044,8 @@ __0297:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 8->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[512]; lineYield(task,512);
+		// MODULE(Updates):STEP(Update):LINE 10->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[511]; lineYield(task,511);
 		// STORE 108 TO REG#36991
 		R36991 = 108;
 		// IF REG#36991=0 GOTO __0298
@@ -12065,20 +12060,20 @@ __0298:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 14->R36101_Temp = EmptyAxis1.fpos*1000
+		// MODULE(Updates):STEP(Update):LINE 16->R36101_Temp = EmptyAxis1.fpos*1000
+		Q4T(task)->currentStep = (void *)&currentLine[512]; lineYield(task,512);
+		// STORE 335 TO REG#36990
+		process_ATABLE(335, task);
+		// MODULE(Updates):STEP(Update):LINE 17->R569_fpos = R36101_Temp
 		Q4T(task)->currentStep = (void *)&currentLine[513]; lineYield(task,513);
 		// STORE 336 TO REG#36990
 		process_ATABLE(336, task);
-		// MODULE(Updates):STEP(Update):LINE 15->R569_fpos = R36101_Temp
-		Q4T(task)->currentStep = (void *)&currentLine[514]; lineYield(task,514);
-		// STORE 337 TO REG#36990
-		process_ATABLE(337, task);
-		// MODULE(Updates):STEP(Update):LINE 16->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[515];
+		// MODULE(Updates):STEP(Update):LINE 19->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[514];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 338 TO REG#36990
-		process_ATABLE(338, task); start_of_step_timeout_flag = 0;
+		// STORE 337 TO REG#36990
+		process_ATABLE(337, task); start_of_step_timeout_flag = 0;
 		// GOTO __0299
 		goto __0299;
 // [0312]
@@ -12089,8 +12084,8 @@ __0299:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 16->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[516]; lineYield(task,516);
+		// MODULE(Updates):STEP(Update):LINE 19->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[515]; lineYield(task,515);
 		// STORE 109 TO REG#36991
 		R36991 = 109;
 		// IF REG#36991=0 GOTO __0300
@@ -12105,20 +12100,20 @@ __0300:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 18->R36101_Temp = EmptyAxis2.fpos*1000
+		// MODULE(Updates):STEP(Update):LINE 21->R36101_Temp = EmptyAxis2.fpos*1000
+		Q4T(task)->currentStep = (void *)&currentLine[516]; lineYield(task,516);
+		// STORE 338 TO REG#36990
+		process_ATABLE(338, task);
+		// MODULE(Updates):STEP(Update):LINE 22->R579_fpos = R36101_Temp
 		Q4T(task)->currentStep = (void *)&currentLine[517]; lineYield(task,517);
 		// STORE 339 TO REG#36990
 		process_ATABLE(339, task);
-		// MODULE(Updates):STEP(Update):LINE 19->R579_fpos = R36101_Temp
-		Q4T(task)->currentStep = (void *)&currentLine[518]; lineYield(task,518);
-		// STORE 340 TO REG#36990
-		process_ATABLE(340, task);
-		// MODULE(Updates):STEP(Update):LINE 20->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[519];
+		// MODULE(Updates):STEP(Update):LINE 24->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[518];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 341 TO REG#36990
-		process_ATABLE(341, task); start_of_step_timeout_flag = 0;
+		// STORE 340 TO REG#36990
+		process_ATABLE(340, task); start_of_step_timeout_flag = 0;
 		// GOTO __0301
 		goto __0301;
 // [0314]
@@ -12129,8 +12124,8 @@ __0301:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 20->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[520]; lineYield(task,520);
+		// MODULE(Updates):STEP(Update):LINE 24->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[519]; lineYield(task,519);
 		// STORE 110 TO REG#36991
 		R36991 = 110;
 		// IF REG#36991=0 GOTO __0302
@@ -12145,20 +12140,20 @@ __0302:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 22->R36101_Temp = TransferStation.fpos*1000
+		// MODULE(Updates):STEP(Update):LINE 26->R36101_Temp = TransferStation.fpos*1000
+		Q4T(task)->currentStep = (void *)&currentLine[520]; lineYield(task,520);
+		// STORE 341 TO REG#36990
+		process_ATABLE(341, task);
+		// MODULE(Updates):STEP(Update):LINE 27->R589_fpos = R36101_Temp
 		Q4T(task)->currentStep = (void *)&currentLine[521]; lineYield(task,521);
 		// STORE 342 TO REG#36990
 		process_ATABLE(342, task);
-		// MODULE(Updates):STEP(Update):LINE 23->R589_fpos = R36101_Temp
-		Q4T(task)->currentStep = (void *)&currentLine[522]; lineYield(task,522);
-		// STORE 343 TO REG#36990
-		process_ATABLE(343, task);
-		// MODULE(Updates):STEP(Update):LINE 24->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[523];
+		// MODULE(Updates):STEP(Update):LINE 29->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[522];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 344 TO REG#36990
-		process_ATABLE(344, task); start_of_step_timeout_flag = 0;
+		// STORE 343 TO REG#36990
+		process_ATABLE(343, task); start_of_step_timeout_flag = 0;
 		// GOTO __0303
 		goto __0303;
 // [0316]
@@ -12169,8 +12164,8 @@ __0303:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 24->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[524]; lineYield(task,524);
+		// MODULE(Updates):STEP(Update):LINE 29->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[523]; lineYield(task,523);
 		// STORE 111 TO REG#36991
 		R36991 = 111;
 		// IF REG#36991=0 GOTO __0304
@@ -12185,20 +12180,20 @@ __0304:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 26->R36101_Temp = EmptyAxis3.fpos*1000
+		// MODULE(Updates):STEP(Update):LINE 31->R36101_Temp = EmptyAxis3.fpos*1000
+		Q4T(task)->currentStep = (void *)&currentLine[524]; lineYield(task,524);
+		// STORE 344 TO REG#36990
+		process_ATABLE(344, task);
+		// MODULE(Updates):STEP(Update):LINE 32->R599_fpos = R36101_Temp
 		Q4T(task)->currentStep = (void *)&currentLine[525]; lineYield(task,525);
 		// STORE 345 TO REG#36990
 		process_ATABLE(345, task);
-		// MODULE(Updates):STEP(Update):LINE 27->R599_fpos = R36101_Temp
-		Q4T(task)->currentStep = (void *)&currentLine[526]; lineYield(task,526);
-		// STORE 346 TO REG#36990
-		process_ATABLE(346, task);
-		// MODULE(Updates):STEP(Update):LINE 28->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[527];
+		// MODULE(Updates):STEP(Update):LINE 34->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[526];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 347 TO REG#36990
-		process_ATABLE(347, task); start_of_step_timeout_flag = 0;
+		// STORE 346 TO REG#36990
+		process_ATABLE(346, task); start_of_step_timeout_flag = 0;
 		// GOTO __0305
 		goto __0305;
 // [0318]
@@ -12209,8 +12204,8 @@ __0305:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 28->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[528]; lineYield(task,528);
+		// MODULE(Updates):STEP(Update):LINE 34->delay = 2
+		Q4T(task)->currentStep = (void *)&currentLine[527]; lineYield(task,527);
 		// STORE 112 TO REG#36991
 		R36991 = 112;
 		// IF REG#36991=0 GOTO __0306
@@ -12225,8 +12220,8 @@ __0306:
 		else { /* release lock */ stepUnlocked = 1; }
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
-		// MODULE(Updates):STEP(Update):LINE 30->goto Update
-		Q4T(task)->currentStep = (void *)&currentLine[529]; lineYield(task,529);
+		// MODULE(Updates):STEP(Update):LINE 36->goto Update
+		Q4T(task)->currentStep = (void *)&currentLine[528]; lineYield(task,528);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO Updates_Update
@@ -12261,29 +12256,29 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(StageControl):STEP(StageAuto):LINE 6->R520_YAxisCommands = 0"},
 {1,"MODULE(StageControl):STEP(StageAuto):LINE 7->R530_ZAxisCommands = 0"},
 {1,"MODULE(StageControl):STEP(StageAuto):LINE 8->R540_ThetaCommands = 0"},
-{0,"MODULE(StageControl):STEP(StageAuto):LINE 9->delay = 20"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 9->delay = 20"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 11->R36701_Speed = R501_Speed"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 12->R36702_Accel = R502_Accel"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 13->R36703_Decel = R503_Decel"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 15->R36704_XTarget = R504_Target"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 16->R36705_YTarget = R514_Target"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 17->R36706_ZTarget = R524_Target"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 20->XAxis.speed = R36701_Speed/1000"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 21->XAxis.Accel = R36702_Accel/1000"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 22->XAxis.Decel = R36703_Decel/1000"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 24->XAxis.XTarget = R36704_XTarget/1000"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 25->XAxis.YTarget = R36705_YTarget/1000"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 26->XAxis.ZTarget = R36706_ZTarget/1000"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 28->XAxis.command = 10"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 30->repeat ( "},
-{0,"MODULE(StageControl):STEP(StageAuto):LINE 31->delay = 20"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 31->delay = 20"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 30->repeat ( "},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 33->F1_Trigger = false"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 34->R510_XAxisCommands = 0"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 36->goto StageAuto"},
-{1,"MODULE(StageControl):STEP(StageAuto):LINE 38->goto StageAuto"},
+{0,"MODULE(StageControl):STEP(StageAuto):LINE 10->delay = 2"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 10->delay = 2"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 12->R36701_Speed = R501_Speed"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 13->R36702_Accel = R502_Accel"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 14->R36703_Decel = R503_Decel"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 16->R36704_XTarget = R504_Target"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 17->R36705_YTarget = R514_Target"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 18->R36706_ZTarget = R524_Target"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 21->XAxis.speed = R36701_Speed/1000"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 22->XAxis.Accel = R36702_Accel/1000"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 23->XAxis.Decel = R36703_Decel/1000"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 25->XAxis.XTarget = R36704_XTarget/1000"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 26->XAxis.YTarget = R36705_YTarget/1000"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 27->XAxis.ZTarget = R36706_ZTarget/1000"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 29->XAxis.command = 10"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 31->repeat ( "},
+{0,"MODULE(StageControl):STEP(StageAuto):LINE 32->delay = 20"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 32->delay = 20"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 31->repeat ( "},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 34->F1_Trigger = false"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 35->R510_XAxisCommands = 0"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 37->goto StageAuto"},
+{1,"MODULE(StageControl):STEP(StageAuto):LINE 39->goto StageAuto"},
 {1,"MODULE(kickoff):STEP(Stops):LINE 4->if R500_RestartProgram==1 then "},
 {1,"MODULE(kickoff):STEP(Stops):LINE 5->R500_RestartProgram = 0"},
 {1,"MODULE(kickoff):STEP(Stops):LINE 7->cancel other tasks"},
@@ -12316,38 +12311,38 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisX):STEP(AxisXControl):LINE 12->XAxis.Decel = R503_Decel"},
 {1,"MODULE(AxisX):STEP(AxisXControl):LINE 13->XAxis.Target = R504_Target"},
 {1,"MODULE(AxisX):STEP(AxisXControl):LINE 15->XAxis.command = (R510_XAxisCommands)"},
-{0,"MODULE(AxisX):STEP(AxisXControl):LINE 16->delay = 20"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 16->delay = 20"},
-{0,"MODULE(AxisX):STEP(AxisXControl):LINE 19->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 19->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 20->running1 = true"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 26->if (R510_XAxisCommands)==3 | (R510_XAxisCommands)==4 then "},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 27->XAxis.Maxspeed = R501_Speed"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 28->XAxis.Accel = R502_Accel"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 29->XAxis.Decel = R503_Decel"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 31->XAxis.command = (R510_XAxisCommands)"},
-{0,"MODULE(AxisX):STEP(AxisXControl):LINE 32->delay = 20"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 32->delay = 20"},
-{0,"MODULE(AxisX):STEP(AxisXControl):LINE 33->while XAxis.command==(R510_XAxisCommands) repeat"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 33->while XAxis.command==(R510_XAxisCommands) repeat"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 34->running1 = true"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 39->if (R510_XAxisCommands)==5 then "},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 40->XAxis.Maxspeed = R501_Speed"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 41->XAxis.Accel = R502_Accel"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 42->XAxis.Decel = R503_Decel"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 45->XAxis.Target = R504_Target"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 46->XAxis.OffsetHome = R505_HomeOffset"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 47->XAxis.command = 5"},
-{0,"MODULE(AxisX):STEP(AxisXControl):LINE 49->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 49->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 50->running1 = true"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 56->if ((R510_XAxisCommands)==0 & running1==true) then "},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 57->XAxis.command = 0"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 58->running1 = false"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 62->if ((R510_XAxisCommands)==6 | (R510_XAxisCommands)==7) then "},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 63->XAxis.command = R510_XAxisCommands"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 64->R510_XAxisCommands = 0"},
-{1,"MODULE(AxisX):STEP(AxisXControl):LINE 71->goto AxisXControl"},
+{0,"MODULE(AxisX):STEP(AxisXControl):LINE 17->delay = 2"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 17->delay = 2"},
+{0,"MODULE(AxisX):STEP(AxisXControl):LINE 20->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 20->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 21->running1 = true"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 27->if (R510_XAxisCommands)==3 | (R510_XAxisCommands)==4 then "},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 28->XAxis.Maxspeed = R501_Speed"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 29->XAxis.Accel = R502_Accel"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 30->XAxis.Decel = R503_Decel"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 32->XAxis.command = (R510_XAxisCommands)"},
+{0,"MODULE(AxisX):STEP(AxisXControl):LINE 34->delay = 2"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 34->delay = 2"},
+{0,"MODULE(AxisX):STEP(AxisXControl):LINE 35->while XAxis.command==(R510_XAxisCommands) repeat"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 35->while XAxis.command==(R510_XAxisCommands) repeat"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 36->running1 = true"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 41->if (R510_XAxisCommands)==5 then "},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 42->XAxis.Maxspeed = R501_Speed"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 43->XAxis.Accel = R502_Accel"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 44->XAxis.Decel = R503_Decel"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 47->XAxis.Target = R504_Target"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 48->XAxis.OffsetHome = R505_HomeOffset"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 49->XAxis.command = 5"},
+{0,"MODULE(AxisX):STEP(AxisXControl):LINE 51->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 51->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 52->running1 = true"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 58->if ((R510_XAxisCommands)==0 & running1==true) then "},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 59->XAxis.command = 0"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 60->running1 = false"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 64->if ((R510_XAxisCommands)==6 | (R510_XAxisCommands)==7) then "},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 65->XAxis.command = R510_XAxisCommands"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 66->R510_XAxisCommands = 0"},
+{1,"MODULE(AxisX):STEP(AxisXControl):LINE 73->goto AxisXControl"},
 {1,"MODULE(AxisX):LINE 2->goto Init"},
 {1,"MODULE(AxisY):STEP(Init):LINE 3->start YAxis Motion0"},
 {1,"MODULE(AxisY):STEP(Init):LINE 4->YAxis.command = 0"},
@@ -12359,38 +12354,38 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisY):STEP(AxisYControl):LINE 11->YAxis.Decel = R513_Decel"},
 {1,"MODULE(AxisY):STEP(AxisYControl):LINE 12->YAxis.Target = R514_Target"},
 {1,"MODULE(AxisY):STEP(AxisYControl):LINE 14->YAxis.command = (R520_YAxisCommands)"},
-{0,"MODULE(AxisY):STEP(AxisYControl):LINE 15->delay = 20"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 15->delay = 20"},
-{0,"MODULE(AxisY):STEP(AxisYControl):LINE 16->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 16->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 17->running2 = true"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 23->if (R520_YAxisCommands)==3 | (R520_YAxisCommands)==4 then "},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 24->YAxis.Maxspeed = R511_Speed"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 25->YAxis.Accel = R512_Accel"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 26->YAxis.Decel = R513_Decel"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 27->YAxis.command = (R520_YAxisCommands)"},
-{0,"MODULE(AxisY):STEP(AxisYControl):LINE 29->delay = 20"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 29->delay = 20"},
-{0,"MODULE(AxisY):STEP(AxisYControl):LINE 30->while YAxis.command==(R520_YAxisCommands) repeat"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 30->while YAxis.command==(R520_YAxisCommands) repeat"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 31->running2 = true"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 36->if (R520_YAxisCommands)==5 then "},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 37->YAxis.Maxspeed = R511_Speed"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 38->YAxis.Accel = R512_Accel"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 39->YAxis.Decel = R513_Decel"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 40->YAxis.Target = R514_Target"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 41->YAxis.OffsetHome = R515_HomeOffset"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 42->YAxis.command = 5"},
-{0,"MODULE(AxisY):STEP(AxisYControl):LINE 44->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 44->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 45->running2 = true"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 51->if ((R520_YAxisCommands)==0 & running2==true) then "},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 52->YAxis.command = 0"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 53->running2 = false"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 58->if ((R520_YAxisCommands)==6 | (R520_YAxisCommands)==7) then "},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 59->YAxis.command = R520_YAxisCommands"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 60->R520_YAxisCommands = 0"},
-{1,"MODULE(AxisY):STEP(AxisYControl):LINE 66->goto AxisYControl"},
+{0,"MODULE(AxisY):STEP(AxisYControl):LINE 16->delay = 2"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 16->delay = 2"},
+{0,"MODULE(AxisY):STEP(AxisYControl):LINE 17->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 17->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 18->running2 = true"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 24->if (R520_YAxisCommands)==3 | (R520_YAxisCommands)==4 then "},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 25->YAxis.Maxspeed = R511_Speed"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 26->YAxis.Accel = R512_Accel"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 27->YAxis.Decel = R513_Decel"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 28->YAxis.command = (R520_YAxisCommands)"},
+{0,"MODULE(AxisY):STEP(AxisYControl):LINE 31->delay = 2"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 31->delay = 2"},
+{0,"MODULE(AxisY):STEP(AxisYControl):LINE 32->while YAxis.command==(R520_YAxisCommands) repeat"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 32->while YAxis.command==(R520_YAxisCommands) repeat"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 33->running2 = true"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 38->if (R520_YAxisCommands)==5 then "},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 39->YAxis.Maxspeed = R511_Speed"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 40->YAxis.Accel = R512_Accel"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 41->YAxis.Decel = R513_Decel"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 42->YAxis.Target = R514_Target"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 43->YAxis.OffsetHome = R515_HomeOffset"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 44->YAxis.command = 5"},
+{0,"MODULE(AxisY):STEP(AxisYControl):LINE 46->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 46->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 47->running2 = true"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 53->if ((R520_YAxisCommands)==0 & running2==true) then "},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 54->YAxis.command = 0"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 55->running2 = false"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 60->if ((R520_YAxisCommands)==6 | (R520_YAxisCommands)==7) then "},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 61->YAxis.command = R520_YAxisCommands"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 62->R520_YAxisCommands = 0"},
+{1,"MODULE(AxisY):STEP(AxisYControl):LINE 68->goto AxisYControl"},
 {1,"MODULE(AxisY):LINE 2->goto Init"},
 {1,"MODULE(AxisZ):STEP(Init):LINE 2->start ZAxis Motion0"},
 {1,"MODULE(AxisZ):STEP(Init):LINE 3->ZAxis.command = 0"},
@@ -12402,38 +12397,38 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisZ):STEP(AxisZControl):LINE 15->ZAxis.Decel = R523_Decel"},
 {1,"MODULE(AxisZ):STEP(AxisZControl):LINE 16->ZAxis.Target = R524_Target"},
 {1,"MODULE(AxisZ):STEP(AxisZControl):LINE 18->ZAxis.command = (R530_ZAxisCommands)"},
-{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 19->delay = 20"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 19->delay = 20"},
-{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 20->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 20->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 21->running3 = true"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 27->if (R530_ZAxisCommands)==3 | (R530_ZAxisCommands)==4 then "},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 29->ZAxis.Maxspeed = R521_Speed"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 30->ZAxis.Accel = R522_Accel"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 31->ZAxis.Decel = R523_Decel"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 33->ZAxis.command = (R530_ZAxisCommands)"},
-{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 34->delay = 20"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 34->delay = 20"},
-{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 35->while ZAxis.command==(R530_ZAxisCommands) repeat"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 35->while ZAxis.command==(R530_ZAxisCommands) repeat"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 36->running3 = true"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 41->if (R530_ZAxisCommands)==5 then "},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 42->ZAxis.Maxspeed = R521_Speed"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 43->ZAxis.Accel = R522_Accel"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 44->ZAxis.Decel = R523_Decel"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 45->ZAxis.Target = R524_Target"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 46->ZAxis.OffsetHome = R525_HomeOffset"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 47->ZAxis.command = 5"},
-{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 49->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 49->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 50->running3 = true"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 56->if ((R530_ZAxisCommands)==0 & running3==true) then "},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 57->ZAxis.command = 0"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 58->running3 = false"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 62->if ((R530_ZAxisCommands)==6 | (R530_ZAxisCommands)==7) then "},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 63->ZAxis.command = R530_ZAxisCommands"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 64->R530_ZAxisCommands = 0"},
-{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 69->goto AxisZControl"},
+{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 20->delay = 2"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 20->delay = 2"},
+{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 21->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 21->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 22->running3 = true"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 28->if (R530_ZAxisCommands)==3 | (R530_ZAxisCommands)==4 then "},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 30->ZAxis.Maxspeed = R521_Speed"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 31->ZAxis.Accel = R522_Accel"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 32->ZAxis.Decel = R523_Decel"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 34->ZAxis.command = (R530_ZAxisCommands)"},
+{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 36->delay = 2"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 36->delay = 2"},
+{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 37->while ZAxis.command==(R530_ZAxisCommands) repeat"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 37->while ZAxis.command==(R530_ZAxisCommands) repeat"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 38->running3 = true"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 43->if (R530_ZAxisCommands)==5 then "},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 44->ZAxis.Maxspeed = R521_Speed"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 45->ZAxis.Accel = R522_Accel"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 46->ZAxis.Decel = R523_Decel"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 47->ZAxis.Target = R524_Target"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 48->ZAxis.OffsetHome = R525_HomeOffset"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 49->ZAxis.command = 5"},
+{0,"MODULE(AxisZ):STEP(AxisZControl):LINE 51->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 51->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 52->running3 = true"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 58->if ((R530_ZAxisCommands)==0 & running3==true) then "},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 59->ZAxis.command = 0"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 60->running3 = false"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 64->if ((R530_ZAxisCommands)==6 | (R530_ZAxisCommands)==7) then "},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 65->ZAxis.command = R530_ZAxisCommands"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 66->R530_ZAxisCommands = 0"},
+{1,"MODULE(AxisZ):STEP(AxisZControl):LINE 71->goto AxisZControl"},
 {1,"MODULE(AxisZ):LINE 2->goto Init"},
 {1,"MODULE(AxisTheta):LINE 2->goto Init"},
 {1,"MODULE(AxisTheta):STEP(Init):LINE 2->start ThetaAxis Motion0"},
@@ -12446,38 +12441,38 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 15->ThetaAxis.Decel = R533_Decel"},
 {1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 16->ThetaAxis.Target = R534_Target"},
 {1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 18->ThetaAxis.command = (R540_ThetaCommands)"},
-{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 19->delay = 20"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 19->delay = 20"},
-{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 20->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 20->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 21->running4 = true"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 27->if (R540_ThetaCommands)==3 | (R540_ThetaCommands)==4 then "},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 29->ThetaAxis.Maxspeed = R531_Speed"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 30->ThetaAxis.Accel = R532_Accel"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 31->ThetaAxis.Decel = R533_Decel"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 33->ThetaAxis.command = (R540_ThetaCommands)"},
-{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 34->delay = 20"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 34->delay = 20"},
-{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 35->while ThetaAxis.command==(R540_ThetaCommands) repeat"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 35->while ThetaAxis.command==(R540_ThetaCommands) repeat"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 36->running4 = true"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 41->if (R540_ThetaCommands)==5 then "},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 42->ThetaAxis.Maxspeed = R531_Speed"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 43->ThetaAxis.Accel = R532_Accel"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 44->ThetaAxis.Decel = R533_Decel"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 45->ThetaAxis.Target = R534_Target"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 46->ThetaAxis.OffsetHome = R535_HomeOffset"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 47->ThetaAxis.command = 5"},
-{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 49->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 49->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 50->running4 = true"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 56->if ((R540_ThetaCommands)==0 & running4==true) then "},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 57->ThetaAxis.command = 0"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 58->running4 = false"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 63->if ((R540_ThetaCommands)==6 | (R540_ThetaCommands)==7) then "},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 64->ThetaAxis.command = R540_ThetaCommands"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 65->R540_ThetaCommands = 0"},
-{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 70->goto ThetaControl"},
+{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 20->delay = 2"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 20->delay = 2"},
+{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 21->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 21->while (ThetaAxis.command==1 | ThetaAxis.command==11) & (R540_ThetaCommands==1 | R540_ThetaCommands==11) repeat"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 22->running4 = true"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 28->if (R540_ThetaCommands)==3 | (R540_ThetaCommands)==4 then "},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 30->ThetaAxis.Maxspeed = R531_Speed"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 31->ThetaAxis.Accel = R532_Accel"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 32->ThetaAxis.Decel = R533_Decel"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 34->ThetaAxis.command = (R540_ThetaCommands)"},
+{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 36->delay = 2"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 36->delay = 2"},
+{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 37->while ThetaAxis.command==(R540_ThetaCommands) repeat"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 37->while ThetaAxis.command==(R540_ThetaCommands) repeat"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 38->running4 = true"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 43->if (R540_ThetaCommands)==5 then "},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 44->ThetaAxis.Maxspeed = R531_Speed"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 45->ThetaAxis.Accel = R532_Accel"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 46->ThetaAxis.Decel = R533_Decel"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 47->ThetaAxis.Target = R534_Target"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 48->ThetaAxis.OffsetHome = R535_HomeOffset"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 49->ThetaAxis.command = 5"},
+{0,"MODULE(AxisTheta):STEP(ThetaControl):LINE 51->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 51->while ThetaAxis.command==5 & (R540_ThetaCommands)==5 repeat"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 52->running4 = true"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 58->if ((R540_ThetaCommands)==0 & running4==true) then "},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 59->ThetaAxis.command = 0"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 60->running4 = false"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 65->if ((R540_ThetaCommands)==6 | (R540_ThetaCommands)==7) then "},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 66->ThetaAxis.command = R540_ThetaCommands"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 67->R540_ThetaCommands = 0"},
+{1,"MODULE(AxisTheta):STEP(ThetaControl):LINE 72->goto ThetaControl"},
 {1,"MODULE(AxisGripper):LINE 2->goto Init"},
 {1,"MODULE(AxisGripper):STEP(Init):LINE 2->start Gripper MaxonMotion0"},
 {1,"MODULE(AxisGripper):STEP(Init):LINE 4->Gripper.command = 0"},
@@ -12489,42 +12484,42 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisGripper):STEP(GripperControl):LINE 14->Gripper.Decel = R543_Decel"},
 {1,"MODULE(AxisGripper):STEP(GripperControl):LINE 15->Gripper.Target = R544_Target"},
 {1,"MODULE(AxisGripper):STEP(GripperControl):LINE 17->Gripper.command = (R550_GripperCommands)"},
-{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 18->delay = 20"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 18->delay = 20"},
-{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 19->while (Gripper.command==1) & (R550_GripperCommands==1) repeat"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 19->while (Gripper.command==1) & (R550_GripperCommands==1) repeat"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 20->running5 = true"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 26->if (R550_GripperCommands)==3 | (R550_GripperCommands)==4 then "},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 28->Gripper.Maxspeed = R541_Speed"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 29->Gripper.Accel = R542_Accel"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 30->Gripper.Decel = R543_Decel"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 32->Gripper.command = (R550_GripperCommands)"},
-{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 33->delay = 20"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 33->delay = 20"},
-{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 34->while Gripper.command==(R550_GripperCommands) repeat"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 34->while Gripper.command==(R550_GripperCommands) repeat"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 35->running5 = true"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 40->if (R550_GripperCommands)==5 then "},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 41->Gripper.Maxspeed = R541_Speed"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 42->Gripper.Accel = R542_Accel"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 43->Gripper.Decel = R533_Decel"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 44->Gripper.Target = R544_Target"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 45->Gripper.OffsetHome = R545_HomeOffset"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 46->Gripper.command = 5"},
-{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 48->while Gripper.command==5 & (R550_GripperCommands)==5 repeat"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 48->while Gripper.command==5 & (R550_GripperCommands)==5 repeat"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 49->running5 = true"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 55->if ((R550_GripperCommands)==0 & running5==true) then "},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 56->Gripper.command = 0"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 57->running5 = false"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 60->if ((R550_GripperCommands)==6 | (R550_GripperCommands)==7) then "},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 61->Gripper.command = R550_GripperCommands"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 62->R550_GripperCommands = 0"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 66->if (R550_GripperCommands)==9 then "},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 67->Gripper.NewPosition = 0"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 68->Gripper.command = R550_GripperCommands"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 69->R550_GripperCommands = 0"},
-{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 71->goto GripperControl"},
+{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 19->delay = 2"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 19->delay = 2"},
+{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 20->while (Gripper.command==1) & (R550_GripperCommands==1) repeat"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 20->while (Gripper.command==1) & (R550_GripperCommands==1) repeat"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 21->running5 = true"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 27->if (R550_GripperCommands)==3 | (R550_GripperCommands)==4 then "},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 29->Gripper.Maxspeed = R541_Speed"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 30->Gripper.Accel = R542_Accel"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 31->Gripper.Decel = R543_Decel"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 33->Gripper.command = (R550_GripperCommands)"},
+{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 35->delay = 2"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 35->delay = 2"},
+{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 36->while Gripper.command==(R550_GripperCommands) repeat"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 36->while Gripper.command==(R550_GripperCommands) repeat"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 37->running5 = true"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 42->if (R550_GripperCommands)==5 then "},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 43->Gripper.Maxspeed = R541_Speed"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 44->Gripper.Accel = R542_Accel"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 45->Gripper.Decel = R533_Decel"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 46->Gripper.Target = R544_Target"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 47->Gripper.OffsetHome = R545_HomeOffset"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 48->Gripper.command = 5"},
+{0,"MODULE(AxisGripper):STEP(GripperControl):LINE 50->while Gripper.command==5 & (R550_GripperCommands)==5 repeat"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 50->while Gripper.command==5 & (R550_GripperCommands)==5 repeat"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 51->running5 = true"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 57->if ((R550_GripperCommands)==0 & running5==true) then "},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 58->Gripper.command = 0"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 59->running5 = false"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 62->if ((R550_GripperCommands)==6 | (R550_GripperCommands)==7) then "},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 63->Gripper.command = R550_GripperCommands"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 64->R550_GripperCommands = 0"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 68->if (R550_GripperCommands)==9 then "},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 69->Gripper.NewPosition = 0"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 70->Gripper.command = R550_GripperCommands"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 71->R550_GripperCommands = 0"},
+{1,"MODULE(AxisGripper):STEP(GripperControl):LINE 73->goto GripperControl"},
 {1,"MODULE(AxisEmpty1):LINE 2->goto Init"},
 {1,"MODULE(AxisEmpty1):STEP(Init):LINE 2->start EmptyAxis1 MaxonMotion0"},
 {1,"MODULE(AxisEmpty1):STEP(Init):LINE 4->EmptyAxis1.command = 0"},
@@ -12536,38 +12531,38 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 14->EmptyAxis1.Decel = R563_Decel"},
 {1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 15->EmptyAxis1.Target = R564_Target"},
 {1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 17->EmptyAxis1.command = (R570_Empty1Commands)"},
-{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 18->delay = 20"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 18->delay = 20"},
-{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 20->running7 = true"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 26->if (R570_Empty1Commands)==3 | (R570_Empty1Commands)==4 then "},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 28->EmptyAxis1.Maxspeed = R561_Speed"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 29->EmptyAxis1.Accel = R562_Accel"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 30->EmptyAxis1.Decel = R563_Decel"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 32->EmptyAxis1.command = (R570_Empty1Commands)"},
-{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 33->delay = 20"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 33->delay = 20"},
-{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 34->while EmptyAxis1.command==(R570_Empty1Commands) repeat"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 34->while EmptyAxis1.command==(R570_Empty1Commands) repeat"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 35->running7 = true"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 40->if (R570_Empty1Commands)==5 then "},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 41->EmptyAxis1.Maxspeed = R561_Speed"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 42->EmptyAxis1.Accel = R562_Accel"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 43->EmptyAxis1.Decel = R563_Decel"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 44->EmptyAxis1.Target = R564_Target"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 45->EmptyAxis1.OffsetHome = R565_HomeOffset"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 46->EmptyAxis1.command = 5"},
-{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 48->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 48->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 49->running7 = true"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 55->if ((R570_Empty1Commands)==0 & running7==true) then "},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 56->EmptyAxis1.command = 0"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 57->running7 = false"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 60->if ((R570_Empty1Commands)==6 | (R570_Empty1Commands)==7) then "},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 61->EmptyAxis1.command = R570_Empty1Commands"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 62->R570_Empty1Commands = 0"},
-{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 67->goto Empty1Control"},
+{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->delay = 2"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 19->delay = 2"},
+{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 20->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 20->while (EmptyAxis1.command==1) & (R570_Empty1Commands==1) repeat"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 21->running7 = true"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 27->if (R570_Empty1Commands)==3 | (R570_Empty1Commands)==4 then "},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 29->EmptyAxis1.Maxspeed = R561_Speed"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 30->EmptyAxis1.Accel = R562_Accel"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 31->EmptyAxis1.Decel = R563_Decel"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 33->EmptyAxis1.command = (R570_Empty1Commands)"},
+{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 35->delay = 2"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 35->delay = 2"},
+{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 36->while EmptyAxis1.command==(R570_Empty1Commands) repeat"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 36->while EmptyAxis1.command==(R570_Empty1Commands) repeat"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 37->running7 = true"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 42->if (R570_Empty1Commands)==5 then "},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 43->EmptyAxis1.Maxspeed = R561_Speed"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 44->EmptyAxis1.Accel = R562_Accel"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 45->EmptyAxis1.Decel = R563_Decel"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 46->EmptyAxis1.Target = R564_Target"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 47->EmptyAxis1.OffsetHome = R565_HomeOffset"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 48->EmptyAxis1.command = 5"},
+{0,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 50->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 50->while EmptyAxis1.command==5 & (R570_Empty1Commands)==5 repeat"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 51->running7 = true"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 57->if ((R570_Empty1Commands)==0 & running7==true) then "},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 58->EmptyAxis1.command = 0"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 59->running7 = false"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 62->if ((R570_Empty1Commands)==6 | (R570_Empty1Commands)==7) then "},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 63->EmptyAxis1.command = R570_Empty1Commands"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 64->R570_Empty1Commands = 0"},
+{1,"MODULE(AxisEmpty1):STEP(Empty1Control):LINE 69->goto Empty1Control"},
 {1,"MODULE(AxisEmpty2):LINE 2->goto Init"},
 {1,"MODULE(AxisEmpty2):STEP(Init):LINE 2->start EmptyAxis2 MaxonMotion0"},
 {1,"MODULE(AxisEmpty2):STEP(Init):LINE 4->EmptyAxis2.command = 0"},
@@ -12579,38 +12574,38 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 14->EmptyAxis2.Decel = R573_Decel"},
 {1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 15->EmptyAxis2.Target = R574_Target"},
 {1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 17->EmptyAxis2.command = (R580_Empty2Commands)"},
-{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 18->delay = 20"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 18->delay = 20"},
-{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 20->running8 = true"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 26->if (R580_Empty2Commands)==3 | (R580_Empty2Commands)==4 then "},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 28->EmptyAxis2.Maxspeed = R571_Speed"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 29->EmptyAxis2.Accel = R572_Accel"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 30->EmptyAxis2.Decel = R573_Decel"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 32->EmptyAxis2.command = (R580_Empty2Commands)"},
-{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 33->delay = 20"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 33->delay = 20"},
-{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 34->while EmptyAxis2.command==(R580_Empty2Commands) repeat"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 34->while EmptyAxis2.command==(R580_Empty2Commands) repeat"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 35->running8 = true"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 40->if (R580_Empty2Commands)==5 then "},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 41->EmptyAxis2.Maxspeed = R571_Speed"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 42->EmptyAxis2.Accel = R572_Accel"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 43->EmptyAxis2.Decel = R573_Decel"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 44->EmptyAxis2.Target = R574_Target"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 45->EmptyAxis2.OffsetHome = R575_HomeOffset"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 46->EmptyAxis2.command = 5"},
-{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 48->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 48->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 49->running8 = true"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 55->if ((R580_Empty2Commands)==0 & running8==true) then "},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 56->EmptyAxis2.command = 0"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 57->running8 = false"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 60->if ((R580_Empty2Commands)==6 | (R580_Empty2Commands)==7) then "},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 61->EmptyAxis2.command = R580_Empty2Commands"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 62->R580_Empty2Commands = 0"},
-{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 67->goto Empty2Control"},
+{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->delay = 2"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 19->delay = 2"},
+{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 20->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 20->while (EmptyAxis2.command==1) & (R580_Empty2Commands==1) repeat"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 21->running8 = true"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 27->if (R580_Empty2Commands)==3 | (R580_Empty2Commands)==4 then "},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 29->EmptyAxis2.Maxspeed = R571_Speed"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 30->EmptyAxis2.Accel = R572_Accel"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 31->EmptyAxis2.Decel = R573_Decel"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 33->EmptyAxis2.command = (R580_Empty2Commands)"},
+{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 35->delay = 2"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 35->delay = 2"},
+{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 36->while EmptyAxis2.command==(R580_Empty2Commands) repeat"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 36->while EmptyAxis2.command==(R580_Empty2Commands) repeat"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 37->running8 = true"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 42->if (R580_Empty2Commands)==5 then "},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 43->EmptyAxis2.Maxspeed = R571_Speed"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 44->EmptyAxis2.Accel = R572_Accel"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 45->EmptyAxis2.Decel = R573_Decel"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 46->EmptyAxis2.Target = R574_Target"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 47->EmptyAxis2.OffsetHome = R575_HomeOffset"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 48->EmptyAxis2.command = 5"},
+{0,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 50->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 50->while EmptyAxis2.command==5 & (R580_Empty2Commands)==5 repeat"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 51->running8 = true"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 57->if ((R580_Empty2Commands)==0 & running8==true) then "},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 58->EmptyAxis2.command = 0"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 59->running8 = false"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 62->if ((R580_Empty2Commands)==6 | (R580_Empty2Commands)==7) then "},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 63->EmptyAxis2.command = R580_Empty2Commands"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 64->R580_Empty2Commands = 0"},
+{1,"MODULE(AxisEmpty2):STEP(Empty2Control):LINE 69->goto Empty2Control"},
 {1,"MODULE(AxisTransferStation):LINE 2->goto Init"},
 {1,"MODULE(AxisTransferStation):STEP(Init):LINE 2->start TransferStation StepperMotion0"},
 {0,"MODULE(AxisTransferStation):STEP(Init):LINE 3->delay = 100"},
@@ -12625,43 +12620,43 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 14->TransferStation.Decel = R583_Decel"},
 {1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 15->TransferStation.Target = R584_Target"},
 {1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 17->TransferStation.command = (R590_TransferStationCommands)"},
-{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 18->delay = 20"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 18->delay = 20"},
-{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 20->running9 = true"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 26->if (R590_TransferStationCommands)==3 | (R590_TransferStationCommands)==4 then "},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 28->TransferStation.Maxspeed = R581_Speed"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 29->TransferStation.Accel = R582_Accel"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 30->TransferStation.Decel = R583_Decel"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 32->TransferStation.command = (R590_TransferStationCommands)"},
-{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 33->delay = 20"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 33->delay = 20"},
-{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 34->while TransferStation.command==(R590_TransferStationCommands) repeat"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 34->while TransferStation.command==(R590_TransferStationCommands) repeat"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 35->running9 = true"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 40->if (R590_TransferStationCommands)==5 then "},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 41->TransferStation.Maxspeed = R581_Speed"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 42->TransferStation.Accel = R582_Accel"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 43->TransferStation.Decel = R583_Decel"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 44->TransferStation.Target = R584_Target"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 45->TransferStation.OffsetHome = R585_HomeOffset"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 46->TransferStation.command = 5"},
-{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 48->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 48->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 49->running9 = true"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 55->if ((R590_TransferStationCommands)==0 & running9==true) then "},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 56->TransferStation.command = 0"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 57->running9 = false"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 60->if ((R590_TransferStationCommands)==6 | (R590_TransferStationCommands)==7) then "},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 61->TransferStation.command = R590_TransferStationCommands"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 62->R590_TransferStationCommands = 0"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 64->if (R590_TransferStationCommands)==8 then "},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 65->TransferStation.command = R590_TransferStationCommands"},
-{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 66->delay = 10"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 66->delay = 10"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 67->R590_TransferStationCommands = 0"},
-{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 71->goto CableElevfControl"},
+{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->delay = 2"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 19->delay = 2"},
+{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 20->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 20->while (TransferStation.command==1) & (R590_TransferStationCommands==1) repeat"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 21->running9 = true"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 27->if (R590_TransferStationCommands)==3 | (R590_TransferStationCommands)==4 then "},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 29->TransferStation.Maxspeed = R581_Speed"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 30->TransferStation.Accel = R582_Accel"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 31->TransferStation.Decel = R583_Decel"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 33->TransferStation.command = (R590_TransferStationCommands)"},
+{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 35->delay = 2"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 35->delay = 2"},
+{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 36->while TransferStation.command==(R590_TransferStationCommands) repeat"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 36->while TransferStation.command==(R590_TransferStationCommands) repeat"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 37->running9 = true"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 42->if (R590_TransferStationCommands)==5 then "},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 43->TransferStation.Maxspeed = R581_Speed"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 44->TransferStation.Accel = R582_Accel"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 45->TransferStation.Decel = R583_Decel"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 46->TransferStation.Target = R584_Target"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 47->TransferStation.OffsetHome = R585_HomeOffset"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 48->TransferStation.command = 5"},
+{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 50->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 50->while TransferStation.command==5 & (R590_TransferStationCommands)==5 repeat"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 51->running9 = true"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 57->if ((R590_TransferStationCommands)==0 & running9==true) then "},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 58->TransferStation.command = 0"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 59->running9 = false"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 62->if ((R590_TransferStationCommands)==6 | (R590_TransferStationCommands)==7) then "},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 63->TransferStation.command = R590_TransferStationCommands"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 64->R590_TransferStationCommands = 0"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 66->if (R590_TransferStationCommands)==8 then "},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 67->TransferStation.command = R590_TransferStationCommands"},
+{0,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 68->delay = 10"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 68->delay = 10"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 69->R590_TransferStationCommands = 0"},
+{1,"MODULE(AxisTransferStation):STEP(CableElevfControl):LINE 73->goto CableElevfControl"},
 {1,"MODULE(AxisEmpty3):LINE 2->goto Init"},
 {1,"MODULE(AxisEmpty3):STEP(Init):LINE 2->start EmptyAxis3 StepperMotion0"},
 {0,"MODULE(AxisEmpty3):STEP(Init):LINE 3->delay = 100"},
@@ -12715,7 +12710,6 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(AxisEmpty3):STEP(Empty3Control):LINE 72->goto Empty3Control"},
 {1,"MODULE(FastUpdates):LINE 1->R9_Dwell = 0"},
 {1,"MODULE(FastUpdates):LINE 2->goto Update"},
-{1,"MODULE(FastUpdates):STEP(Update):LINE 2->$REGISTERS[13002] = 0"},
 {1,"MODULE(FastUpdates):STEP(Update):LINE 5->R36711_Ax1Fpos = XAxis.fpos*1000"},
 {1,"MODULE(FastUpdates):STEP(Update):LINE 6->R36712_Ax1Fpos = YAxis.fpos*1000"},
 {1,"MODULE(FastUpdates):STEP(Update):LINE 7->R36713_Ax1Fpos = ZAxis.fpos*1000"},
@@ -12745,29 +12739,29 @@ OPTIMIZED_LINE_ENTRY currentLine[] = {
 {1,"MODULE(Updates):LINE 2->goto Update"},
 {1,"MODULE(Updates):STEP(Update):LINE 2->R36101_Temp = ThetaAxis.fpos*1000"},
 {1,"MODULE(Updates):STEP(Update):LINE 3->R539_fpos = R36101_Temp"},
-{0,"MODULE(Updates):STEP(Update):LINE 4->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 4->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 6->R36101_Temp = Gripper.fpos*1000"},
-{1,"MODULE(Updates):STEP(Update):LINE 7->R549_fpos = R36101_Temp"},
-{0,"MODULE(Updates):STEP(Update):LINE 8->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 8->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 14->R36101_Temp = EmptyAxis1.fpos*1000"},
-{1,"MODULE(Updates):STEP(Update):LINE 15->R569_fpos = R36101_Temp"},
-{0,"MODULE(Updates):STEP(Update):LINE 16->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 16->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 18->R36101_Temp = EmptyAxis2.fpos*1000"},
-{1,"MODULE(Updates):STEP(Update):LINE 19->R579_fpos = R36101_Temp"},
-{0,"MODULE(Updates):STEP(Update):LINE 20->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 20->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 22->R36101_Temp = TransferStation.fpos*1000"},
-{1,"MODULE(Updates):STEP(Update):LINE 23->R589_fpos = R36101_Temp"},
-{0,"MODULE(Updates):STEP(Update):LINE 24->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 24->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 26->R36101_Temp = EmptyAxis3.fpos*1000"},
-{1,"MODULE(Updates):STEP(Update):LINE 27->R599_fpos = R36101_Temp"},
-{0,"MODULE(Updates):STEP(Update):LINE 28->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 28->delay = 20"},
-{1,"MODULE(Updates):STEP(Update):LINE 30->goto Update"},
+{0,"MODULE(Updates):STEP(Update):LINE 5->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 5->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 7->R36101_Temp = Gripper.fpos*1000"},
+{1,"MODULE(Updates):STEP(Update):LINE 8->R549_fpos = R36101_Temp"},
+{0,"MODULE(Updates):STEP(Update):LINE 10->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 10->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 16->R36101_Temp = EmptyAxis1.fpos*1000"},
+{1,"MODULE(Updates):STEP(Update):LINE 17->R569_fpos = R36101_Temp"},
+{0,"MODULE(Updates):STEP(Update):LINE 19->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 19->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 21->R36101_Temp = EmptyAxis2.fpos*1000"},
+{1,"MODULE(Updates):STEP(Update):LINE 22->R579_fpos = R36101_Temp"},
+{0,"MODULE(Updates):STEP(Update):LINE 24->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 24->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 26->R36101_Temp = TransferStation.fpos*1000"},
+{1,"MODULE(Updates):STEP(Update):LINE 27->R589_fpos = R36101_Temp"},
+{0,"MODULE(Updates):STEP(Update):LINE 29->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 29->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 31->R36101_Temp = EmptyAxis3.fpos*1000"},
+{1,"MODULE(Updates):STEP(Update):LINE 32->R599_fpos = R36101_Temp"},
+{0,"MODULE(Updates):STEP(Update):LINE 34->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 34->delay = 2"},
+{1,"MODULE(Updates):STEP(Update):LINE 36->goto Update"},
 {0,"MODULE(++++++):LINE 1->*** STARTING ****"},
 {0,""}
 };
