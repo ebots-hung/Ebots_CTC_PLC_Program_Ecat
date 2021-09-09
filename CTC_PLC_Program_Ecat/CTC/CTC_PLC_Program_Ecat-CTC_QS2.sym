@@ -15,6 +15,7 @@
 1024	27	0	running8
 1024	28	0	running9
 1024	29	0	running10
+1024	32001	0	R700_BroadcastMotion
 1024	36101	0	R36101_Temp
 1024	36201	0	StageTasks
 1024	36701	0	R36701_Speed
