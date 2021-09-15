@@ -87,7 +87,7 @@ R594_Target                                       int       nvar      0         
 R595_HomeOffset                                   int       nvar      0         595       scalar                        
 R599_fpos                                         int       nvar      0         599       scalar                        
 R600_Empty3Commands                               int       nvar      0         600       scalar                        
-R700_BroadcastMotion                              int       nvar      0         32001     scalar                        
+R700_BroadcastMotion                              int       nvar      0         700       scalar                        
 R9_Dwell                                          int       var       0         9         scalar                        
 running1                                          int       var       0         20        scalar                        
 running10                                         int       var       0         29        scalar                        
