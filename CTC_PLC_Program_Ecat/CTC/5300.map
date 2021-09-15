@@ -640,132 +640,132 @@ LOAD qs4.o
                 0x2162ba60                PROVIDE (_mdata, .)
                 0x2162ba60                PROVIDE (_program_data_end, .)
 
-.mdata          0x2162ba60     0xc8a8
+.mdata          0x2162ba60     0xd408
  *(.data)
- .data          0x2162ba60     0xc514 qs4.o
+ .data          0x2162ba60     0xd074 qs4.o
                 0x2162e680                XVar_string_Names
-                0x216367fa                __aoCM
-                0x21630b50                __ipm_YAxis_sb_Motion_mopdata
-                0x216375fc                __aiCT
+                0x2163735a                __aoCM
+                0x21631100                __ipm_YAxis_sb_Motion_mopdata
+                0x2163815c                __aiCT
                 0x2162f8fc                __ipm_EmptyAxis1_param
-                0x2163324c                __ipm_ThetaAxis_sb_Motion_mopdata
-                0x21633c94                __ipm_Gripper_sbdata
+                0x21633dac                __ipm_ThetaAxis_sb_Motion_mopdata
+                0x216347f4                __ipm_Gripper_sbdata
                 0x2162fb8c                __ipm_ZAxis_sb_SyncMotion_Z_mopdata
-                0x216369fc                __aoEtherCAT
-                0x21634718                __ipm_EmptyAxis3_sbdata
-                0x216352fc                __ipm_EmptyAxis2_sb_MaxonMotion_mopdata
+                0x2163755c                __aoEtherCAT
+                0x21635278                __ipm_EmptyAxis3_sbdata
+                0x21635e5c                __ipm_EmptyAxis2_sb_MaxonMotion_mopdata
                 0x2162ba60                currentLine
-                0x2162fe2c                __ipm_ZAxis_sb_Motion_mopdata
+                0x216300fc                __ipm_ZAxis_sb_Motion_mopdata
                 0x2162fb58                __QS4IPM_NUMBER
                 0x2162e664                AutoMode
-                0x21633c9c                __ipm_Gripper_sb_MaxonMotion_mopdata
-                0x21634720                __ipm_EmptyAxis3_sb_StepperMotion_mopdata
+                0x216347fc                __ipm_Gripper_sb_MaxonMotion_mopdata
+                0x21635280                __ipm_EmptyAxis3_sb_StepperMotion_mopdata
                 0x2162cc4c                QS4SymbolTable
-                0x216308b0                __ipm_YAxis_sb_SyncMotion_Y_mopdata
-                0x21631598                __ipm_YAxis_sb_axis_Y_mopdata
-                0x21635d80                __ipm_EmptyAxis1_sb_MaxonMotion_mopdata
-                0x216315c4                __ipm_XAxis_sbdata
+                0x21630b80                __ipm_YAxis_sb_SyncMotion_Y_mopdata
+                0x21631b48                __ipm_YAxis_sb_axis_Y_mopdata
+                0x216368e0                __ipm_EmptyAxis1_sb_MaxonMotion_mopdata
+                0x21631b74                __ipm_XAxis_sbdata
                 0x2162cc48                QS4SYMBOLGUID
                 0x2162e75c                __ipm_ZAxis_param
                 0x2162e684                XVar_float64_Names
                 0x2162e644                QS4Objects
-                0x216352f4                __ipm_EmptyAxis2_sbdata
-                0x21632fac                __ipm_ThetaAxis_sb_SyncMotion_U_mopdata
-                0x216308a0                __ipm_YAxis_sbdata
+                0x21635e54                __ipm_EmptyAxis2_sbdata
+                0x2163383c                __ipm_ThetaAxis_sb_SyncMotion_U_mopdata
+                0x21630b70                __ipm_YAxis_sbdata
                 0x2162f02c                __ipm_ThetaAxis_param
-                0x21635d78                __ipm_EmptyAxis1_sbdata
+                0x216368d8                __ipm_EmptyAxis1_sbdata
                 0x2162f6c8                __ipm_EmptyAxis2_param
-                0x216323cc                __ipm_TransferStation_sb_StepperMotion_mopdata
-                0x21632fa0                __ipm_ThetaAxis_sbdata
+                0x21632c5c                __ipm_TransferStation_sb_StepperMotion_mopdata
+                0x21633830                __ipm_ThetaAxis_sbdata
                 0x2162e63c                QS4ObjectTypes
                 0x2162edf8                __ipm_TransferStation_param
                 0x2162f260                __ipm_Gripper_param
                 0x2162e688                XVar_int_Names
                 0x2162e734                __QS4IPMPARAMS
-                0x216322bc                __ipm_XAxis_sb_axis_X_mopdata
+                0x21632b4c                __ipm_XAxis_sb_axis_X_mopdata
                 0x2162ebc4                __ipm_XAxis_param
                 0x2162e67c                XVar_float32_Names
                 0x2162fb7c                __ipm_ZAxis_sbdata
-                0x216315d4                __ipm_XAxis_sb_SyncMotion_X_mopdata
-                0x216323c4                __ipm_TransferStation_sbdata
+                0x21631b84                __ipm_XAxis_sb_SyncMotion_X_mopdata
+                0x21632c54                __ipm_TransferStation_sbdata
                 0x2162e64c                ManualMode
                 0x2162e990                __ipm_YAxis_param
-                0x21631874                __ipm_XAxis_sb_Motion_mopdata
+                0x21632104                __ipm_XAxis_sb_Motion_mopdata
                 0x2162fb30                __QS4IPMs
-                0x216371fc                __aiEtherCAT
+                0x21637d5c                __aiEtherCAT
                 0x2162e68c                PID_Names
                 0x2162f494                __ipm_EmptyAxis3_param
-                0x21630874                __ipm_ZAxis_sb_axis_Z_mopdata
- .data          0x21637f74      0x380 ./usr/arm-elf/lib/libc.a(impure.o)
-                0x21637f74                _impure_ptr
- .data          0x216382f4       0x14 ./usr/arm-elf/lib/libc.a(locale.o)
-                0x21638300                __mb_cur_max
-                0x216382f4                __lc_ctype
+                0x21630b44                __ipm_ZAxis_sb_axis_Z_mopdata
+ .data          0x21638ad4      0x380 ./usr/arm-elf/lib/libc.a(impure.o)
+                0x21638ad4                _impure_ptr
+ .data          0x21638e54       0x14 ./usr/arm-elf/lib/libc.a(locale.o)
+                0x21638e60                __mb_cur_max
+                0x21638e54                __lc_ctype
  SORT(*)(.gnu.linkonce.d*)
  SORT(*)(.gcc_except_table)
                 0x2162ba60                _data = ADDR (.mdata)
-                0x21638308                _edata = (ADDR (.mdata) + SIZEOF (.mdata))
+                0x21638e68                _edata = (ADDR (.mdata) + SIZEOF (.mdata))
 
-.common         0x21638308   0x11ca68
-                0x21638308                PROVIDE (_s_common, .)
-                0x21638308                PROVIDE (s_common, .)
+.common         0x21638e68   0x11ca68
+                0x21638e68                PROVIDE (_s_common, .)
+                0x21638e68                PROVIDE (s_common, .)
  *(.bss)
- .bss           0x21638308       0x5c CoreStart.o
- .bss           0x21638364     0x2cf4 qs4.o
-                0x21638370                __capptr
-                0x21638384                ccResourceHandle
-                0x2163938c                __aoScale
-                0x21638374                __GRDT
-                0x2163838c                __aoOffset
-                0x21638368                globalLastTick
-                0x21638b8c                __aoScaleI
-                0x2163837c                __GDT
-                0x2163836c                __nobj
-                0x21639b8c                __aiRS
-                0x21639f8c                __aiOffset
-                0x2163a78c                __aiScale
-                0x21638388                __RUNTICK
-                0x21638364                globalLastSubTick
- .bss           0x2163b058        0x4 ./usr/arm-elf/lib/libc.a(findfp.o)
- .bss           0x2163b05c        0xc ./usr/arm-elf/lib/libc.a(locale.o)
-                0x2163b064                __nlocale_changed
-                0x2163b060                __mlocale_changed
-                0x2163b05c                _PathLocale
- .bss           0x2163b068       0xb4 ./usr/arm-elf/lib/libc.a(syscalls.o)
+ .bss           0x21638e68       0x5c CoreStart.o
+ .bss           0x21638ec4     0x2cf4 qs4.o
+                0x21638ed0                __capptr
+                0x21638ee4                ccResourceHandle
+                0x21639eec                __aoScale
+                0x21638ed4                __GRDT
+                0x21638eec                __aoOffset
+                0x21638ec8                globalLastTick
+                0x216396ec                __aoScaleI
+                0x21638edc                __GDT
+                0x21638ecc                __nobj
+                0x2163a6ec                __aiRS
+                0x2163aaec                __aiOffset
+                0x2163b2ec                __aiScale
+                0x21638ee8                __RUNTICK
+                0x21638ec4                globalLastSubTick
+ .bss           0x2163bbb8        0x4 ./usr/arm-elf/lib/libc.a(findfp.o)
+ .bss           0x2163bbbc        0xc ./usr/arm-elf/lib/libc.a(locale.o)
+                0x2163bbc4                __nlocale_changed
+                0x2163bbc0                __mlocale_changed
+                0x2163bbbc                _PathLocale
+ .bss           0x2163bbc8       0xb4 ./usr/arm-elf/lib/libc.a(syscalls.o)
  *(COMMON)
- COMMON         0x2163b11c        0x4 CoreFunc.o
+ COMMON         0x2163bc7c        0x4 CoreFunc.o
                                   0x0 (size before relaxing)
-                0x2163b11c                coreTable
- COMMON         0x2163b120   0x100034 CoreStart.o
+                0x2163bc7c                coreTable
+ COMMON         0x2163bc80   0x100034 CoreStart.o
                                   0x0 (size before relaxing)
-                0x2163b120                main_byte_pool
-                0x2163b154                allocatable_memory
- COMMON         0x2173b154    0x19c18 qs4.o
+                0x2163bc80                main_byte_pool
+                0x2163bcb4                allocatable_memory
+ COMMON         0x2173bcb4    0x19c18 qs4.o
                                   0x0 (size before relaxing)
-                0x2173b154                __ioCapture
-                0x2173d094                TASK_THREADS
-                0x21748f14                __captureVType
-                0x21748f34                __capturePropNum
-                0x21748f54                evts
-                0x217490d4                __qs4_task_mutex
-                0x21749108                __captureRegObjNum
-                0x21749128                files
-                0x21749168                DBLOCK
-                0x2174b0a8                ccResource
-                0x2174b0b8                __captureType
-                0x2174b0d8                IBLOCK
-                0x2174c078                __deltaCapture
-                0x2174d018                __capturePtrs
-                0x2174d038                __qs4_control_mutex
-                0x2174d06c                __dataCapture
- COMMON         0x21754d6c        0x4 ./usr/arm-elf/lib/libc.a(reent.o)
+                0x2173bcb4                __ioCapture
+                0x2173dbf4                TASK_THREADS
+                0x21749a74                __captureVType
+                0x21749a94                __capturePropNum
+                0x21749ab4                evts
+                0x21749c34                __qs4_task_mutex
+                0x21749c68                __captureRegObjNum
+                0x21749c88                files
+                0x21749cc8                DBLOCK
+                0x2174bc08                ccResource
+                0x2174bc18                __captureType
+                0x2174bc38                IBLOCK
+                0x2174cbd8                __deltaCapture
+                0x2174db78                __capturePtrs
+                0x2174db98                __qs4_control_mutex
+                0x2174dbcc                __dataCapture
+ COMMON         0x217558cc        0x4 ./usr/arm-elf/lib/libc.a(reent.o)
                                   0x0 (size before relaxing)
-                0x21754d6c                errno
-                0x21754d70                __end = ALIGN (0x10)
-                0x21754d70                _end = .
-                0x21754d70                PROVIDE (end, .)
-                0x21754d70                PROVIDE (_e_common, .)
-                0x21754d70                PROVIDE (e_common, .)
+                0x217558cc                errno
+                0x217558d0                __end = ALIGN (0x10)
+                0x217558d0                _end = .
+                0x217558d0                PROVIDE (end, .)
+                0x217558d0                PROVIDE (_e_common, .)
+                0x217558d0                PROVIDE (e_common, .)
 LOAD ./usr/arm-elf/lib/libc.a
 LOAD ./lib/gcc-lib/arm-elf/3.4.0//libgcc.a
 LOAD ./usr/arm-elf/lib/libstdc++.a
