@@ -7516,7 +7516,7 @@
                     <id>0</id>
                     <nodetype>plain</nodetype>
                     <guid>ba2ba2aa-eb9e-4ec6-9880-919a7bb93d6c</guid>
-                    <fname>R700_BroadcastMotion</fname>
+                    <fname>R700_CAM_En</fname>
                     <logical />
                     <group />
                     <override>700</override>
@@ -7766,7 +7766,7 @@ R10_Mode = 0;
 
 begin (StageControl AxisX AxisY AxisZ) tasks to StageTasks;
 
-begin (Updates FastUpdates AxisTheta AxisGripper AxisEmpty1 AxisEmpty2 AxisTransferStation AxisEmpty3 Task_SyncMotion);
+begin (Updates FastUpdates AxisTheta AxisGripper AxisEmpty1 AxisEmpty2 AxisTransferStation AxisEmpty3 );
 //begin (Updates CableElev IrisCup);
 
 delay 1000 ms;
@@ -7774,7 +7774,10 @@ delay 1000 ms;
 start XAxis axis_X;
 start YAxis axis_Y;
 start ZAxis axis_Z;	
-		</code>
+
+start XAxis SyncMotion_X;
+start YAxis SyncMotion_Y;
+start ThetaAxis SyncMotion_Theta;</code>
                     <tport>6</tport>
                     <bport>7</bport>
                     <lport0>8</lport0>
@@ -7875,7 +7878,7 @@ R510_XAxisCommands = 0;</code>
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>31</id>
-                    <bounds x="1022" y="284" w="96" h="32" />
+                    <bounds x="912" y="294" w="96" h="32" />
                     <name>axis_X</name>
                     <code>// =========================== MotionSequenceBlock - axis_X =========================== //
 delay 1000 ms;
@@ -7927,7 +7930,7 @@ goto interpolate;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>28</id>
-                    <bounds x="1022" y="324" w="96" h="32" />
+                    <bounds x="912" y="334" w="96" h="32" />
                     <name>axis_Y</name>
                     <code>// =========================== MotionSequenceBlock - axis_Y =========================== //
 delay 1000 ms;
@@ -7952,7 +7955,7 @@ goto beginTest;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>29</id>
-                    <bounds x="1022" y="364" w="96" h="32" />
+                    <bounds x="912" y="374" w="96" h="32" />
                     <name>axis_Z</name>
                     <code>// =========================== MotionSequenceBlock - axis_Z =========================== //
 delay 1000 ms;
@@ -8162,7 +8165,7 @@ if (R510_XAxisCommands)== 5 then { // Wait for 'Home'
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>70</id>
-                    <bounds x="1152" y="284" w="96" h="32" />
+                    <bounds x="1042" y="294" w="96" h="32" />
                     <name>Motion</name>
                     <code>// =========================== MotionSequenceBlock - Motion =========================== //
 
@@ -8636,7 +8639,7 @@ if (R520_YAxisCommands)== 1 | (R520_YAxisCommands)== 11 then { // Wait for 'Go' 
 if (R520_YAxisCommands)==13  | (R520_YAxisCommands)==14 | (R520_YAxisCommands)==15 then { 
 	YAxis.command = (R520_YAxisCommands);	// Trigger SyncMotion block
 	while (YAxis.command == 13 | YAxis.command == 14 | YAxis.command == 15) &amp;  (R520_YAxisCommands == 13  | R520_YAxisCommands == 14 | R520_YAxisCommands == 15) repeat { 
-		running1 = true;		
+		running2 = true;		
 	}	
 }
 
@@ -8769,7 +8772,7 @@ if (R530_ZAxisCommands)== 1 | (R530_ZAxisCommands)== 11 then { // Wait for 'Go' 
 if (R530_ZAxisCommands)==13  | (R530_ZAxisCommands)==14 | (R530_ZAxisCommands)==15 then { 
 	ZAxis.command = (R530_ZAxisCommands);	// Trigger SyncMotion block
 	while (ZAxis.command == 13 | ZAxis.command == 14 | ZAxis.command == 15) &amp;  (R530_ZAxisCommands == 13  | R530_ZAxisCommands == 14 | R530_ZAxisCommands == 15) repeat { 
-		running1 = true;		
+		running3 = true;		
 	}	
 }
 //**************************Scan Jog Commands**************************************
@@ -8847,7 +8850,7 @@ if (R530_ZAxisCommands)== 5 then { // Wait for 'Home'
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCModule">
                     <id>150</id>
-                    <bounds x="826" y="30.908844" w="128" h="78.18228" />
+                    <bounds x="846" y="30.90886" w="128" h="78.18228" />
                     <name>AxisTheta</name>
                     <code />
                     <tport />
@@ -8865,7 +8868,7 @@ if (R530_ZAxisCommands)== 5 then { // Wait for 'Home'
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCStep">
                     <id>155</id>
-                    <bounds x="842" y="126" w="96" h="48" />
+                    <bounds x="862" y="126" w="96" h="48" />
                     <name>Init</name>
                     <code>// =========================== AxisTheta - Init =========================== //
 start ThetaAxis Motion; // Start the motion MSB
@@ -8887,7 +8890,7 @@ R540_ThetaCommands = 0;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCStep">
                     <id>160</id>
-                    <bounds x="842" y="186" w="96" h="48" />
+                    <bounds x="862" y="186" w="96" h="48" />
                     <name>ThetaControl</name>
                     <code>// =========================== AxisThea - AxisThetaControl =========================== //
 //This task handles the commands to the motion axis.
@@ -8911,14 +8914,14 @@ if (R540_ThetaCommands)== 1 | (R540_ThetaCommands)== 11 then { // Wait for 'Go' 
 	delay 2 ms;
 	while (ThetaAxis.command == 1 | ThetaAxis.command == 11)   &amp;  (R540_ThetaCommands== 1 | R540_ThetaCommands== 11) repeat { 
 		running4 = true;		
-	 }	
+	}	
  
  }
 //**************************Scan Commands from CAM table **************************************
 if (R540_ThetaCommands)==13  | (R540_ThetaCommands)==14 | (R540_ThetaCommands)==15 then { 
 	ThetaAxis.command = (R540_ThetaCommands);	// Trigger SyncMotion block
 	while (ThetaAxis.command == 13 | ThetaAxis.command == 14 | ThetaAxis.command == 15) &amp;  (R540_ThetaCommands == 13  | R540_ThetaCommands == 14 | R540_ThetaCommands == 15) repeat { 
-		running1 = true;		
+		running4 = true;		
 	}	
 }
 //**************************Scan Jog Commands**************************************
@@ -9107,7 +9110,7 @@ if (R550_GripperCommands)== 9 then {
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCModule">
                     <id>145</id>
-                    <bounds x="676" y="290.908844" w="128" h="78.18231" />
+                    <bounds x="546" y="290.908844" w="128" h="78.18231" />
                     <name>AxisEmpty1</name>
                     <code />
                     <tport />
@@ -9125,7 +9128,7 @@ if (R550_GripperCommands)== 9 then {
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCStep">
                     <id>151</id>
-                    <bounds x="692" y="386" w="96" h="48" />
+                    <bounds x="562" y="386" w="96" h="48" />
                     <name>Init</name>
                     <code>// =========================== AxisEmpty1 - Init =========================== //
 start EmptyAxis1 MaxonMotion; // Start the maxonmotion MSB
@@ -9148,7 +9151,7 @@ R570_Empty1Commands = 0;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCStep">
                     <id>170</id>
-                    <bounds x="690.849854" y="446" w="98.300354" h="48" />
+                    <bounds x="560.849854" y="446" w="98.300354" h="48" />
                     <name>Empty1Control</name>
                     <code>// =========================== AxisEmpty1 - Empty1Control =========================== //
 //This task handles the commands to the motion axis.
@@ -9231,7 +9234,7 @@ if (R570_Empty1Commands)== 5 then { // Wait for 'Home'
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCModule">
                     <id>207</id>
-                    <bounds x="826" y="290.908844" w="128" h="78.18231" />
+                    <bounds x="696" y="290.908844" w="128" h="78.18231" />
                     <name>AxisEmpty2</name>
                     <code />
                     <tport />
@@ -9249,7 +9252,7 @@ if (R570_Empty1Commands)== 5 then { // Wait for 'Home'
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCStep">
                     <id>212</id>
-                    <bounds x="842" y="386" w="96" h="48" />
+                    <bounds x="712" y="386" w="96" h="48" />
                     <name>Init</name>
                     <code>// =========================== AxisEmpty2 - Init =========================== //
 start EmptyAxis2 MaxonMotion; // Start the maxonmotion MSB
@@ -9272,7 +9275,7 @@ R580_Empty2Commands = 0;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCStep">
                     <id>217</id>
-                    <bounds x="840.849854" y="446" w="98.300354" h="48" />
+                    <bounds x="710.849854" y="446" w="98.300354" h="48" />
                     <name>Empty2Control</name>
                     <code>// =========================== AxisEmpty2 - Empty1Contro2 =========================== //
 //This task handles the commands to the motion axis.
@@ -9755,7 +9758,7 @@ delay 2 ms;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>127</id>
-                    <bounds x="1022" y="434" w="96" h="32" />
+                    <bounds x="912" y="444" w="96" h="32" />
                     <name>StepperMotion</name>
                     <code>// =========================== MotionSequenceBlock - StepperMotion =========================== //
 [Engage]
@@ -10168,7 +10171,7 @@ goto ScanCommands;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>119</id>
-                    <bounds x="1152" y="434" w="96" h="32" />
+                    <bounds x="1042" y="334" w="96" h="32" />
                     <name>MaxonMotion</name>
                     <code>// =========================== MotionSequenceBlock - MaxonMotion =========================== //
 
@@ -10599,27 +10602,188 @@ goto ScanCommands;
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>116</id>
-                    <bounds x="1302" y="284" w="96" h="32" />
+                    <bounds x="1172" y="294" w="96" h="32" />
                     <name>SyncMotion_X</name>
                     <code>// =========================== MotionSequenceBlock - SyncMotion_X =========================== //
 delay 1000 ms;
 
-Axisnum = axisnum;
+XAxisnum = 1;
+YAxisnum = 2; 
+ThetaAxisnum = 4; 
+
+axisY = YAxisnum;		
+axisZ = ThetaAxisnum; 
+
+[Cam_enable]
+if R700_CAM_En != 1 goto Cam_enable;
 
 table 0 clear; 
-table 0 addseries  		// Time in ms, position per user units
-0.0, 0.0:
-1.0, 0.1:
-2.0, 0.2:
-3.0, 0.3:
-4.0, 0.4:
-5.0, 0.5;
+table 1 clear;
+table 2 clear;
 
-table 0 precompute; 
+table 0 addseries  		// Time in ms, position per user units
+0.00,  0.0   :                         
+0.05,  -0.008:                               
+0.10,  -0.032:                               
+0.15,  -0.073:                               
+0.20,  -0.128:                               
+0.25,  -0.198:                               
+0.30,  -0.281:                               
+0.35,  -0.376:                               
+0.40,  -0.481:                               
+0.45,  -0.595:                               
+0.50,  -0.715:                               
+0.55,  -0.840:                               
+0.60,  -0.967:                               
+0.65,  -1.096:                               
+0.70,  -1.222:                               
+0.75,  -1.345:                               
+0.80,  -1.462:                               
+0.85,  -1.572:                               
+0.90,  -1.672:                               
+0.95,  -1.761:                               
+1.00, -1.838:                               
+1.05, -1.900:                               
+1.10, -1.949:                               
+1.15, -1.981:                               
+1.20, -1.997:                               
+1.25, -1.997:                              
+1.30, -1.981:                              
+1.35, -1.949:                              
+1.40, -1.900:                              
+1.45, -1.838:                              
+1.50, -1.761:                              
+1.55, -1.672:                              
+1.60, -1.572:                              
+1.65, -1.462:                              
+1.70, -1.345:                              
+1.75, -1.222:                              
+1.80, -1.096:                              
+1.85, -0.967:                              
+1.90, -0.840:                              
+1.95, -0.715:                              
+2.00, -0.595:                              
+2.05, -0.481:                              
+2.10, -0.376:                              
+2.15, -0.281:                              
+2.20, -0.198:                              
+2.25, -0.128:                              
+2.30, -0.073:                              
+2.35, -0.032:                              
+2.40, -0.008:                              
+2.45, 0.0   ;    
+
+table 1 addseries  		// Time in ms, position per user units
+0.00,   0.0  :
+0.05,   0.127:
+0.10,   0.253:
+0.15,   0.375:
+0.20,   0.490:
+0.25,   0.598:
+0.30,   0.695:
+0.35,   0.781:
+0.40,   0.855:
+0.45,   0.914:
+0.50,   0.958:
+0.55,   0.987:
+0.60,   0.999:
+0.65,   0.995:
+0.70,   0.974:
+0.75,   0.938:
+0.80,   0.886:
+0.85,   0.820:
+0.90,   0.740:
+0.95,   0.648:
+1.00,   0.545:
+1.05,   0.433:
+1.10,   0.315:
+1.15,   0.191:
+1.20,   0.064:
+1.25,  -0.064:
+1.30,  -0.191:
+1.35,  -0.315:
+1.40,  -0.433:
+1.45,  -0.545:
+1.50,  -0.648:
+1.55,  -0.740:
+1.60,  -0.820:
+1.65,  -0.886:
+1.70,  -0.938:
+1.75,  -0.974:
+1.80,  -0.995:
+1.85,  -0.999:
+1.90,  -0.987:
+1.95,  -0.958:
+2.00,  -0.914:
+2.05,  -0.855:
+2.10,  -0.781:
+2.15,  -0.695:
+2.20,  -0.598:
+2.25,  -0.490:
+2.30,  -0.375:
+2.35,  -0.253:
+2.40,  -0.127:
+2.45,  0.0   ;
+
+table 2 addseries  		// Time in ms, position per user units
+0.00,   0.0  :
+0.05,   0.0  :
+0.10,   0.0  :
+0.15,   0.0  :
+0.20,   0.0  :
+0.25,   0.0  :
+0.30,   0.0  :
+0.35,   0.0  :
+0.40,   0.0  :
+0.45,   0.0  :
+0.50,   0.0  :
+0.55,   0.0  :
+0.60,   0.0  :
+0.65,   0.0  :
+0.70,   0.0  :
+0.75,   0.0  :
+0.80,   0.0  :
+0.85,   0.0  :
+0.90,   0.0  :
+0.95,   0.0  :
+1.00,   0.0  :
+1.05,   0.0  :
+1.10,   0.0  :
+1.15,   0.0  :
+1.20,   0.0  :
+1.25,   0.0  :
+1.30,   0.0  :
+1.35,   0.0  :
+1.40,   0.0  :
+1.45,   0.0  :
+1.50,   0.0  :
+1.55,   0.0  :
+1.60,   0.0  :
+1.65,   0.0  :
+1.70,   0.0  :
+1.75,   0.0  :
+1.80,   0.0  :
+1.85,   0.0  :
+1.90,   0.0  :
+1.95,   0.0  :
+2.00,   0.0  :
+2.05,   0.0  :
+2.10,   0.0  :
+2.15,   0.0  :
+2.20,   0.0  :
+2.25,   0.0  :
+2.30,   0.0  :
+2.35,   0.0  :
+2.40,   0.0  :
+2.45,   0.0  ;
+
+table 0 precompute; 	// precompute 1/2/3
 
 [begin_motion]
+if (R700_CAM_En != 1) goto Cam_enable; 
 if ((command != 13) &amp; (command != 14) &amp; (command != 15)) goto begin_motion;
 
+delay 10; 			// waiting for 10ms to sync with other axis
 OldPosition = fpos; 
 
 // zero our position since table is relative position based
@@ -10661,6 +10825,8 @@ set feedback position NewPosition;
 goto begin_motion;
 
 
+
+
 </code>
                     <tport />
                     <bport />
@@ -10673,141 +10839,33 @@ goto begin_motion;
                     <lport3 />
                     <rport3 />
                   </vobject>
-                  <vobject class="QuickBuilder.SFC.SFCModule">
-                    <id>117</id>
-                    <bounds x="1346" y="30.9088554" w="128" h="78.18228" />
-                    <name>Task_SyncMotion</name>
-                    <code />
-                    <tport />
-                    <bport>122</bport>
-                    <lport0 />
-                    <rport0 />
-                    <lport1 />
-                    <rport1 />
-                    <lport2 />
-                    <rport2 />
-                    <lport3 />
-                    <rport3 />
-                    <startstep>false</startstep>
-                    <param-locals />
-                  </vobject>
-                  <vobject class="QuickBuilder.SFC.SFCStep">
-                    <id>123</id>
-                    <bounds x="1357.80029" y="126" w="104.399292" h="48" />
-                    <name>Init_SyncMotion</name>
-                    <code>R700_BroadcastMotion = 0;
-start XAxis SyncMotion_X;
-start YAxis SyncMotion_Y;
-start ZAxis SyncMotion_Z;
-start ThetaAxis SyncMotion_U;</code>
-                    <tport>124</tport>
-                    <bport>125</bport>
-                    <lport0>129</lport0>
-                    <rport0>130</rport0>
-                    <lport1 />
-                    <rport1 />
-                    <lport2 />
-                    <rport2 />
-                    <lport3 />
-                    <rport3 />
-                  </vobject>
-                  <vobject class="QuickBuilder.SFC.SFCStep">
-                    <id>131</id>
-                    <bounds x="1351.38623" y="186" w="117.227417" h="48" />
-                    <name>Sync_Motion_loop</name>
-                    <code>// =========================== StageControl - StageAuto =========================== //
-
-repeat {
- } until (R700_BroadcastMotion == 13) | (R700_BroadcastMotion == 14) | (R700_BroadcastMotion == 15);
-
-R510_XAxisCommands = 0;
-R520_YAxisCommands = 0;
-R530_ZAxisCommands = 0;
-R540_ThetaCommands = 0;
-
-// HL: change from 20ms to 2ms
-delay 2 ms;
-
-R510_XAxisCommands = R700_BroadcastMotion;
-R520_YAxisCommands = R700_BroadcastMotion;
-R530_ZAxisCommands = R700_BroadcastMotion;
-R540_ThetaCommands = R700_BroadcastMotion;
-
-repeat {
- delay 20 ms;} until R510_XAxisCommands == 0;
- 
-R700_BroadcastMotion = 0;
-</code>
-                    <tport>132</tport>
-                    <bport>133</bport>
-                    <lport0>134</lport0>
-                    <rport0>135</rport0>
-                    <lport1 />
-                    <rport1 />
-                    <lport2 />
-                    <rport2 />
-                    <lport3 />
-                    <rport3 />
-                  </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>139</id>
-                    <bounds x="1302" y="324" w="96" h="32" />
+                    <bounds x="1172" y="334" w="96" h="32" />
                     <name>SyncMotion_Y</name>
                     <code>// =========================== MotionSequenceBlock - SyncMotion_Y =========================== //
 delay 1000 ms;
 
 Axisnum = axisnum;
 
-table 1 clear; 
-table 1 addseries  		// Time in ms, position per user units
-0.0, 0.0:
-1.0, 0.1:
-2.0, 0.2:
-3.0, 0.3:
-4.0, 0.4:
-5.0, 0.5;
-
-table 1 precompute; 
+[Cam_enable]
+if (R700_CAM_En != 1) goto Cam_enable;
 
 [begin_motion]
-if ((command != 13) &amp; (command != 14) &amp; (command != 15)) goto begin_motion;
+if (R700_CAM_En != 1) goto Cam_enable;
+if ((R510_XAxisCommands != 13) &amp; (R510_XAxisCommands != 14) &amp; (R510_XAxisCommands != 15)) goto begin_motion;
 
-OldPosition = fpos*1000; 
+delay 10; 				// waiting for 10ms to sync with other axis
 
-// zero our position since table is relative position based
-zero feedback position;
+OldPosition = fpos; 
 
-// command 13 - linear
-if (command == 13) goto linear_cam; 
-if (command == 14) goto quadratic_cam; 
-if (command == 15) goto cubic_cam; 
+[loop]
+if (R510_XAxisCommands == 13) | (R510_XAxisCommands == 14) | (R510_XAxisCommands == 15) goto loop; 
 
-[linear_cam]
-table 0 start linear 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[quadratic_cam]
-table 0 start quadratic 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[cubic_cam]
-table 0 start cubic 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[StopMove]
-running = 0;
-RegWrite = 0;
-host write RegWrite, ((Axisnum * 10) + 500) ;
-delay 2 ms;
+delay 10 ms;
 
 // update new position
-NewPosition = OldPosition + fpos*1000;
+NewPosition = OldPosition + fpos;
 set feedback position NewPosition;
 
 goto begin_motion;</code>
@@ -10824,136 +10882,31 @@ goto begin_motion;</code>
                   </vobject>
                   <vobject class="QuickBuilder.SFC.SFCMSB">
                     <id>141</id>
-                    <bounds x="1302" y="434" w="96" h="32" />
-                    <name>SyncMotion_U</name>
+                    <bounds x="1169.38623" y="374" w="101.227417" h="32" />
+                    <name>SyncMotion_Theta</name>
                     <code>// =========================== MotionSequenceBlock - SyncMotion_U =========================== //
 delay 1000 ms;
 
 Axisnum = axisnum;
 
-table 3 clear; 
-table 3 addseries  		// Time in ms, position per user units
-0.0, 0.0:
-1.0, 0.1:
-2.0, 0.2:
-3.0, 0.3:
-4.0, 0.4:
-5.0, 0.5;
-
-table 3 precompute; 
+[Cam_enable]
+if (R700_CAM_En != 1) goto Cam_enable;
 
 [begin_motion]
-if ((command != 13) &amp; (command != 14) &amp; (command != 15)) goto begin_motion;
+if (R700_CAM_En != 1) goto Cam_enable;
+if ((R510_XAxisCommands != 13) &amp; (R510_XAxisCommands != 14) &amp; (R510_XAxisCommands != 15)) goto begin_motion;
 
-OldPosition = fpos*1000; 
+delay 10; 				// waiting for 10ms to sync with other axis
 
-// zero our position since table is relative position based
-zero feedback position;
+OldPosition = fpos; 
 
-// command 13 - linear
-if (command == 13) goto linear_cam; 
-if (command == 14) goto quadratic_cam; 
-if (command == 15) goto cubic_cam; 
+[loop]
+if (R510_XAxisCommands == 13) | (R510_XAxisCommands == 14) | (R510_XAxisCommands == 15) goto loop; 
 
-[linear_cam]
-table 0 start linear 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[quadratic_cam]
-table 0 start quadratic 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[cubic_cam]
-table 0 start cubic 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[StopMove]
-running = 0;
-RegWrite = 0;
-host write RegWrite, ((Axisnum * 10) + 500) ;
-delay 2 ms;
+delay 10 ms;
 
 // update new position
-NewPosition = OldPosition + fpos*1000;
-set feedback position NewPosition;
-
-goto begin_motion;</code>
-                    <tport />
-                    <bport />
-                    <lport0 />
-                    <rport0 />
-                    <lport1 />
-                    <rport1 />
-                    <lport2 />
-                    <rport2 />
-                    <lport3 />
-                    <rport3 />
-                  </vobject>
-                  <vobject class="QuickBuilder.SFC.SFCMSB">
-                    <id>142</id>
-                    <bounds x="1302" y="364" w="96" h="32" />
-                    <name>SyncMotion_Z</name>
-                    <code>// =========================== MotionSequenceBlock - SyncMotion_Z =========================== //
-delay 1000 ms;
-
-Axisnum = axisnum;
-
-table 2 clear; 
-table 2 addseries  		// Time in ms, position per user units
-0.0, 0.0:
-1.0, 0.1:
-2.0, 0.2:
-3.0, 0.3:
-4.0, 0.4:
-5.0, 0.5;
-
-table 2 precompute; 
-
-[begin_motion]
-if ((command != 13) &amp; (command != 14) &amp; (command != 15)) goto begin_motion;
-
-OldPosition = fpos*1000; 
-
-// zero our position since table is relative position based
-zero feedback position;
-
-// command 13 - linear
-if (command == 13) goto linear_cam; 
-if (command == 14) goto quadratic_cam; 
-if (command == 15) goto cubic_cam; 
-
-[linear_cam]
-table 0 start linear 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[quadratic_cam]
-table 0 start quadratic 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[cubic_cam]
-table 0 start cubic 1.0, 1.0, 1;
-running = 1;
-wait for in position;
-goto StopMove;
-
-[StopMove]
-running = 0;
-RegWrite = 0;
-host write RegWrite, ((Axisnum * 10) + 500) ;
-delay 2 ms;
-
-// update new position
-NewPosition = OldPosition + fpos*1000;
+NewPosition = OldPosition + fpos;
 set feedback position NewPosition;
 
 goto begin_motion;</code>
@@ -11189,24 +11142,6 @@ goto begin_motion;</code>
                     <trans />
                     <fromID>18</fromID>
                     <toID>23</toID>
-                  </vlink>
-                  <vlink class="QuickBuilder.SFC.SFCLink">
-                    <id>136</id>
-                    <trans />
-                    <fromID>125</fromID>
-                    <toID>132</toID>
-                  </vlink>
-                  <vlink class="QuickBuilder.SFC.SFCLink">
-                    <id>137</id>
-                    <trans />
-                    <fromID>133</fromID>
-                    <toID>134</toID>
-                  </vlink>
-                  <vlink class="QuickBuilder.SFC.SFCLink">
-                    <id>138</id>
-                    <trans />
-                    <fromID>122</fromID>
-                    <toID>124</toID>
                   </vlink>
                 </vdocument>
                 <nodes />
@@ -13882,14 +13817,6 @@ goto begin_motion;</code>
         </item>
         <item>
           <key>
-            <int>338</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion (Task)</string>
-          </value>
-        </item>
-        <item>
-          <key>
             <int>326</int>
           </key>
           <value>
@@ -13986,106 +13913,10 @@ goto begin_motion;</code>
         </item>
         <item>
           <key>
-            <int>339</int>
+            <int>338</int>
           </key>
           <value>
-            <string>Task_SyncMotion.Init_SyncMotion (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>340</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>341</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>342</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>343</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>344</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>345</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>346</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>347</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>348</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>349</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>350</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
-          </value>
-        </item>
-        <item>
-          <key>
-            <int>351</int>
-          </key>
-          <value>
-            <string>Task_SyncMotion.Sync_Motion_loop (Step)</string>
+            <string>Updates.Update (Step)</string>
           </value>
         </item>
       </dictionary>
