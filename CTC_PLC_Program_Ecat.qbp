@@ -10614,9 +10614,6 @@ ThetaAxisnum = 4;
 axisY = YAxisnum;		
 axisZ = ThetaAxisnum; 
 
-[Cam_enable]
-if R700_CAM_En != 1 goto Cam_enable;
-
 table 0 clear; 
 table 1 clear;
 table 2 clear;
@@ -10779,9 +10776,13 @@ table 2 addseries  		// Time in ms, position per user units
 
 table 0 precompute; 	// precompute 1/2/3
 
-[begin_motion]
-if (R700_CAM_En != 1) goto Cam_enable; 
-if ((command != 13) &amp; (command != 14) &amp; (command != 15)) goto begin_motion;
+[Cam_enable]
+stop table; 
+if (R700_CAM_En != 1) goto Cam_enable;
+
+[begin_spline_motion]
+if (R700_CAM_En != 1) goto Cam_enable;
+if ((command != 13) &amp; (command != 14) &amp; (command != 15)) goto begin_spline_motion;
 
 delay 10; 			// waiting for 10ms to sync with other axis
 OldPosition = fpos; 
@@ -10797,22 +10798,36 @@ if (command == 15) goto cubic_cam;
 [linear_cam]
 table 0 start linear 1.0, 1.0, 1;
 running = 1;
-wait for in position;
-goto StopMove;
+State = 0;
+if command == 0 goto StopMove;
+goto MoveForward;
 
 [quadratic_cam]
 table 0 start quadratic 1.0, 1.0, 1;
 running = 1;
-wait for in position;
-goto StopMove;
+State = 0;
+if command == 0 goto StopMove;
+goto MoveForward;
+
 
 [cubic_cam]
 table 0 start cubic 1.0, 1.0, 1;
 running = 1;
-wait for in position;
+State = 0;
+if command == 0 goto StopMove;
+goto MoveForward;
+
+
+[MoveForward] // Scan for complete, stop, or end of travel limits
+if command == 0 goto StopMove;
+delay 5 ms;
+State = pstate;
+if State == -1 goto StopMove;
+if State != 2 goto MoveForward;	// pstate returns a '2' when the motion is complete
 goto StopMove;
 
 [StopMove]
+stop table;
 running = 0;
 RegWrite = 0;
 host write RegWrite, ((Axisnum * 10) + 500) ;
@@ -10822,7 +10837,11 @@ delay 10 ms;
 NewPosition = OldPosition + fpos;
 set feedback position NewPosition;
 
-goto begin_motion;
+goto begin_spline_motion;
+
+
+
+
 
 
 
