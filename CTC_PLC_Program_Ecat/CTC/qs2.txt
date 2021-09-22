@@ -181,20 +181,8 @@ __0006:
 		Q4T(task)->currentStep = (void *)&currentLine[14]; lineYield(task,14);
 		// STORE 9 TO REG#36990
 		process_ATABLE(9, task);
-		// MODULE(kickoff):STEP(Init1):LINE 28->start XAxis SyncMotion_X0
+		// MODULE(kickoff):STEP(Init1):LINE 27->goto Stops
 		Q4T(task)->currentStep = (void *)&currentLine[15]; lineYield(task,15);
-		// STORE 10 TO REG#36990
-		process_ATABLE(10, task);
-		// MODULE(kickoff):STEP(Init1):LINE 29->start YAxis SyncMotion_Y0
-		Q4T(task)->currentStep = (void *)&currentLine[16]; lineYield(task,16);
-		// STORE 11 TO REG#36990
-		process_ATABLE(11, task);
-		// MODULE(kickoff):STEP(Init1):LINE 30->start ThetaAxis SyncMotion_Theta0
-		Q4T(task)->currentStep = (void *)&currentLine[17]; lineYield(task,17);
-		// STORE 12 TO REG#36990
-		process_ATABLE(12, task);
-		// MODULE(kickoff):STEP(Init1):LINE 31->goto Stops
-		Q4T(task)->currentStep = (void *)&currentLine[18]; lineYield(task,18);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO kickoff_Stops
@@ -211,7 +199,7 @@ StageControl_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):LINE 2->goto Mode_Select
-		Q4T(task)->currentStep = (void *)&currentLine[19]; lineYield(task,19);
+		Q4T(task)->currentStep = (void *)&currentLine[16]; lineYield(task,16);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO StageControl_Mode_Select
@@ -228,11 +216,11 @@ StageControl_Mode_Select_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(Mode_Select):LINE 2->R510_XAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[20]; lineYield(task,20);
-		// STORE 13 TO REG#36990
-		process_ATABLE(13, task);
+		Q4T(task)->currentStep = (void *)&currentLine[17]; lineYield(task,17);
+		// STORE 10 TO REG#36990
+		process_ATABLE(10, task);
 		// MODULE(StageControl):STEP(Mode_Select):LINE 5->goto StageAuto
-		Q4T(task)->currentStep = (void *)&currentLine[21]; lineYield(task,21);
+		Q4T(task)->currentStep = (void *)&currentLine[18]; lineYield(task,18);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO StageControl_StageAuto
@@ -249,7 +237,7 @@ StageControl_StageAuto_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(StageAuto):LINE 3->repeat ( 
-		Q4T(task)->currentStep = (void *)&currentLine[22]; lineYield(task,22);
+		Q4T(task)->currentStep = (void *)&currentLine[19]; lineYield(task,19);
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0008
@@ -291,23 +279,23 @@ __0009:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(StageAuto):LINE 6->R520_YAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[23]; lineYield(task,23);
-		// STORE 14 TO REG#36990
-		process_ATABLE(14, task);
+		Q4T(task)->currentStep = (void *)&currentLine[20]; lineYield(task,20);
+		// STORE 11 TO REG#36990
+		process_ATABLE(11, task);
 		// MODULE(StageControl):STEP(StageAuto):LINE 7->R530_ZAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[24]; lineYield(task,24);
-		// STORE 15 TO REG#36990
-		process_ATABLE(15, task);
+		Q4T(task)->currentStep = (void *)&currentLine[21]; lineYield(task,21);
+		// STORE 12 TO REG#36990
+		process_ATABLE(12, task);
 		// MODULE(StageControl):STEP(StageAuto):LINE 8->R540_ThetaCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[25]; lineYield(task,25);
-		// STORE 16 TO REG#36990
-		process_ATABLE(16, task);
+		Q4T(task)->currentStep = (void *)&currentLine[22]; lineYield(task,22);
+		// STORE 13 TO REG#36990
+		process_ATABLE(13, task);
 		// MODULE(StageControl):STEP(StageAuto):LINE 10->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[26];
+		Q4T(task)->currentStep = (void *)&currentLine[23];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 17 TO REG#36990
-		process_ATABLE(17, task); start_of_step_timeout_flag = 0;
+		// STORE 14 TO REG#36990
+		process_ATABLE(14, task); start_of_step_timeout_flag = 0;
 		// GOTO __0010
 		goto __0010;
 // [0018]
@@ -319,7 +307,7 @@ __0010:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(StageAuto):LINE 10->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[27]; lineYield(task,27);
+		Q4T(task)->currentStep = (void *)&currentLine[24]; lineYield(task,24);
 		// STORE 4 TO REG#36991
 		R36991 = 4;
 		// IF REG#36991=0 GOTO __0011
@@ -335,59 +323,59 @@ __0011:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(StageAuto):LINE 12->R36701_Speed = R501_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[25]; lineYield(task,25);
+		// STORE 15 TO REG#36990
+		process_ATABLE(15, task);
+		// MODULE(StageControl):STEP(StageAuto):LINE 13->R36702_Accel = R502_Accel
+		Q4T(task)->currentStep = (void *)&currentLine[26]; lineYield(task,26);
+		// STORE 16 TO REG#36990
+		process_ATABLE(16, task);
+		// MODULE(StageControl):STEP(StageAuto):LINE 14->R36703_Decel = R503_Decel
+		Q4T(task)->currentStep = (void *)&currentLine[27]; lineYield(task,27);
+		// STORE 17 TO REG#36990
+		process_ATABLE(17, task);
+		// MODULE(StageControl):STEP(StageAuto):LINE 16->R36704_XTarget = R504_Target
 		Q4T(task)->currentStep = (void *)&currentLine[28]; lineYield(task,28);
 		// STORE 18 TO REG#36990
 		process_ATABLE(18, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 13->R36702_Accel = R502_Accel
+		// MODULE(StageControl):STEP(StageAuto):LINE 17->R36705_YTarget = R514_Target
 		Q4T(task)->currentStep = (void *)&currentLine[29]; lineYield(task,29);
 		// STORE 19 TO REG#36990
 		process_ATABLE(19, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 14->R36703_Decel = R503_Decel
+		// MODULE(StageControl):STEP(StageAuto):LINE 18->R36706_ZTarget = R524_Target
 		Q4T(task)->currentStep = (void *)&currentLine[30]; lineYield(task,30);
 		// STORE 20 TO REG#36990
 		process_ATABLE(20, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 16->R36704_XTarget = R504_Target
+		// MODULE(StageControl):STEP(StageAuto):LINE 21->XAxis.speed = R36701_Speed/1000
 		Q4T(task)->currentStep = (void *)&currentLine[31]; lineYield(task,31);
 		// STORE 21 TO REG#36990
 		process_ATABLE(21, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 17->R36705_YTarget = R514_Target
+		// MODULE(StageControl):STEP(StageAuto):LINE 22->XAxis.Accel = R36702_Accel/1000
 		Q4T(task)->currentStep = (void *)&currentLine[32]; lineYield(task,32);
 		// STORE 22 TO REG#36990
 		process_ATABLE(22, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 18->R36706_ZTarget = R524_Target
+		// MODULE(StageControl):STEP(StageAuto):LINE 23->XAxis.Decel = R36703_Decel/1000
 		Q4T(task)->currentStep = (void *)&currentLine[33]; lineYield(task,33);
 		// STORE 23 TO REG#36990
 		process_ATABLE(23, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 21->XAxis.speed = R36701_Speed/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 25->XAxis.XTarget = R36704_XTarget/1000
 		Q4T(task)->currentStep = (void *)&currentLine[34]; lineYield(task,34);
 		// STORE 24 TO REG#36990
 		process_ATABLE(24, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 22->XAxis.Accel = R36702_Accel/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 26->XAxis.YTarget = R36705_YTarget/1000
 		Q4T(task)->currentStep = (void *)&currentLine[35]; lineYield(task,35);
 		// STORE 25 TO REG#36990
 		process_ATABLE(25, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 23->XAxis.Decel = R36703_Decel/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 27->XAxis.ZTarget = R36706_ZTarget/1000
 		Q4T(task)->currentStep = (void *)&currentLine[36]; lineYield(task,36);
 		// STORE 26 TO REG#36990
 		process_ATABLE(26, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 25->XAxis.XTarget = R36704_XTarget/1000
+		// MODULE(StageControl):STEP(StageAuto):LINE 29->XAxis.command = 10
 		Q4T(task)->currentStep = (void *)&currentLine[37]; lineYield(task,37);
 		// STORE 27 TO REG#36990
 		process_ATABLE(27, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 26->XAxis.YTarget = R36705_YTarget/1000
-		Q4T(task)->currentStep = (void *)&currentLine[38]; lineYield(task,38);
-		// STORE 28 TO REG#36990
-		process_ATABLE(28, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 27->XAxis.ZTarget = R36706_ZTarget/1000
-		Q4T(task)->currentStep = (void *)&currentLine[39]; lineYield(task,39);
-		// STORE 29 TO REG#36990
-		process_ATABLE(29, task);
-		// MODULE(StageControl):STEP(StageAuto):LINE 29->XAxis.command = 10
-		Q4T(task)->currentStep = (void *)&currentLine[40]; lineYield(task,40);
-		// STORE 30 TO REG#36990
-		process_ATABLE(30, task);
 		// MODULE(StageControl):STEP(StageAuto):LINE 31->repeat ( 
-		Q4T(task)->currentStep = (void *)&currentLine[41]; lineYield(task,41);
+		Q4T(task)->currentStep = (void *)&currentLine[38]; lineYield(task,38);
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0013
@@ -401,11 +389,11 @@ __0013:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(StageAuto):LINE 32->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[42];
+		Q4T(task)->currentStep = (void *)&currentLine[39];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 31 TO REG#36990
-		process_ATABLE(31, task); start_of_step_timeout_flag = 0;
+		// STORE 28 TO REG#36990
+		process_ATABLE(28, task); start_of_step_timeout_flag = 0;
 		// GOTO __0015
 		goto __0015;
 // [0021]
@@ -417,7 +405,7 @@ __0015:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(StageAuto):LINE 32->delay = 20
-		Q4T(task)->currentStep = (void *)&currentLine[43]; lineYield(task,43);
+		Q4T(task)->currentStep = (void *)&currentLine[40]; lineYield(task,40);
 		// STORE 5 TO REG#36991
 		R36991 = 5;
 		// IF REG#36991=0 GOTO __0016
@@ -447,7 +435,7 @@ __0012:
 		// STORE 6 TO REG#36991
 		R36991 = 6;
 		// MODULE(StageControl):STEP(StageAuto):LINE 31->repeat ( 
-		Q4T(task)->currentStep = (void *)&currentLine[44]; lineYield(task,44);
+		Q4T(task)->currentStep = (void *)&currentLine[41]; lineYield(task,41);
 		// IF REG#36991=0 GOTO __0013
 		if (process_CTABLE(R36991, task) == 0) goto __0013;
 		// STORE 0 TO REG#36996
@@ -463,15 +451,15 @@ __0014:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(StageControl):STEP(StageAuto):LINE 34->F1_Trigger = false
-		Q4T(task)->currentStep = (void *)&currentLine[45]; lineYield(task,45);
-		// STORE 32 TO REG#36990
-		process_ATABLE(32, task);
+		Q4T(task)->currentStep = (void *)&currentLine[42]; lineYield(task,42);
+		// STORE 29 TO REG#36990
+		process_ATABLE(29, task);
 		// MODULE(StageControl):STEP(StageAuto):LINE 35->R510_XAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[46]; lineYield(task,46);
-		// STORE 33 TO REG#36990
-		process_ATABLE(33, task);
+		Q4T(task)->currentStep = (void *)&currentLine[43]; lineYield(task,43);
+		// STORE 30 TO REG#36990
+		process_ATABLE(30, task);
 		// MODULE(StageControl):STEP(StageAuto):LINE 36->goto StageAuto
-		Q4T(task)->currentStep = (void *)&currentLine[47]; lineYield(task,47);
+		Q4T(task)->currentStep = (void *)&currentLine[44]; lineYield(task,44);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO StageControl_StageAuto
@@ -500,7 +488,7 @@ __0017:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 4->if R500_RestartProgram==1 then 
-		Q4T(task)->currentStep = (void *)&currentLine[48]; lineYield(task,48);
+		Q4T(task)->currentStep = (void *)&currentLine[45]; lineYield(task,45);
 		// STORE 7 TO REG#36991
 		R36991 = 7;
 		// IF REG#36991<>0 GOTO __0018
@@ -516,11 +504,11 @@ __0018:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 5->R500_RestartProgram = 0
-		Q4T(task)->currentStep = (void *)&currentLine[49]; lineYield(task,49);
-		// STORE 34 TO REG#36990
-		process_ATABLE(34, task);
+		Q4T(task)->currentStep = (void *)&currentLine[46]; lineYield(task,46);
+		// STORE 31 TO REG#36990
+		process_ATABLE(31, task);
 		// MODULE(kickoff):STEP(Stops):LINE 7->cancel other tasks
-		Q4T(task)->currentStep = (void *)&currentLine[50]; lineYield(task,50);
+		Q4T(task)->currentStep = (void *)&currentLine[47]; lineYield(task,47);
 		// GOTO __0020
 		goto __0020;
 // [0028]
@@ -544,47 +532,47 @@ __0021:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 8->stop XAxis 0
+		Q4T(task)->currentStep = (void *)&currentLine[48]; lineYield(task,48);
+		// STORE 32 TO REG#36990
+		process_ATABLE(32, task);
+		// MODULE(kickoff):STEP(Stops):LINE 9->stop YAxis 0
+		Q4T(task)->currentStep = (void *)&currentLine[49]; lineYield(task,49);
+		// STORE 33 TO REG#36990
+		process_ATABLE(33, task);
+		// MODULE(kickoff):STEP(Stops):LINE 10->stop ZAxis 0
+		Q4T(task)->currentStep = (void *)&currentLine[50]; lineYield(task,50);
+		// STORE 34 TO REG#36990
+		process_ATABLE(34, task);
+		// MODULE(kickoff):STEP(Stops):LINE 11->stop ThetaAxis 0
 		Q4T(task)->currentStep = (void *)&currentLine[51]; lineYield(task,51);
 		// STORE 35 TO REG#36990
 		process_ATABLE(35, task);
-		// MODULE(kickoff):STEP(Stops):LINE 9->stop YAxis 0
+		// MODULE(kickoff):STEP(Stops):LINE 12->stop Gripper 0
 		Q4T(task)->currentStep = (void *)&currentLine[52]; lineYield(task,52);
 		// STORE 36 TO REG#36990
 		process_ATABLE(36, task);
-		// MODULE(kickoff):STEP(Stops):LINE 10->stop ZAxis 0
+		// MODULE(kickoff):STEP(Stops):LINE 14->stop EmptyAxis1 0
 		Q4T(task)->currentStep = (void *)&currentLine[53]; lineYield(task,53);
 		// STORE 37 TO REG#36990
 		process_ATABLE(37, task);
-		// MODULE(kickoff):STEP(Stops):LINE 11->stop ThetaAxis 0
+		// MODULE(kickoff):STEP(Stops):LINE 15->stop EmptyAxis2 0
 		Q4T(task)->currentStep = (void *)&currentLine[54]; lineYield(task,54);
 		// STORE 38 TO REG#36990
 		process_ATABLE(38, task);
-		// MODULE(kickoff):STEP(Stops):LINE 12->stop Gripper 0
+		// MODULE(kickoff):STEP(Stops):LINE 16->stop TransferStation 0
 		Q4T(task)->currentStep = (void *)&currentLine[55]; lineYield(task,55);
 		// STORE 39 TO REG#36990
 		process_ATABLE(39, task);
-		// MODULE(kickoff):STEP(Stops):LINE 14->stop EmptyAxis1 0
+		// MODULE(kickoff):STEP(Stops):LINE 17->stop EmptyAxis3 0
 		Q4T(task)->currentStep = (void *)&currentLine[56]; lineYield(task,56);
 		// STORE 40 TO REG#36990
 		process_ATABLE(40, task);
-		// MODULE(kickoff):STEP(Stops):LINE 15->stop EmptyAxis2 0
-		Q4T(task)->currentStep = (void *)&currentLine[57]; lineYield(task,57);
-		// STORE 41 TO REG#36990
-		process_ATABLE(41, task);
-		// MODULE(kickoff):STEP(Stops):LINE 16->stop TransferStation 0
-		Q4T(task)->currentStep = (void *)&currentLine[58]; lineYield(task,58);
-		// STORE 42 TO REG#36990
-		process_ATABLE(42, task);
-		// MODULE(kickoff):STEP(Stops):LINE 17->stop EmptyAxis3 0
-		Q4T(task)->currentStep = (void *)&currentLine[59]; lineYield(task,59);
-		// STORE 43 TO REG#36990
-		process_ATABLE(43, task);
 		// MODULE(kickoff):STEP(Stops):LINE 18->delay = 3000
-		Q4T(task)->currentStep = (void *)&currentLine[60];
+		Q4T(task)->currentStep = (void *)&currentLine[57];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 44 TO REG#36990
-		process_ATABLE(44, task); start_of_step_timeout_flag = 0;
+		// STORE 41 TO REG#36990
+		process_ATABLE(41, task); start_of_step_timeout_flag = 0;
 		// GOTO __0022
 		goto __0022;
 // [0030]
@@ -596,7 +584,7 @@ __0022:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 18->delay = 3000
-		Q4T(task)->currentStep = (void *)&currentLine[61]; lineYield(task,61);
+		Q4T(task)->currentStep = (void *)&currentLine[58]; lineYield(task,58);
 		// STORE 8 TO REG#36991
 		R36991 = 8;
 		// IF REG#36991=0 GOTO __0023
@@ -612,27 +600,27 @@ __0023:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 21->$REGISTERS[10101] = 0
+		Q4T(task)->currentStep = (void *)&currentLine[59]; lineYield(task,59);
+		// STORE 42 TO REG#36990
+		process_ATABLE(42, task);
+		// MODULE(kickoff):STEP(Stops):LINE 30->i = 0
+		Q4T(task)->currentStep = (void *)&currentLine[60]; lineYield(task,60);
+		// STORE 43 TO REG#36990
+		process_ATABLE(43, task);
+		// MODULE(kickoff):STEP(Stops):LINE 33->R12333_RestartEtherCAT = 1
+		Q4T(task)->currentStep = (void *)&currentLine[61]; lineYield(task,61);
+		// STORE 44 TO REG#36990
+		process_ATABLE(44, task);
+		// MODULE(kickoff):STEP(Stops):LINE 34->R13464_EtherCATStatus = 21930
 		Q4T(task)->currentStep = (void *)&currentLine[62]; lineYield(task,62);
 		// STORE 45 TO REG#36990
 		process_ATABLE(45, task);
-		// MODULE(kickoff):STEP(Stops):LINE 30->i = 0
-		Q4T(task)->currentStep = (void *)&currentLine[63]; lineYield(task,63);
-		// STORE 46 TO REG#36990
-		process_ATABLE(46, task);
-		// MODULE(kickoff):STEP(Stops):LINE 33->R12333_RestartEtherCAT = 1
-		Q4T(task)->currentStep = (void *)&currentLine[64]; lineYield(task,64);
-		// STORE 47 TO REG#36990
-		process_ATABLE(47, task);
-		// MODULE(kickoff):STEP(Stops):LINE 34->R13464_EtherCATStatus = 21930
-		Q4T(task)->currentStep = (void *)&currentLine[65]; lineYield(task,65);
-		// STORE 48 TO REG#36990
-		process_ATABLE(48, task);
 		// MODULE(kickoff):STEP(Stops):LINE 35->delay = 2000
-		Q4T(task)->currentStep = (void *)&currentLine[66];
+		Q4T(task)->currentStep = (void *)&currentLine[63];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 49 TO REG#36990
-		process_ATABLE(49, task); start_of_step_timeout_flag = 0;
+		// STORE 46 TO REG#36990
+		process_ATABLE(46, task); start_of_step_timeout_flag = 0;
 		// GOTO __0024
 		goto __0024;
 // [0032]
@@ -644,7 +632,7 @@ __0024:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 35->delay = 2000
-		Q4T(task)->currentStep = (void *)&currentLine[67]; lineYield(task,67);
+		Q4T(task)->currentStep = (void *)&currentLine[64]; lineYield(task,64);
 		// STORE 9 TO REG#36991
 		R36991 = 9;
 		// IF REG#36991=0 GOTO __0025
@@ -660,7 +648,7 @@ __0025:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 36->goto Init1
-		Q4T(task)->currentStep = (void *)&currentLine[68]; lineYield(task,68);
+		Q4T(task)->currentStep = (void *)&currentLine[65]; lineYield(task,65);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO kickoff_Init1
@@ -674,7 +662,7 @@ __0019:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(kickoff):STEP(Stops):LINE 41->goto Stops
-		Q4T(task)->currentStep = (void *)&currentLine[69]; lineYield(task,69);
+		Q4T(task)->currentStep = (void *)&currentLine[66]; lineYield(task,66);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO kickoff_Stops
@@ -691,19 +679,23 @@ AxisX_Init_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(Init):LINE 3->start XAxis Motion0
+		Q4T(task)->currentStep = (void *)&currentLine[67]; lineYield(task,67);
+		// STORE 47 TO REG#36990
+		process_ATABLE(47, task);
+		// MODULE(AxisX):STEP(Init):LINE 4->start XAxis SyncMotion_X0
+		Q4T(task)->currentStep = (void *)&currentLine[68]; lineYield(task,68);
+		// STORE 48 TO REG#36990
+		process_ATABLE(48, task);
+		// MODULE(AxisX):STEP(Init):LINE 5->XAxis.command = 0
+		Q4T(task)->currentStep = (void *)&currentLine[69]; lineYield(task,69);
+		// STORE 49 TO REG#36990
+		process_ATABLE(49, task);
+		// MODULE(AxisX):STEP(Init):LINE 6->R510_XAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[70]; lineYield(task,70);
 		// STORE 50 TO REG#36990
 		process_ATABLE(50, task);
-		// MODULE(AxisX):STEP(Init):LINE 4->XAxis.command = 0
+		// MODULE(AxisX):STEP(Init):LINE 8->goto AxisXControl
 		Q4T(task)->currentStep = (void *)&currentLine[71]; lineYield(task,71);
-		// STORE 51 TO REG#36990
-		process_ATABLE(51, task);
-		// MODULE(AxisX):STEP(Init):LINE 5->R510_XAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[72]; lineYield(task,72);
-		// STORE 52 TO REG#36990
-		process_ATABLE(52, task);
-		// MODULE(AxisX):STEP(Init):LINE 7->goto AxisXControl
-		Q4T(task)->currentStep = (void *)&currentLine[73]; lineYield(task,73);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisX_AxisXControl
@@ -732,7 +724,7 @@ __0026:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 9->if (R510_XAxisCommands)==1 | (R510_XAxisCommands)==11 then 
-		Q4T(task)->currentStep = (void *)&currentLine[74]; lineYield(task,74);
+		Q4T(task)->currentStep = (void *)&currentLine[72]; lineYield(task,72);
 		// STORE 10 TO REG#36991
 		R36991 = 10;
 		// IF REG#36991<>0 GOTO __0027
@@ -748,27 +740,27 @@ __0027:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 10->XAxis.Maxspeed = R501_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[73]; lineYield(task,73);
+		// STORE 51 TO REG#36990
+		process_ATABLE(51, task);
+		// MODULE(AxisX):STEP(AxisXControl):LINE 11->XAxis.Accel = R502_Accel
+		Q4T(task)->currentStep = (void *)&currentLine[74]; lineYield(task,74);
+		// STORE 52 TO REG#36990
+		process_ATABLE(52, task);
+		// MODULE(AxisX):STEP(AxisXControl):LINE 12->XAxis.Decel = R503_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[75]; lineYield(task,75);
 		// STORE 53 TO REG#36990
 		process_ATABLE(53, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 11->XAxis.Accel = R502_Accel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 13->XAxis.Target = R504_Target
 		Q4T(task)->currentStep = (void *)&currentLine[76]; lineYield(task,76);
 		// STORE 54 TO REG#36990
 		process_ATABLE(54, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 12->XAxis.Decel = R503_Decel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 15->XAxis.command = (R510_XAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[77]; lineYield(task,77);
 		// STORE 55 TO REG#36990
 		process_ATABLE(55, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 13->XAxis.Target = R504_Target
-		Q4T(task)->currentStep = (void *)&currentLine[78]; lineYield(task,78);
-		// STORE 56 TO REG#36990
-		process_ATABLE(56, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 15->XAxis.command = (R510_XAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[79]; lineYield(task,79);
-		// STORE 57 TO REG#36990
-		process_ATABLE(57, task);
 		// MODULE(AxisX):STEP(AxisXControl):LINE 17->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[80];
+		Q4T(task)->currentStep = (void *)&currentLine[78];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0029
@@ -782,7 +774,7 @@ __0029:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 17->while (XAxis.command==1 | XAxis.command==11) & (R510_XAxisCommands==1 | R510_XAxisCommands==11) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[81]; lineYield(task,81);
+		Q4T(task)->currentStep = (void *)&currentLine[79]; lineYield(task,79);
 		// STORE 11 TO REG#36991
 		R36991 = 11;
 		// STORE 0 TO REG#36996
@@ -800,9 +792,9 @@ __0030:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 18->running1 = true
-		Q4T(task)->currentStep = (void *)&currentLine[82]; lineYield(task,82);
-		// STORE 58 TO REG#36990
-		process_ATABLE(58, task);
+		Q4T(task)->currentStep = (void *)&currentLine[80]; lineYield(task,80);
+		// STORE 56 TO REG#36990
+		process_ATABLE(56, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0029
@@ -828,7 +820,7 @@ __0032:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 24->if (R510_XAxisCommands)==13 | (R510_XAxisCommands)==14 | (R510_XAxisCommands)==15 then 
-		Q4T(task)->currentStep = (void *)&currentLine[83]; lineYield(task,83);
+		Q4T(task)->currentStep = (void *)&currentLine[81]; lineYield(task,81);
 		// STORE 12 TO REG#36991
 		R36991 = 12;
 		// IF REG#36991<>0 GOTO __0033
@@ -844,11 +836,11 @@ __0033:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 25->XAxis.command = (R510_XAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[84]; lineYield(task,84);
-		// STORE 59 TO REG#36990
-		process_ATABLE(59, task);
+		Q4T(task)->currentStep = (void *)&currentLine[82]; lineYield(task,82);
+		// STORE 57 TO REG#36990
+		process_ATABLE(57, task);
 		// MODULE(AxisX):STEP(AxisXControl):LINE 26->while (XAxis.command==13 | XAxis.command==14 | XAxis.command==15) & (R510_XAxisCommands==13 | R510_XAxisCommands==14 | R510_XAxisCommands==15) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[85];
+		Q4T(task)->currentStep = (void *)&currentLine[83];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0035
@@ -862,7 +854,7 @@ __0035:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 26->while (XAxis.command==13 | XAxis.command==14 | XAxis.command==15) & (R510_XAxisCommands==13 | R510_XAxisCommands==14 | R510_XAxisCommands==15) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[86]; lineYield(task,86);
+		Q4T(task)->currentStep = (void *)&currentLine[84]; lineYield(task,84);
 		// STORE 13 TO REG#36991
 		R36991 = 13;
 		// STORE 0 TO REG#36996
@@ -880,9 +872,9 @@ __0036:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 27->running1 = true
-		Q4T(task)->currentStep = (void *)&currentLine[87]; lineYield(task,87);
-		// STORE 60 TO REG#36990
-		process_ATABLE(60, task);
+		Q4T(task)->currentStep = (void *)&currentLine[85]; lineYield(task,85);
+		// STORE 58 TO REG#36990
+		process_ATABLE(58, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0035
@@ -908,7 +900,7 @@ __0038:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 32->if (R510_XAxisCommands)==3 | (R510_XAxisCommands)==4 then 
-		Q4T(task)->currentStep = (void *)&currentLine[88]; lineYield(task,88);
+		Q4T(task)->currentStep = (void *)&currentLine[86]; lineYield(task,86);
 		// STORE 14 TO REG#36991
 		R36991 = 14;
 		// IF REG#36991<>0 GOTO __0039
@@ -924,27 +916,27 @@ __0039:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 33->XAxis.Maxspeed = R501_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[87]; lineYield(task,87);
+		// STORE 59 TO REG#36990
+		process_ATABLE(59, task);
+		// MODULE(AxisX):STEP(AxisXControl):LINE 34->XAxis.Accel = R502_Accel
+		Q4T(task)->currentStep = (void *)&currentLine[88]; lineYield(task,88);
+		// STORE 60 TO REG#36990
+		process_ATABLE(60, task);
+		// MODULE(AxisX):STEP(AxisXControl):LINE 35->XAxis.Decel = R503_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[89]; lineYield(task,89);
 		// STORE 61 TO REG#36990
 		process_ATABLE(61, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 34->XAxis.Accel = R502_Accel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 37->XAxis.command = (R510_XAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[90]; lineYield(task,90);
 		// STORE 62 TO REG#36990
 		process_ATABLE(62, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 35->XAxis.Decel = R503_Decel
-		Q4T(task)->currentStep = (void *)&currentLine[91]; lineYield(task,91);
-		// STORE 63 TO REG#36990
-		process_ATABLE(63, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 37->XAxis.command = (R510_XAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[92]; lineYield(task,92);
-		// STORE 64 TO REG#36990
-		process_ATABLE(64, task);
 		// MODULE(AxisX):STEP(AxisXControl):LINE 39->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[93];
+		Q4T(task)->currentStep = (void *)&currentLine[91];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 65 TO REG#36990
-		process_ATABLE(65, task); start_of_step_timeout_flag = 0;
+		// STORE 63 TO REG#36990
+		process_ATABLE(63, task); start_of_step_timeout_flag = 0;
 		// GOTO __0041
 		goto __0041;
 // [0049]
@@ -956,7 +948,7 @@ __0041:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 39->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[94]; lineYield(task,94);
+		Q4T(task)->currentStep = (void *)&currentLine[92]; lineYield(task,92);
 		// STORE 15 TO REG#36991
 		R36991 = 15;
 		// IF REG#36991=0 GOTO __0042
@@ -972,7 +964,7 @@ __0042:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 40->while XAxis.command==(R510_XAxisCommands) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[95];
+		Q4T(task)->currentStep = (void *)&currentLine[93];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0043
@@ -986,7 +978,7 @@ __0043:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 40->while XAxis.command==(R510_XAxisCommands) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[96]; lineYield(task,96);
+		Q4T(task)->currentStep = (void *)&currentLine[94]; lineYield(task,94);
 		// STORE 16 TO REG#36991
 		R36991 = 16;
 		// STORE 0 TO REG#36996
@@ -1004,9 +996,9 @@ __0044:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 41->running1 = true
-		Q4T(task)->currentStep = (void *)&currentLine[97]; lineYield(task,97);
-		// STORE 66 TO REG#36990
-		process_ATABLE(66, task);
+		Q4T(task)->currentStep = (void *)&currentLine[95]; lineYield(task,95);
+		// STORE 64 TO REG#36990
+		process_ATABLE(64, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0043
@@ -1032,7 +1024,7 @@ __0046:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 46->if (R510_XAxisCommands)==5 then 
-		Q4T(task)->currentStep = (void *)&currentLine[98]; lineYield(task,98);
+		Q4T(task)->currentStep = (void *)&currentLine[96]; lineYield(task,96);
 		// STORE 17 TO REG#36991
 		R36991 = 17;
 		// IF REG#36991<>0 GOTO __0047
@@ -1048,31 +1040,31 @@ __0047:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 47->XAxis.Maxspeed = R501_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[97]; lineYield(task,97);
+		// STORE 65 TO REG#36990
+		process_ATABLE(65, task);
+		// MODULE(AxisX):STEP(AxisXControl):LINE 48->XAxis.Accel = R502_Accel
+		Q4T(task)->currentStep = (void *)&currentLine[98]; lineYield(task,98);
+		// STORE 66 TO REG#36990
+		process_ATABLE(66, task);
+		// MODULE(AxisX):STEP(AxisXControl):LINE 49->XAxis.Decel = R503_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[99]; lineYield(task,99);
 		// STORE 67 TO REG#36990
 		process_ATABLE(67, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 48->XAxis.Accel = R502_Accel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 52->XAxis.Target = R504_Target
 		Q4T(task)->currentStep = (void *)&currentLine[100]; lineYield(task,100);
 		// STORE 68 TO REG#36990
 		process_ATABLE(68, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 49->XAxis.Decel = R503_Decel
+		// MODULE(AxisX):STEP(AxisXControl):LINE 53->XAxis.OffsetHome = R505_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[101]; lineYield(task,101);
 		// STORE 69 TO REG#36990
 		process_ATABLE(69, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 52->XAxis.Target = R504_Target
+		// MODULE(AxisX):STEP(AxisXControl):LINE 54->XAxis.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[102]; lineYield(task,102);
 		// STORE 70 TO REG#36990
 		process_ATABLE(70, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 53->XAxis.OffsetHome = R505_HomeOffset
-		Q4T(task)->currentStep = (void *)&currentLine[103]; lineYield(task,103);
-		// STORE 71 TO REG#36990
-		process_ATABLE(71, task);
-		// MODULE(AxisX):STEP(AxisXControl):LINE 54->XAxis.command = 5
-		Q4T(task)->currentStep = (void *)&currentLine[104]; lineYield(task,104);
-		// STORE 72 TO REG#36990
-		process_ATABLE(72, task);
 		// MODULE(AxisX):STEP(AxisXControl):LINE 56->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat
-		Q4T(task)->currentStep = (void *)&currentLine[105];
+		Q4T(task)->currentStep = (void *)&currentLine[103];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0049
@@ -1086,7 +1078,7 @@ __0049:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 56->while XAxis.command==5 & (R510_XAxisCommands)==5 repeat
-		Q4T(task)->currentStep = (void *)&currentLine[106]; lineYield(task,106);
+		Q4T(task)->currentStep = (void *)&currentLine[104]; lineYield(task,104);
 		// STORE 18 TO REG#36991
 		R36991 = 18;
 		// STORE 0 TO REG#36996
@@ -1104,9 +1096,9 @@ __0050:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 57->running1 = true
-		Q4T(task)->currentStep = (void *)&currentLine[107]; lineYield(task,107);
-		// STORE 73 TO REG#36990
-		process_ATABLE(73, task);
+		Q4T(task)->currentStep = (void *)&currentLine[105]; lineYield(task,105);
+		// STORE 71 TO REG#36990
+		process_ATABLE(71, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0049
@@ -1132,7 +1124,7 @@ __0052:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 63->if ((R510_XAxisCommands)==0 & running1==true) then 
-		Q4T(task)->currentStep = (void *)&currentLine[108]; lineYield(task,108);
+		Q4T(task)->currentStep = (void *)&currentLine[106]; lineYield(task,106);
 		// STORE 19 TO REG#36991
 		R36991 = 19;
 		// IF REG#36991<>0 GOTO __0053
@@ -1148,13 +1140,13 @@ __0053:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 64->XAxis.command = 0
-		Q4T(task)->currentStep = (void *)&currentLine[109]; lineYield(task,109);
-		// STORE 74 TO REG#36990
-		process_ATABLE(74, task);
+		Q4T(task)->currentStep = (void *)&currentLine[107]; lineYield(task,107);
+		// STORE 72 TO REG#36990
+		process_ATABLE(72, task);
 		// MODULE(AxisX):STEP(AxisXControl):LINE 65->running1 = false
-		Q4T(task)->currentStep = (void *)&currentLine[110]; lineYield(task,110);
-		// STORE 75 TO REG#36990
-		process_ATABLE(75, task);
+		Q4T(task)->currentStep = (void *)&currentLine[108]; lineYield(task,108);
+		// STORE 73 TO REG#36990
+		process_ATABLE(73, task);
 		// GOTO __0054
 		goto __0054;
 // [0061]
@@ -1178,7 +1170,7 @@ __0055:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 69->if ((R510_XAxisCommands)==6 | (R510_XAxisCommands)==7) then 
-		Q4T(task)->currentStep = (void *)&currentLine[111]; lineYield(task,111);
+		Q4T(task)->currentStep = (void *)&currentLine[109]; lineYield(task,109);
 		// STORE 20 TO REG#36991
 		R36991 = 20;
 		// IF REG#36991<>0 GOTO __0056
@@ -1194,13 +1186,13 @@ __0056:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 70->XAxis.command = R510_XAxisCommands
-		Q4T(task)->currentStep = (void *)&currentLine[112]; lineYield(task,112);
-		// STORE 76 TO REG#36990
-		process_ATABLE(76, task);
+		Q4T(task)->currentStep = (void *)&currentLine[110]; lineYield(task,110);
+		// STORE 74 TO REG#36990
+		process_ATABLE(74, task);
 		// MODULE(AxisX):STEP(AxisXControl):LINE 71->R510_XAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[113]; lineYield(task,113);
-		// STORE 77 TO REG#36990
-		process_ATABLE(77, task);
+		Q4T(task)->currentStep = (void *)&currentLine[111]; lineYield(task,111);
+		// STORE 75 TO REG#36990
+		process_ATABLE(75, task);
 		// GOTO __0057
 		goto __0057;
 // [0064]
@@ -1212,7 +1204,7 @@ __0057:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):STEP(AxisXControl):LINE 77->goto AxisXControl
-		Q4T(task)->currentStep = (void *)&currentLine[114]; lineYield(task,114);
+		Q4T(task)->currentStep = (void *)&currentLine[112]; lineYield(task,112);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisX_AxisXControl
@@ -1229,7 +1221,7 @@ AxisX_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisX):LINE 2->goto Init
-		Q4T(task)->currentStep = (void *)&currentLine[115]; lineYield(task,115);
+		Q4T(task)->currentStep = (void *)&currentLine[113]; lineYield(task,113);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisX_Init
@@ -1246,19 +1238,23 @@ AxisY_Init_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(Init):LINE 3->start YAxis Motion0
+		Q4T(task)->currentStep = (void *)&currentLine[114]; lineYield(task,114);
+		// STORE 76 TO REG#36990
+		process_ATABLE(76, task);
+		// MODULE(AxisY):STEP(Init):LINE 5->start YAxis SyncMotion_Y0
+		Q4T(task)->currentStep = (void *)&currentLine[115]; lineYield(task,115);
+		// STORE 77 TO REG#36990
+		process_ATABLE(77, task);
+		// MODULE(AxisY):STEP(Init):LINE 7->YAxis.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[116]; lineYield(task,116);
 		// STORE 78 TO REG#36990
 		process_ATABLE(78, task);
-		// MODULE(AxisY):STEP(Init):LINE 4->YAxis.command = 0
+		// MODULE(AxisY):STEP(Init):LINE 8->R520_YAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[117]; lineYield(task,117);
 		// STORE 79 TO REG#36990
 		process_ATABLE(79, task);
-		// MODULE(AxisY):STEP(Init):LINE 5->R520_YAxisCommands = 0
+		// MODULE(AxisY):STEP(Init):LINE 11->goto AxisYControl
 		Q4T(task)->currentStep = (void *)&currentLine[118]; lineYield(task,118);
-		// STORE 80 TO REG#36990
-		process_ATABLE(80, task);
-		// MODULE(AxisY):STEP(Init):LINE 8->goto AxisYControl
-		Q4T(task)->currentStep = (void *)&currentLine[119]; lineYield(task,119);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisY_AxisYControl
@@ -1287,7 +1283,7 @@ __0058:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 8->if (R520_YAxisCommands)==1 | (R520_YAxisCommands)==11 then 
-		Q4T(task)->currentStep = (void *)&currentLine[120]; lineYield(task,120);
+		Q4T(task)->currentStep = (void *)&currentLine[119]; lineYield(task,119);
 		// STORE 21 TO REG#36991
 		R36991 = 21;
 		// IF REG#36991<>0 GOTO __0059
@@ -1303,31 +1299,31 @@ __0059:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 9->YAxis.Maxspeed = R511_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[120]; lineYield(task,120);
+		// STORE 80 TO REG#36990
+		process_ATABLE(80, task);
+		// MODULE(AxisY):STEP(AxisYControl):LINE 10->YAxis.Accel = R512_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[121]; lineYield(task,121);
 		// STORE 81 TO REG#36990
 		process_ATABLE(81, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 10->YAxis.Accel = R512_Accel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 11->YAxis.Decel = R513_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[122]; lineYield(task,122);
 		// STORE 82 TO REG#36990
 		process_ATABLE(82, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 11->YAxis.Decel = R513_Decel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 12->YAxis.Target = R514_Target
 		Q4T(task)->currentStep = (void *)&currentLine[123]; lineYield(task,123);
 		// STORE 83 TO REG#36990
 		process_ATABLE(83, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 12->YAxis.Target = R514_Target
+		// MODULE(AxisY):STEP(AxisYControl):LINE 14->YAxis.command = (R520_YAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[124]; lineYield(task,124);
 		// STORE 84 TO REG#36990
 		process_ATABLE(84, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 14->YAxis.command = (R520_YAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[125]; lineYield(task,125);
-		// STORE 85 TO REG#36990
-		process_ATABLE(85, task);
 		// MODULE(AxisY):STEP(AxisYControl):LINE 16->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[126];
+		Q4T(task)->currentStep = (void *)&currentLine[125];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 86 TO REG#36990
-		process_ATABLE(86, task); start_of_step_timeout_flag = 0;
+		// STORE 85 TO REG#36990
+		process_ATABLE(85, task); start_of_step_timeout_flag = 0;
 		// GOTO __0061
 		goto __0061;
 // [0070]
@@ -1339,7 +1335,7 @@ __0061:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 16->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[127]; lineYield(task,127);
+		Q4T(task)->currentStep = (void *)&currentLine[126]; lineYield(task,126);
 		// STORE 22 TO REG#36991
 		R36991 = 22;
 		// IF REG#36991=0 GOTO __0062
@@ -1355,7 +1351,7 @@ __0062:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 17->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[128];
+		Q4T(task)->currentStep = (void *)&currentLine[127];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0063
@@ -1369,7 +1365,7 @@ __0063:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 17->while (YAxis.command==1 | YAxis.command==11) & (R520_YAxisCommands==1 | R520_YAxisCommands==11) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[129]; lineYield(task,129);
+		Q4T(task)->currentStep = (void *)&currentLine[128]; lineYield(task,128);
 		// STORE 23 TO REG#36991
 		R36991 = 23;
 		// STORE 0 TO REG#36996
@@ -1387,9 +1383,9 @@ __0064:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 18->running2 = true
-		Q4T(task)->currentStep = (void *)&currentLine[130]; lineYield(task,130);
-		// STORE 87 TO REG#36990
-		process_ATABLE(87, task);
+		Q4T(task)->currentStep = (void *)&currentLine[129]; lineYield(task,129);
+		// STORE 86 TO REG#36990
+		process_ATABLE(86, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0063
@@ -1415,7 +1411,7 @@ __0066:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 24->if (R520_YAxisCommands)==13 | (R520_YAxisCommands)==14 | (R520_YAxisCommands)==15 then 
-		Q4T(task)->currentStep = (void *)&currentLine[131]; lineYield(task,131);
+		Q4T(task)->currentStep = (void *)&currentLine[130]; lineYield(task,130);
 		// STORE 24 TO REG#36991
 		R36991 = 24;
 		// IF REG#36991<>0 GOTO __0067
@@ -1431,11 +1427,11 @@ __0067:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 25->YAxis.command = (R520_YAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[132]; lineYield(task,132);
-		// STORE 88 TO REG#36990
-		process_ATABLE(88, task);
+		Q4T(task)->currentStep = (void *)&currentLine[131]; lineYield(task,131);
+		// STORE 87 TO REG#36990
+		process_ATABLE(87, task);
 		// MODULE(AxisY):STEP(AxisYControl):LINE 26->while (YAxis.command==13 | YAxis.command==14 | YAxis.command==15) & (R520_YAxisCommands==13 | R520_YAxisCommands==14 | R520_YAxisCommands==15) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[133];
+		Q4T(task)->currentStep = (void *)&currentLine[132];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0069
@@ -1449,7 +1445,7 @@ __0069:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 26->while (YAxis.command==13 | YAxis.command==14 | YAxis.command==15) & (R520_YAxisCommands==13 | R520_YAxisCommands==14 | R520_YAxisCommands==15) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[134]; lineYield(task,134);
+		Q4T(task)->currentStep = (void *)&currentLine[133]; lineYield(task,133);
 		// STORE 25 TO REG#36991
 		R36991 = 25;
 		// STORE 0 TO REG#36996
@@ -1467,9 +1463,9 @@ __0070:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 27->running2 = true
-		Q4T(task)->currentStep = (void *)&currentLine[135]; lineYield(task,135);
-		// STORE 89 TO REG#36990
-		process_ATABLE(89, task);
+		Q4T(task)->currentStep = (void *)&currentLine[134]; lineYield(task,134);
+		// STORE 88 TO REG#36990
+		process_ATABLE(88, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0069
@@ -1495,7 +1491,7 @@ __0072:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 32->if (R520_YAxisCommands)==3 | (R520_YAxisCommands)==4 then 
-		Q4T(task)->currentStep = (void *)&currentLine[136]; lineYield(task,136);
+		Q4T(task)->currentStep = (void *)&currentLine[135]; lineYield(task,135);
 		// STORE 26 TO REG#36991
 		R36991 = 26;
 		// IF REG#36991<>0 GOTO __0073
@@ -1511,27 +1507,27 @@ __0073:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 33->YAxis.Maxspeed = R511_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[136]; lineYield(task,136);
+		// STORE 89 TO REG#36990
+		process_ATABLE(89, task);
+		// MODULE(AxisY):STEP(AxisYControl):LINE 34->YAxis.Accel = R512_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[137]; lineYield(task,137);
 		// STORE 90 TO REG#36990
 		process_ATABLE(90, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 34->YAxis.Accel = R512_Accel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 35->YAxis.Decel = R513_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[138]; lineYield(task,138);
 		// STORE 91 TO REG#36990
 		process_ATABLE(91, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 35->YAxis.Decel = R513_Decel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 36->YAxis.command = (R520_YAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[139]; lineYield(task,139);
 		// STORE 92 TO REG#36990
 		process_ATABLE(92, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 36->YAxis.command = (R520_YAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[140]; lineYield(task,140);
-		// STORE 93 TO REG#36990
-		process_ATABLE(93, task);
 		// MODULE(AxisY):STEP(AxisYControl):LINE 39->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[141];
+		Q4T(task)->currentStep = (void *)&currentLine[140];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 94 TO REG#36990
-		process_ATABLE(94, task); start_of_step_timeout_flag = 0;
+		// STORE 93 TO REG#36990
+		process_ATABLE(93, task); start_of_step_timeout_flag = 0;
 		// GOTO __0075
 		goto __0075;
 // [0082]
@@ -1543,7 +1539,7 @@ __0075:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 39->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[142]; lineYield(task,142);
+		Q4T(task)->currentStep = (void *)&currentLine[141]; lineYield(task,141);
 		// STORE 27 TO REG#36991
 		R36991 = 27;
 		// IF REG#36991=0 GOTO __0076
@@ -1559,7 +1555,7 @@ __0076:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 40->while YAxis.command==(R520_YAxisCommands) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[143];
+		Q4T(task)->currentStep = (void *)&currentLine[142];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0077
@@ -1573,7 +1569,7 @@ __0077:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 40->while YAxis.command==(R520_YAxisCommands) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[144]; lineYield(task,144);
+		Q4T(task)->currentStep = (void *)&currentLine[143]; lineYield(task,143);
 		// STORE 28 TO REG#36991
 		R36991 = 28;
 		// STORE 0 TO REG#36996
@@ -1591,9 +1587,9 @@ __0078:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 41->running2 = true
-		Q4T(task)->currentStep = (void *)&currentLine[145]; lineYield(task,145);
-		// STORE 95 TO REG#36990
-		process_ATABLE(95, task);
+		Q4T(task)->currentStep = (void *)&currentLine[144]; lineYield(task,144);
+		// STORE 94 TO REG#36990
+		process_ATABLE(94, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0077
@@ -1619,7 +1615,7 @@ __0080:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 46->if (R520_YAxisCommands)==5 then 
-		Q4T(task)->currentStep = (void *)&currentLine[146]; lineYield(task,146);
+		Q4T(task)->currentStep = (void *)&currentLine[145]; lineYield(task,145);
 		// STORE 29 TO REG#36991
 		R36991 = 29;
 		// IF REG#36991<>0 GOTO __0081
@@ -1635,31 +1631,31 @@ __0081:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 47->YAxis.Maxspeed = R511_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[146]; lineYield(task,146);
+		// STORE 95 TO REG#36990
+		process_ATABLE(95, task);
+		// MODULE(AxisY):STEP(AxisYControl):LINE 48->YAxis.Accel = R512_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[147]; lineYield(task,147);
 		// STORE 96 TO REG#36990
 		process_ATABLE(96, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 48->YAxis.Accel = R512_Accel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 49->YAxis.Decel = R513_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[148]; lineYield(task,148);
 		// STORE 97 TO REG#36990
 		process_ATABLE(97, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 49->YAxis.Decel = R513_Decel
+		// MODULE(AxisY):STEP(AxisYControl):LINE 50->YAxis.Target = R514_Target
 		Q4T(task)->currentStep = (void *)&currentLine[149]; lineYield(task,149);
 		// STORE 98 TO REG#36990
 		process_ATABLE(98, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 50->YAxis.Target = R514_Target
+		// MODULE(AxisY):STEP(AxisYControl):LINE 51->YAxis.OffsetHome = R515_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[150]; lineYield(task,150);
 		// STORE 99 TO REG#36990
 		process_ATABLE(99, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 51->YAxis.OffsetHome = R515_HomeOffset
+		// MODULE(AxisY):STEP(AxisYControl):LINE 52->YAxis.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[151]; lineYield(task,151);
 		// STORE 100 TO REG#36990
 		process_ATABLE(100, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 52->YAxis.command = 5
-		Q4T(task)->currentStep = (void *)&currentLine[152]; lineYield(task,152);
-		// STORE 101 TO REG#36990
-		process_ATABLE(101, task);
 		// MODULE(AxisY):STEP(AxisYControl):LINE 54->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat
-		Q4T(task)->currentStep = (void *)&currentLine[153];
+		Q4T(task)->currentStep = (void *)&currentLine[152];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0083
@@ -1673,7 +1669,7 @@ __0083:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 54->while YAxis.command==5 & (R520_YAxisCommands)==5 repeat
-		Q4T(task)->currentStep = (void *)&currentLine[154]; lineYield(task,154);
+		Q4T(task)->currentStep = (void *)&currentLine[153]; lineYield(task,153);
 		// STORE 30 TO REG#36991
 		R36991 = 30;
 		// STORE 0 TO REG#36996
@@ -1691,9 +1687,9 @@ __0084:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 55->running2 = true
-		Q4T(task)->currentStep = (void *)&currentLine[155]; lineYield(task,155);
-		// STORE 102 TO REG#36990
-		process_ATABLE(102, task);
+		Q4T(task)->currentStep = (void *)&currentLine[154]; lineYield(task,154);
+		// STORE 101 TO REG#36990
+		process_ATABLE(101, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0083
@@ -1719,7 +1715,7 @@ __0086:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 61->if ((R520_YAxisCommands)==0 & running2==true) then 
-		Q4T(task)->currentStep = (void *)&currentLine[156]; lineYield(task,156);
+		Q4T(task)->currentStep = (void *)&currentLine[155]; lineYield(task,155);
 		// STORE 31 TO REG#36991
 		R36991 = 31;
 		// IF REG#36991<>0 GOTO __0087
@@ -1735,13 +1731,13 @@ __0087:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 62->YAxis.command = 0
+		Q4T(task)->currentStep = (void *)&currentLine[156]; lineYield(task,156);
+		// STORE 102 TO REG#36990
+		process_ATABLE(102, task);
+		// MODULE(AxisY):STEP(AxisYControl):LINE 63->running2 = false
 		Q4T(task)->currentStep = (void *)&currentLine[157]; lineYield(task,157);
 		// STORE 103 TO REG#36990
 		process_ATABLE(103, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 63->running2 = false
-		Q4T(task)->currentStep = (void *)&currentLine[158]; lineYield(task,158);
-		// STORE 104 TO REG#36990
-		process_ATABLE(104, task);
 		// GOTO __0088
 		goto __0088;
 // [0094]
@@ -1765,7 +1761,7 @@ __0089:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 68->if ((R520_YAxisCommands)==6 | (R520_YAxisCommands)==7) then 
-		Q4T(task)->currentStep = (void *)&currentLine[159]; lineYield(task,159);
+		Q4T(task)->currentStep = (void *)&currentLine[158]; lineYield(task,158);
 		// STORE 32 TO REG#36991
 		R36991 = 32;
 		// IF REG#36991<>0 GOTO __0090
@@ -1781,13 +1777,13 @@ __0090:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 69->YAxis.command = R520_YAxisCommands
+		Q4T(task)->currentStep = (void *)&currentLine[159]; lineYield(task,159);
+		// STORE 104 TO REG#36990
+		process_ATABLE(104, task);
+		// MODULE(AxisY):STEP(AxisYControl):LINE 70->R520_YAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[160]; lineYield(task,160);
 		// STORE 105 TO REG#36990
 		process_ATABLE(105, task);
-		// MODULE(AxisY):STEP(AxisYControl):LINE 70->R520_YAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[161]; lineYield(task,161);
-		// STORE 106 TO REG#36990
-		process_ATABLE(106, task);
 		// GOTO __0091
 		goto __0091;
 // [0097]
@@ -1799,7 +1795,7 @@ __0091:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):STEP(AxisYControl):LINE 76->goto AxisYControl
-		Q4T(task)->currentStep = (void *)&currentLine[162]; lineYield(task,162);
+		Q4T(task)->currentStep = (void *)&currentLine[161]; lineYield(task,161);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisY_AxisYControl
@@ -1816,7 +1812,7 @@ AxisY_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisY):LINE 2->goto Init
-		Q4T(task)->currentStep = (void *)&currentLine[163]; lineYield(task,163);
+		Q4T(task)->currentStep = (void *)&currentLine[162]; lineYield(task,162);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisY_Init
@@ -1833,19 +1829,19 @@ AxisZ_Init_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(Init):LINE 2->start ZAxis Motion0
+		Q4T(task)->currentStep = (void *)&currentLine[163]; lineYield(task,163);
+		// STORE 106 TO REG#36990
+		process_ATABLE(106, task);
+		// MODULE(AxisZ):STEP(Init):LINE 3->ZAxis.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[164]; lineYield(task,164);
 		// STORE 107 TO REG#36990
 		process_ATABLE(107, task);
-		// MODULE(AxisZ):STEP(Init):LINE 3->ZAxis.command = 0
+		// MODULE(AxisZ):STEP(Init):LINE 4->R530_ZAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[165]; lineYield(task,165);
 		// STORE 108 TO REG#36990
 		process_ATABLE(108, task);
-		// MODULE(AxisZ):STEP(Init):LINE 4->R530_ZAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[166]; lineYield(task,166);
-		// STORE 109 TO REG#36990
-		process_ATABLE(109, task);
 		// MODULE(AxisZ):STEP(Init):LINE 8->goto AxisZControl
-		Q4T(task)->currentStep = (void *)&currentLine[167]; lineYield(task,167);
+		Q4T(task)->currentStep = (void *)&currentLine[166]; lineYield(task,166);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisZ_AxisZControl
@@ -1874,7 +1870,7 @@ __0092:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 10->if (R530_ZAxisCommands)==1 | (R530_ZAxisCommands)==11 then 
-		Q4T(task)->currentStep = (void *)&currentLine[168]; lineYield(task,168);
+		Q4T(task)->currentStep = (void *)&currentLine[167]; lineYield(task,167);
 		// STORE 33 TO REG#36991
 		R36991 = 33;
 		// IF REG#36991<>0 GOTO __0093
@@ -1890,31 +1886,31 @@ __0093:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 13->ZAxis.Maxspeed = R521_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[168]; lineYield(task,168);
+		// STORE 109 TO REG#36990
+		process_ATABLE(109, task);
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 14->ZAxis.Accel = R522_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[169]; lineYield(task,169);
 		// STORE 110 TO REG#36990
 		process_ATABLE(110, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 14->ZAxis.Accel = R522_Accel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 15->ZAxis.Decel = R523_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[170]; lineYield(task,170);
 		// STORE 111 TO REG#36990
 		process_ATABLE(111, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 15->ZAxis.Decel = R523_Decel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 16->ZAxis.Target = R524_Target
 		Q4T(task)->currentStep = (void *)&currentLine[171]; lineYield(task,171);
 		// STORE 112 TO REG#36990
 		process_ATABLE(112, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 16->ZAxis.Target = R524_Target
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 18->ZAxis.command = (R530_ZAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[172]; lineYield(task,172);
 		// STORE 113 TO REG#36990
 		process_ATABLE(113, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 18->ZAxis.command = (R530_ZAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[173]; lineYield(task,173);
-		// STORE 114 TO REG#36990
-		process_ATABLE(114, task);
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 20->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[174];
+		Q4T(task)->currentStep = (void *)&currentLine[173];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 115 TO REG#36990
-		process_ATABLE(115, task); start_of_step_timeout_flag = 0;
+		// STORE 114 TO REG#36990
+		process_ATABLE(114, task); start_of_step_timeout_flag = 0;
 		// GOTO __0095
 		goto __0095;
 // [0103]
@@ -1926,7 +1922,7 @@ __0095:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 20->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[175]; lineYield(task,175);
+		Q4T(task)->currentStep = (void *)&currentLine[174]; lineYield(task,174);
 		// STORE 34 TO REG#36991
 		R36991 = 34;
 		// IF REG#36991=0 GOTO __0096
@@ -1942,7 +1938,7 @@ __0096:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 21->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[176];
+		Q4T(task)->currentStep = (void *)&currentLine[175];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0097
@@ -1956,7 +1952,7 @@ __0097:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 21->while (ZAxis.command==1 | ZAxis.command==11) & (R530_ZAxisCommands==1 | R530_ZAxisCommands==11) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[177]; lineYield(task,177);
+		Q4T(task)->currentStep = (void *)&currentLine[176]; lineYield(task,176);
 		// STORE 35 TO REG#36991
 		R36991 = 35;
 		// STORE 0 TO REG#36996
@@ -1974,9 +1970,9 @@ __0098:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 22->running3 = true
-		Q4T(task)->currentStep = (void *)&currentLine[178]; lineYield(task,178);
-		// STORE 116 TO REG#36990
-		process_ATABLE(116, task);
+		Q4T(task)->currentStep = (void *)&currentLine[177]; lineYield(task,177);
+		// STORE 115 TO REG#36990
+		process_ATABLE(115, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0097
@@ -2002,7 +1998,7 @@ __0100:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 27->if (R530_ZAxisCommands)==13 | (R530_ZAxisCommands)==14 | (R530_ZAxisCommands)==15 then 
-		Q4T(task)->currentStep = (void *)&currentLine[179]; lineYield(task,179);
+		Q4T(task)->currentStep = (void *)&currentLine[178]; lineYield(task,178);
 		// STORE 36 TO REG#36991
 		R36991 = 36;
 		// IF REG#36991<>0 GOTO __0101
@@ -2018,11 +2014,11 @@ __0101:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 28->ZAxis.command = (R530_ZAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[180]; lineYield(task,180);
-		// STORE 117 TO REG#36990
-		process_ATABLE(117, task);
+		Q4T(task)->currentStep = (void *)&currentLine[179]; lineYield(task,179);
+		// STORE 116 TO REG#36990
+		process_ATABLE(116, task);
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 29->while (ZAxis.command==13 | ZAxis.command==14 | ZAxis.command==15) & (R530_ZAxisCommands==13 | R530_ZAxisCommands==14 | R530_ZAxisCommands==15) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[181];
+		Q4T(task)->currentStep = (void *)&currentLine[180];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0103
@@ -2036,7 +2032,7 @@ __0103:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 29->while (ZAxis.command==13 | ZAxis.command==14 | ZAxis.command==15) & (R530_ZAxisCommands==13 | R530_ZAxisCommands==14 | R530_ZAxisCommands==15) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[182]; lineYield(task,182);
+		Q4T(task)->currentStep = (void *)&currentLine[181]; lineYield(task,181);
 		// STORE 37 TO REG#36991
 		R36991 = 37;
 		// STORE 0 TO REG#36996
@@ -2054,9 +2050,9 @@ __0104:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 30->running3 = true
-		Q4T(task)->currentStep = (void *)&currentLine[183]; lineYield(task,183);
-		// STORE 118 TO REG#36990
-		process_ATABLE(118, task);
+		Q4T(task)->currentStep = (void *)&currentLine[182]; lineYield(task,182);
+		// STORE 117 TO REG#36990
+		process_ATABLE(117, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0103
@@ -2082,7 +2078,7 @@ __0106:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 34->if (R530_ZAxisCommands)==3 | (R530_ZAxisCommands)==4 then 
-		Q4T(task)->currentStep = (void *)&currentLine[184]; lineYield(task,184);
+		Q4T(task)->currentStep = (void *)&currentLine[183]; lineYield(task,183);
 		// STORE 38 TO REG#36991
 		R36991 = 38;
 		// IF REG#36991<>0 GOTO __0107
@@ -2098,27 +2094,27 @@ __0107:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 36->ZAxis.Maxspeed = R521_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[184]; lineYield(task,184);
+		// STORE 118 TO REG#36990
+		process_ATABLE(118, task);
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 37->ZAxis.Accel = R522_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[185]; lineYield(task,185);
 		// STORE 119 TO REG#36990
 		process_ATABLE(119, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 37->ZAxis.Accel = R522_Accel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 38->ZAxis.Decel = R523_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[186]; lineYield(task,186);
 		// STORE 120 TO REG#36990
 		process_ATABLE(120, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 38->ZAxis.Decel = R523_Decel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 40->ZAxis.command = (R530_ZAxisCommands)
 		Q4T(task)->currentStep = (void *)&currentLine[187]; lineYield(task,187);
 		// STORE 121 TO REG#36990
 		process_ATABLE(121, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 40->ZAxis.command = (R530_ZAxisCommands)
-		Q4T(task)->currentStep = (void *)&currentLine[188]; lineYield(task,188);
-		// STORE 122 TO REG#36990
-		process_ATABLE(122, task);
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 42->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[189];
+		Q4T(task)->currentStep = (void *)&currentLine[188];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
-		// STORE 123 TO REG#36990
-		process_ATABLE(123, task); start_of_step_timeout_flag = 0;
+		// STORE 122 TO REG#36990
+		process_ATABLE(122, task); start_of_step_timeout_flag = 0;
 		// GOTO __0109
 		goto __0109;
 // [0115]
@@ -2130,7 +2126,7 @@ __0109:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 42->delay = 2
-		Q4T(task)->currentStep = (void *)&currentLine[190]; lineYield(task,190);
+		Q4T(task)->currentStep = (void *)&currentLine[189]; lineYield(task,189);
 		// STORE 39 TO REG#36991
 		R36991 = 39;
 		// IF REG#36991=0 GOTO __0110
@@ -2146,7 +2142,7 @@ __0110:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 43->while ZAxis.command==(R530_ZAxisCommands) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[191];
+		Q4T(task)->currentStep = (void *)&currentLine[190];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0111
@@ -2160,7 +2156,7 @@ __0111:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 43->while ZAxis.command==(R530_ZAxisCommands) repeat
-		Q4T(task)->currentStep = (void *)&currentLine[192]; lineYield(task,192);
+		Q4T(task)->currentStep = (void *)&currentLine[191]; lineYield(task,191);
 		// STORE 40 TO REG#36991
 		R36991 = 40;
 		// STORE 0 TO REG#36996
@@ -2178,9 +2174,9 @@ __0112:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 44->running3 = true
-		Q4T(task)->currentStep = (void *)&currentLine[193]; lineYield(task,193);
-		// STORE 124 TO REG#36990
-		process_ATABLE(124, task);
+		Q4T(task)->currentStep = (void *)&currentLine[192]; lineYield(task,192);
+		// STORE 123 TO REG#36990
+		process_ATABLE(123, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0111
@@ -2206,7 +2202,7 @@ __0114:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 49->if (R530_ZAxisCommands)==5 then 
-		Q4T(task)->currentStep = (void *)&currentLine[194]; lineYield(task,194);
+		Q4T(task)->currentStep = (void *)&currentLine[193]; lineYield(task,193);
 		// STORE 41 TO REG#36991
 		R36991 = 41;
 		// IF REG#36991<>0 GOTO __0115
@@ -2222,31 +2218,31 @@ __0115:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 50->ZAxis.Maxspeed = R521_Speed
+		Q4T(task)->currentStep = (void *)&currentLine[194]; lineYield(task,194);
+		// STORE 124 TO REG#36990
+		process_ATABLE(124, task);
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 51->ZAxis.Accel = R522_Accel
 		Q4T(task)->currentStep = (void *)&currentLine[195]; lineYield(task,195);
 		// STORE 125 TO REG#36990
 		process_ATABLE(125, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 51->ZAxis.Accel = R522_Accel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 52->ZAxis.Decel = R523_Decel
 		Q4T(task)->currentStep = (void *)&currentLine[196]; lineYield(task,196);
 		// STORE 126 TO REG#36990
 		process_ATABLE(126, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 52->ZAxis.Decel = R523_Decel
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 53->ZAxis.Target = R524_Target
 		Q4T(task)->currentStep = (void *)&currentLine[197]; lineYield(task,197);
 		// STORE 127 TO REG#36990
 		process_ATABLE(127, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 53->ZAxis.Target = R524_Target
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 54->ZAxis.OffsetHome = R525_HomeOffset
 		Q4T(task)->currentStep = (void *)&currentLine[198]; lineYield(task,198);
 		// STORE 128 TO REG#36990
 		process_ATABLE(128, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 54->ZAxis.OffsetHome = R525_HomeOffset
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 55->ZAxis.command = 5
 		Q4T(task)->currentStep = (void *)&currentLine[199]; lineYield(task,199);
 		// STORE 129 TO REG#36990
 		process_ATABLE(129, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 55->ZAxis.command = 5
-		Q4T(task)->currentStep = (void *)&currentLine[200]; lineYield(task,200);
-		// STORE 130 TO REG#36990
-		process_ATABLE(130, task);
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 57->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat
-		Q4T(task)->currentStep = (void *)&currentLine[201];
+		Q4T(task)->currentStep = (void *)&currentLine[200];
 		// STORE 0 TO REG#36996
 		stepUnlocked = 0; /* Lock step execution */
 		// GOTO __0117
@@ -2260,7 +2256,7 @@ __0117:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 57->while ZAxis.command==5 & (R530_ZAxisCommands)==5 repeat
-		Q4T(task)->currentStep = (void *)&currentLine[202]; lineYield(task,202);
+		Q4T(task)->currentStep = (void *)&currentLine[201]; lineYield(task,201);
 		// STORE 42 TO REG#36991
 		R36991 = 42;
 		// STORE 0 TO REG#36996
@@ -2278,9 +2274,9 @@ __0118:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 58->running3 = true
-		Q4T(task)->currentStep = (void *)&currentLine[203]; lineYield(task,203);
-		// STORE 131 TO REG#36990
-		process_ATABLE(131, task);
+		Q4T(task)->currentStep = (void *)&currentLine[202]; lineYield(task,202);
+		// STORE 130 TO REG#36990
+		process_ATABLE(130, task);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO __0117
@@ -2306,7 +2302,7 @@ __0120:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 64->if ((R530_ZAxisCommands)==0 & running3==true) then 
-		Q4T(task)->currentStep = (void *)&currentLine[204]; lineYield(task,204);
+		Q4T(task)->currentStep = (void *)&currentLine[203]; lineYield(task,203);
 		// STORE 43 TO REG#36991
 		R36991 = 43;
 		// IF REG#36991<>0 GOTO __0121
@@ -2322,13 +2318,13 @@ __0121:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 65->ZAxis.command = 0
+		Q4T(task)->currentStep = (void *)&currentLine[204]; lineYield(task,204);
+		// STORE 131 TO REG#36990
+		process_ATABLE(131, task);
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 66->running3 = false
 		Q4T(task)->currentStep = (void *)&currentLine[205]; lineYield(task,205);
 		// STORE 132 TO REG#36990
 		process_ATABLE(132, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 66->running3 = false
-		Q4T(task)->currentStep = (void *)&currentLine[206]; lineYield(task,206);
-		// STORE 133 TO REG#36990
-		process_ATABLE(133, task);
 		// GOTO __0122
 		goto __0122;
 // [0127]
@@ -2352,7 +2348,7 @@ __0123:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 70->if ((R530_ZAxisCommands)==6 | (R530_ZAxisCommands)==7) then 
-		Q4T(task)->currentStep = (void *)&currentLine[207]; lineYield(task,207);
+		Q4T(task)->currentStep = (void *)&currentLine[206]; lineYield(task,206);
 		// STORE 44 TO REG#36991
 		R36991 = 44;
 		// IF REG#36991<>0 GOTO __0124
@@ -2368,13 +2364,13 @@ __0124:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 71->ZAxis.command = R530_ZAxisCommands
+		Q4T(task)->currentStep = (void *)&currentLine[207]; lineYield(task,207);
+		// STORE 133 TO REG#36990
+		process_ATABLE(133, task);
+		// MODULE(AxisZ):STEP(AxisZControl):LINE 72->R530_ZAxisCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[208]; lineYield(task,208);
 		// STORE 134 TO REG#36990
 		process_ATABLE(134, task);
-		// MODULE(AxisZ):STEP(AxisZControl):LINE 72->R530_ZAxisCommands = 0
-		Q4T(task)->currentStep = (void *)&currentLine[209]; lineYield(task,209);
-		// STORE 135 TO REG#36990
-		process_ATABLE(135, task);
 		// GOTO __0125
 		goto __0125;
 // [0130]
@@ -2386,7 +2382,7 @@ __0125:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):STEP(AxisZControl):LINE 77->goto AxisZControl
-		Q4T(task)->currentStep = (void *)&currentLine[210]; lineYield(task,210);
+		Q4T(task)->currentStep = (void *)&currentLine[209]; lineYield(task,209);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisZ_AxisZControl
@@ -2403,7 +2399,7 @@ AxisZ_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisZ):LINE 2->goto Init
-		Q4T(task)->currentStep = (void *)&currentLine[211]; lineYield(task,211);
+		Q4T(task)->currentStep = (void *)&currentLine[210]; lineYield(task,210);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisZ_Init
@@ -2420,7 +2416,7 @@ AxisTheta_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisTheta):LINE 2->goto Init
-		Q4T(task)->currentStep = (void *)&currentLine[212]; lineYield(task,212);
+		Q4T(task)->currentStep = (void *)&currentLine[211]; lineYield(task,211);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO AxisTheta_Init
@@ -2437,18 +2433,22 @@ AxisTheta_Init_ctc_01:
 		/*-----------------------------------------------------------------*/
 		/*-----------------------------------------------------------------*/
 		// MODULE(AxisTheta):STEP(Init):LINE 2->start ThetaAxis Motion0
+		Q4T(task)->currentStep = (void *)&currentLine[212]; lineYield(task,212);
+		// STORE 135 TO REG#36990
+		process_ATABLE(135, task);
+		// MODULE(AxisTheta):STEP(Init):LINE 5->start ThetaAxis SyncMotion_Theta0
 		Q4T(task)->currentStep = (void *)&currentLine[213]; lineYield(task,213);
 		// STORE 136 TO REG#36990
 		process_ATABLE(136, task);
-		// MODULE(AxisTheta):STEP(Init):LINE 3->ThetaAxis.command = 0
+		// MODULE(AxisTheta):STEP(Init):LINE 7->ThetaAxis.command = 0
 		Q4T(task)->currentStep = (void *)&currentLine[214]; lineYield(task,214);
 		// STORE 137 TO REG#36990
 		process_ATABLE(137, task);
-		// MODULE(AxisTheta):STEP(Init):LINE 4->R540_ThetaCommands = 0
+		// MODULE(AxisTheta):STEP(Init):LINE 8->R540_ThetaCommands = 0
 		Q4T(task)->currentStep = (void *)&currentLine[215]; lineYield(task,215);
 		// STORE 138 TO REG#36990
 		process_ATABLE(138, task);
-		// MODULE(AxisTheta):STEP(Init):LINE 8->goto ThetaControl
+		// MODULE(AxisTheta):STEP(Init):LINE 12->goto ThetaControl
 		Q4T(task)->currentStep = (void *)&currentLine[216]; lineYield(task,216);
 		// STORE 1 TO REG#36996
 		stepUnlocked = 1; /* unlock step execution */
@@ -6220,3 +6220,98 @@ __0328:
 		stepUnlocked = 1; /* unlock step execution */
 		// GOTO Updates_Update
 		goto Updates_Update;
+// [0338]
+CAM_Motion:
+		// *** START NEW STEP ***
+		stepUnlocked = 1; Q4T(task)->firstPass = 1; start_of_step_timeout_flag = 0;
+CAM_Motion_ctc_01:
+		if (stepUnlocked) {
+			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
+		}
+		else { /* release lock */ stepUnlocked = 1; }
+		/*-----------------------------------------------------------------*/
+		/*-----------------------------------------------------------------*/
+		// MODULE(CAM_Motion):LINE 2->goto CAM_Init
+		Q4T(task)->currentStep = (void *)&currentLine[549]; lineYield(task,549);
+		// STORE 1 TO REG#36996
+		stepUnlocked = 1; /* unlock step execution */
+		// GOTO CAM_Motion_CAM_Init
+		goto CAM_Motion_CAM_Init;
+// [0339]
+CAM_Motion_CAM_Init:
+		// *** START NEW STEP ***
+		stepUnlocked = 1; Q4T(task)->firstPass = 1; start_of_step_timeout_flag = 0;
+CAM_Motion_CAM_Init_ctc_01:
+		if (stepUnlocked) {
+			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
+		}
+		else { /* release lock */ stepUnlocked = 1; }
+		/*-----------------------------------------------------------------*/
+		/*-----------------------------------------------------------------*/
+		// MODULE(CAM_Motion):STEP(CAM_Init):LINE 1->R700_CAM_En = 0
+		Q4T(task)->currentStep = (void *)&currentLine[550]; lineYield(task,550);
+		// STORE 357 TO REG#36990
+		process_ATABLE(357, task);
+		// MODULE(CAM_Motion):STEP(CAM_Init):LINE 2->R701_CAM_Debug = 0
+		Q4T(task)->currentStep = (void *)&currentLine[551]; lineYield(task,551);
+		// STORE 358 TO REG#36990
+		process_ATABLE(358, task);
+		// MODULE(CAM_Motion):STEP(CAM_Init):LINE 3->goto CAM_Update
+		Q4T(task)->currentStep = (void *)&currentLine[552]; lineYield(task,552);
+		// STORE 1 TO REG#36996
+		stepUnlocked = 1; /* unlock step execution */
+		// GOTO CAM_Motion_CAM_Update
+		goto CAM_Motion_CAM_Update;
+// [0340]
+CAM_Motion_CAM_Update:
+		// *** START NEW STEP ***
+		stepUnlocked = 1; Q4T(task)->firstPass = 1; start_of_step_timeout_flag = 0;
+CAM_Motion_CAM_Update_ctc_01:
+		if (stepUnlocked) {
+			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
+		}
+		else { /* release lock */ stepUnlocked = 1; }
+		/*-----------------------------------------------------------------*/
+		/*-----------------------------------------------------------------*/
+		// MODULE(CAM_Motion):STEP(CAM_Update):LINE 4->R701_CAM_Debug = XAxis.cam_debug_flag
+		Q4T(task)->currentStep = (void *)&currentLine[553]; lineYield(task,553);
+		// STORE 359 TO REG#36990
+		process_ATABLE(359, task);
+		// MODULE(CAM_Motion):STEP(CAM_Update):LINE 6->delay = 1
+		Q4T(task)->currentStep = (void *)&currentLine[554];
+		// STORE 0 TO REG#36996
+		stepUnlocked = 0; /* Lock step execution */
+		// STORE 360 TO REG#36990
+		process_ATABLE(360, task); start_of_step_timeout_flag = 0;
+		// GOTO __0329
+		goto __0329;
+// [0341]
+__0329:
+		if (stepUnlocked) {
+			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
+		}
+		else { /* release lock */ stepUnlocked = 1; }
+		/*-----------------------------------------------------------------*/
+		/*-----------------------------------------------------------------*/
+		// MODULE(CAM_Motion):STEP(CAM_Update):LINE 6->delay = 1
+		Q4T(task)->currentStep = (void *)&currentLine[555]; lineYield(task,555);
+		// STORE 120 TO REG#36991
+		R36991 = 120;
+		// IF REG#36991=0 GOTO __0330
+		if (process_CTABLE(R36991, task) == 0) goto __0330;
+		// GOTO __0329
+		goto __0329;
+// [0342]
+__0330:
+		if (stepUnlocked) {
+			if (task->state != TASK_LL_RUN) { if (stepYield(task)) { /* kill thread */ goto ___exitThread; } } 
+		}
+		else { /* release lock */ stepUnlocked = 1; }
+		/*-----------------------------------------------------------------*/
+		/*-----------------------------------------------------------------*/
+		// MODULE(CAM_Motion):STEP(CAM_Update):LINE 7->goto CAM_Update
+		Q4T(task)->currentStep = (void *)&currentLine[556]; lineYield(task,556);
+		// STORE 1 TO REG#36996
+		stepUnlocked = 1; /* unlock step execution */
+		// GOTO CAM_Motion_CAM_Update
+		goto CAM_Motion_CAM_Update;
